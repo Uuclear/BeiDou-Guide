@@ -20,10 +20,17 @@ BeiDou 游戏系统完整开发文档套件。
 | [08-技术规范文档](docs/08-技术规范文档.md) | API版本控制、数据库命名、代码提交规范 |
 | [09-源码深度导读](docs/09-源码深度导读.md) | gms-server / gms-ui 源码阅读路径、包职责说明 |
 | [10-BeiDou-ijl15-源码详解](docs/10-BeiDou-ijl15-源码详解.md) | 客户端 DLL（ezorsia）按文件的类与函数说明 |
+| [11-全量源码符号文档说明](docs/11-全量源码符号文档说明.md) | “我就要全部”场景：全量符号索引入口与生成方式 |
 
 ### 源码索引（需本地克隆 BeiDou-Server 后生成）
 
 从本仓库运行 `python3 scripts/generate-gms-server-api-index.py` 可生成 **gms-server 全量 public 类型与方法签名** 索引：[docs/reference/gms-server-api-index.md](docs/reference/gms-server-api-index.md)（默认约 1.2 万行，适合检索而非通读）。
+
+若你需要“全部（含非 public）”，运行 `python3 scripts/generate-full-symbol-docs.py` 生成：
+
+- [docs/reference/gms-server-full-symbols.md](docs/reference/gms-server-full-symbols.md)
+- [docs/reference/gms-ui-full-symbols.md](docs/reference/gms-ui-full-symbols.md)
+- [docs/reference/beidou-ijl15-full-symbols.md](docs/reference/beidou-ijl15-full-symbols.md)
 
 ## 项目结构
 
@@ -41,6 +48,7 @@ BeiDou-Guide/
 │   ├── 08-技术规范文档.md       # 开发规范与最佳实践
 │   ├── 09-源码深度导读.md       # 服务端/前端源码阅读指南
 │   ├── 10-BeiDou-ijl15-源码详解.md  # 客户端 DLL 逐文件说明
+│   ├── 11-全量源码符号文档说明.md   # 全量索引入口与生成说明
 │   ├── reference/               # 自动生成的 gms-server API 索引等
 │   └── images/                  # 文档配图目录
 ```
