@@ -42,6 +42,11 @@
 - [x] 12-源码模块精读：Quest / QuestStatus、raiseQuestMobCount、updateQuestStatus 与 WZ 骨架
 - [x] 12-源码模块精读：Inventory / InventoryManipulator 入口（锁、add/remove/equip）与贸易衔接
 - [x] 12-源码模块精读：Trade（锁定、InviteCoordinator、金币税、KarmaManipulator）
+- [x] 12-源码模块精读：CashShop / CashItemFactory / gifts / save
+- [x] 12-源码模块精读：PlayerShop（访客、buy、Trade fee、售罄关店）
+- [x] 12-源码模块精读：HiredMerchant（saveItems、World 144×10min、forceClose）
+- [x] 12-源码模块精读：AbstractPlayerInteraction / NPCConversationManager / NPCScriptManager
+- [x] 12-源码模块精读：BuddyList、Party、Guild 骨架
 
 ## 评审
 
