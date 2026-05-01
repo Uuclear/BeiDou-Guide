@@ -38,6 +38,7 @@
 - [x] 12-源码模块精读：MonsterAggroCoordinator、aggroMonsterDamage、傀儡、puppet 列表与 AutoAggroHandler
 - [x] 12-源码模块精读：Monster.damage、MapleMap.damageMonster、无敌钳制、Mob 反伤与 TakeDamageHandler 反弹
 - [x] 12-源码模块精读：killMonster、removeKilledMonsterObject、killBy、dispatchMonsterKilled、EIM、MonsterListener
+- [x] 12-源码模块精读：EventInstanceManager、MapManager、EventManager setup/startEvent、monsterKilled 双路径、dispose
 
 ## 评审
 
