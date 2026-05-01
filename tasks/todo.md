@@ -35,6 +35,7 @@
 - [x] 12-源码模块精读：giveDebuff、diseaseExpire、diseaseExpireTask、dispel/dispelDebuffs/purge、PacketCreator Disease 包
 - [x] 12-源码模块精读：MobSkill.applyEffect、Monster.applyStatus、applyMonsterBuff、MobStatusService、怪物 dispel/debuffMob
 - [x] 12-源码模块精读：MoveLifeHandler、MOVE_LIFE、applyDelayedEffect、控制器 aggro、MOVE_MONSTER / RESPONSE
+- [x] 12-源码模块精读：MonsterAggroCoordinator、aggroMonsterDamage、傀儡、puppet 列表与 AutoAggroHandler
 
 ## 评审
 
