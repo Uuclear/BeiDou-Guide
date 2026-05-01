@@ -32,6 +32,7 @@
 - [x] 12-源码模块精读：gainExp、gainExpInternal、levelUp 与 getMaxLevel
 - [x] 12-源码模块精读：StatEffect.applyTo、applyBuffEffect、registerEffect、reapplyLocalStats / recalcLocalStats
 - [x] 12-源码模块精读：cancelEffect、buffExpireTask、PlayerBuffStorage、silentGiveBuffs 与登入还原
+- [x] 12-源码模块精读：giveDebuff、diseaseExpire、diseaseExpireTask、dispel/dispelDebuffs/purge、PacketCreator Disease 包
 
 ## 评审
 
