@@ -20,6 +20,7 @@
 - [x] 12-源码模块精读：Character.changeMap 与 Portal（ChangeMapHandler、GenericPortal、changeMapInternal）
 - [x] GitHub Pages：MkDocs 导航分组、阅读指引页、排版样式（extra.css）、首页强化分层说明
 - [x] 12-源码模块精读：getInetSocket / getServerIP / getChannelChange（端口推导、包体字段）
+- [x] 12-源码模块精读：PLAYER_LOGGEDIN / PLAYER_MAP_TRANSFER 与 mapTransitioning / setMapTransitionComplete
 
 ## 评审
 
