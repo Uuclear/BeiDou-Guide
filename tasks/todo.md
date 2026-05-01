@@ -39,6 +39,9 @@
 - [x] 12-源码模块精读：Monster.damage、MapleMap.damageMonster、无敌钳制、Mob 反伤与 TakeDamageHandler 反弹
 - [x] 12-源码模块精读：killMonster、removeKilledMonsterObject、killBy、dispatchMonsterKilled、EIM、MonsterListener
 - [x] 12-源码模块精读：EventInstanceManager、MapManager、EventManager setup/startEvent、monsterKilled 双路径、dispose
+- [x] 12-源码模块精读：Quest / QuestStatus、raiseQuestMobCount、updateQuestStatus 与 WZ 骨架
+- [x] 12-源码模块精读：Inventory / InventoryManipulator 入口（锁、add/remove/equip）与贸易衔接
+- [x] 12-源码模块精读：Trade（锁定、InviteCoordinator、金币税、KarmaManipulator）
 
 ## 评审
 
