@@ -26,6 +26,7 @@
 - [x] 12-源码模块精读：AbstractDealDamageHandler、攻击框、teleport/movement 距离上下文与 DISTANCE_HACK
 - [x] 12-源码模块精读：召唤兽 MOVE_SUMMON / SUMMON_ATTACK / DAMAGE_SUMMON 与 MapleMap.spawnSummon
 - [x] 12-源码模块精读：ITEM_PICKUP、MapItem 归属、spawnItemDrop 与 pickItemDrop
+- [x] 12-源码模块精读：MobLootEntry、use_spawn_loot_on_animation、dropFromMonster 与 dropItemsFromMonster
 
 ## 评审
 
