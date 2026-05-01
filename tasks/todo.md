@@ -29,6 +29,7 @@
 - [x] 12-源码模块精读：MobLootEntry、use_spawn_loot_on_animation、dropFromMonster 与 dropItemsFromMonster
 - [x] 12-源码模块精读：killMonster、killBy、takenDamage 与 dropOwner
 - [x] 12-源码模块精读：distributeExperience、组队分摊、giveExpToCharacter 与白字判定
+- [x] 12-源码模块精读：gainExp、gainExpInternal、levelUp 与 getMaxLevel
 
 ## 评审
 
