@@ -34,6 +34,7 @@
 - [x] 12-源码模块精读：cancelEffect、buffExpireTask、PlayerBuffStorage、silentGiveBuffs 与登入还原
 - [x] 12-源码模块精读：giveDebuff、diseaseExpire、diseaseExpireTask、dispel/dispelDebuffs/purge、PacketCreator Disease 包
 - [x] 12-源码模块精读：MobSkill.applyEffect、Monster.applyStatus、applyMonsterBuff、MobStatusService、怪物 dispel/debuffMob
+- [x] 12-源码模块精读：MoveLifeHandler、MOVE_LIFE、applyDelayedEffect、控制器 aggro、MOVE_MONSTER / RESPONSE
 
 ## 评审
 
