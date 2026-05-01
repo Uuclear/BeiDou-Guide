@@ -34,7 +34,7 @@ BeiDou 游戏系统完整开发文档套件。
 
 若你需要“全部 + 逐符号中文职责摘要”，运行 `python3 scripts/generate-symbol-notes.py` 生成：
 
-- [docs/reference/gms-server-symbol-notes.md](docs/reference/gms-server-symbol-notes.md)
+- **gms-server（按 `org/gms` 一级目录分卷）**：[分卷索引](docs/reference/gms-server-symbol-notes-README.md) · [各卷目录](docs/reference/gms-server-symbol-notes/)
 - [docs/reference/gms-ui-symbol-notes.md](docs/reference/gms-ui-symbol-notes.md)
 - [docs/reference/beidou-ijl15-symbol-notes.md](docs/reference/beidou-ijl15-symbol-notes.md)
 

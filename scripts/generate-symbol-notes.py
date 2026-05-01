@@ -106,6 +106,72 @@ JAVA_METHOD_RE = re.compile(
 JAVA_SKIP = {"if", "for", "while", "switch", "catch", "return", "throw", "new"}
 
 
+def _java_file_symbol_section(fp: Path, root: Path) -> list[str]:
+    """单文件逐符号块（不含文件级标题）。"""
+    text = read_text(fp)
+    rel = fp.relative_to(root)
+    lines_out: list[str] = [
+        f"## `{rel}`",
+        "",
+    ]
+    for kind, cname in JAVA_TYPE_RE.findall(text):
+        lines_out.append(f"- `{kind} {cname}`：{zh_for_class(cname)}")
+    lines = text.splitlines()
+    depth = 0
+    in_comment = False
+    i = 0
+    while i < len(lines):
+        raw = lines[i]
+        s = raw.strip()
+        if in_comment:
+            if "*/" in s:
+                in_comment = False
+            depth += raw.count("{") - raw.count("}")
+            i += 1
+            continue
+        if s.startswith("/*"):
+            if "*/" not in s:
+                in_comment = True
+            depth += raw.count("{") - raw.count("}")
+            i += 1
+            continue
+        if s.startswith("//"):
+            depth += raw.count("{") - raw.count("}")
+            i += 1
+            continue
+        if depth == 1 and "(" in s and not s.startswith("@"):
+            merged = s
+            paren = s.count("(") - s.count(")")
+            j = i
+            while paren > 0 and j + 1 < len(lines):
+                j += 1
+                nxt = lines[j].strip()
+                merged = f"{merged} {nxt}"
+                paren += nxt.count("(") - nxt.count(")")
+            m = JAVA_METHOD_RE.match(merged)
+            if m:
+                name = m.group("name")
+                if name not in JAVA_SKIP:
+                    sig = merged.split("{", 1)[0].rstrip(";").strip()
+                    if " class " in sig or " interface " in sig or " enum " in sig:
+                        depth += raw.count("{") - raw.count("}")
+                        i += 1
+                        continue
+                    lines_out.append(f"  - `{sig}`：{zh_for_symbol(name)}")
+            i = j
+        depth += raw.count("{") - raw.count("}")
+        i += 1
+    lines_out.append("")
+    return lines_out
+
+
+def _gms_server_volume_key(rel: Path) -> str:
+    """按 org/gms 下一级目录分卷；包根下直接放的 Java 归入 _root。"""
+    if len(rel.parts) == 1:
+        return "_root"
+    return rel.parts[0]
+
+
 def gen_server_notes(workspace: Path, out_dir: Path) -> None:
     repo = find_repo(
         "BEIDOU_SERVER_REPO",
@@ -117,68 +183,73 @@ def gen_server_notes(workspace: Path, out_dir: Path) -> None:
 
     root = repo / "gms-server" / "src" / "main" / "java" / "org" / "gms"
     files = sorted(root.rglob("*.java"))
-    out: list[str] = [
-        "# gms-server 逐符号中文职责索引",
+    vol_dir = out_dir / "gms-server-symbol-notes"
+    vol_dir.mkdir(parents=True, exist_ok=True)
+
+    buckets: dict[str, list[Path]] = {}
+    for fp in files:
+        rel = fp.relative_to(root)
+        key = _gms_server_volume_key(rel)
+        buckets.setdefault(key, []).append(fp)
+
+    # 分卷正文
+    for vol, fps in sorted(buckets.items(), key=lambda x: (x[0] != "_root", x[0])):
+        body: list[str] = [
+            f"# gms-server 逐符号中文职责 · 分卷 `{vol}`",
+            "",
+            "> 自动生成：`scripts/generate-symbol-notes.py`",
+            f"> 源码路径：`{rel_display(repo, workspace)}`",
+            f"> 本分卷 Java 文件数：{len(fps)}",
+            "",
+            f"[← 返回分卷索引](../gms-server-symbol-notes-README.md)",
+            "",
+            "---",
+            "",
+        ]
+        for fp in sorted(fps):
+            body.extend(_java_file_symbol_section(fp, root))
+        safe = vol.replace("/", "_").replace("\\", "_")
+        (vol_dir / f"{safe}.md").write_text("\n".join(body), encoding="utf-8")
+
+    # 分卷索引表
+    index_lines: list[str] = [
+        "# gms-server 逐符号中文职责 · 分卷索引",
         "",
         "> 自动生成：`scripts/generate-symbol-notes.py`",
         f"> 源码路径：`{rel_display(repo, workspace)}`",
-        f"> 文件数：{len(files)}",
+        f"> Java 文件总数：{len(files)}",
         "",
+        "按 `org/gms` 下**一级目录**拆分（与源码目录一致），便于按模块打开与搜索。",
+        "",
+        "| 分卷 | Java 文件数 | 链接 |",
+        "|------|---------------|------|",
     ]
-    for fp in files:
-        rel = fp.relative_to(root)
-        text = read_text(fp)
-        out.append(f"## `{rel}`")
-        out.append("")
-        for kind, cname in JAVA_TYPE_RE.findall(text):
-            out.append(f"- `{kind} {cname}`：{zh_for_class(cname)}")
-        lines = text.splitlines()
-        depth = 0
-        in_comment = False
-        i = 0
-        while i < len(lines):
-            raw = lines[i]
-            s = raw.strip()
-            if in_comment:
-                if "*/" in s:
-                    in_comment = False
-                depth += raw.count("{") - raw.count("}")
-                i += 1
-                continue
-            if s.startswith("/*"):
-                if "*/" not in s:
-                    in_comment = True
-                depth += raw.count("{") - raw.count("}")
-                i += 1
-                continue
-            if s.startswith("//"):
-                depth += raw.count("{") - raw.count("}")
-                i += 1
-                continue
-            if depth == 1 and "(" in s and not s.startswith("@"):
-                merged = s
-                paren = s.count("(") - s.count(")")
-                j = i
-                while paren > 0 and j + 1 < len(lines):
-                    j += 1
-                    nxt = lines[j].strip()
-                    merged = f"{merged} {nxt}"
-                    paren += nxt.count("(") - nxt.count(")")
-                m = JAVA_METHOD_RE.match(merged)
-                if m:
-                    name = m.group("name")
-                    if name not in JAVA_SKIP:
-                        sig = merged.split("{", 1)[0].rstrip(";").strip()
-                        if " class " in sig or " interface " in sig or " enum " in sig:
-                            depth += raw.count("{") - raw.count("}")
-                            i += 1
-                            continue
-                        out.append(f"  - `{sig}`：{zh_for_symbol(name)}")
-                i = j
-            depth += raw.count("{") - raw.count("}")
-            i += 1
-        out.append("")
-    (out_dir / "gms-server-symbol-notes.md").write_text("\n".join(out), encoding="utf-8")
+    for vol, fps in sorted(buckets.items(), key=lambda x: (x[0] != "_root", x[0])):
+        safe = vol.replace("/", "_").replace("\\", "_")
+        index_lines.append(f"| `{vol}` | {len(fps)} | [打开](gms-server-symbol-notes/{safe}.md) |")
+    index_lines.extend(
+        [
+            "",
+            "---",
+            "",
+            "根目录 `gms-server-symbol-notes.md` 仅作跳转，避免单文件过大。",
+        ]
+    )
+    (out_dir / "gms-server-symbol-notes-README.md").write_text("\n".join(index_lines), encoding="utf-8")
+
+    stub = "\n".join(
+        [
+            "# gms-server 逐符号中文职责索引（已分卷）",
+            "",
+            "单文件体量过大，已按 `org/gms` 下一级目录拆成多卷。",
+            "",
+            "**请打开：[分卷索引](gms-server-symbol-notes-README.md)**，再选择对应模块。",
+            "",
+            "> 重新生成：`python3 scripts/generate-symbol-notes.py`",
+            "",
+        ]
+    )
+    (out_dir / "gms-server-symbol-notes.md").write_text(stub, encoding="utf-8")
 
 
 TS_FN_RE = re.compile(r"^\s*(?:export\s+)?(?:async\s+)?function\s+(\w+)\s*\(", re.M)

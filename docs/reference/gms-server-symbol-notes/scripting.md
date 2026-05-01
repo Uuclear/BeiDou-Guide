@@ -1,0 +1,728 @@
+# gms-server 逐符号中文职责 · 分卷 `scripting`
+
+> 自动生成：`scripts/generate-symbol-notes.py`
+> 源码路径：`BeiDou-Server`
+> 本分卷 Java 文件数：21
+
+[← 返回分卷索引](../gms-server-symbol-notes-README.md)
+
+---
+
+## `scripting/AbstractPlayerInteraction.java`
+
+- `class AbstractPlayerInteraction`：领域类型或功能模块，职责由同名文件实现定义。
+  - `public AbstractPlayerInteraction(Client c)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public Client getClient()`：读取并返回状态/数据。
+  - `public Character getPlayer()`：读取并返回状态/数据。
+  - `public Character getChar()`：读取并返回状态/数据。
+  - `public int getJobId()`：读取并返回状态/数据。
+  - `public Job getJob()`：读取并返回状态/数据。
+  - `public int getLevel()`：读取并返回状态/数据。
+  - `public MapleMap getMap()`：读取并返回状态/数据。
+  - `public int getHourOfDay()`：读取并返回状态/数据。
+  - `public int getMarketPortalId(int mapId)`：读取并返回状态/数据。
+  - `private int getMarketPortalId(MapleMap map)`：读取并返回状态/数据。
+  - `public void warp(int mapid)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void warp(int map, int portal)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void warp(int map, String portal)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void warpMap(int map)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void warpParty(int id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void warpParty(int id, int portalId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void warpParty(int map, String portalName)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void warpParty(int id, int fromMinId, int fromMaxId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void warpParty(int id, int portalId, int fromMinId, int fromMaxId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public MapleMap getWarpMap(int map)`：读取并返回状态/数据。
+  - `public MapleMap getMap(int map)`：读取并返回状态/数据。
+  - `public int countAllMonstersOnMap(int map)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public int countMonster()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void resetMapObjects(int mapid)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public EventManager getEventManager(String event)`：读取并返回状态/数据。
+  - `public EventInstanceManager getEventInstance()`：读取并返回状态/数据。
+  - `public Inventory getInventory(int type)`：读取并返回状态/数据。
+  - `public Inventory getInventory(InventoryType type)`：读取并返回状态/数据。
+  - `public boolean hasItem(int itemid)`：进行条件判定并返回布尔结果。
+  - `public boolean hasItem(int itemid, int quantity)`：进行条件判定并返回布尔结果。
+  - `public boolean haveItem(int itemid)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean haveItem(int itemid, int quantity)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public int getItemQuantity(int itemid)`：读取并返回状态/数据。
+  - `public boolean haveItemWithId(int itemid)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean haveItemWithId(int itemid, boolean checkEquipped)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean canHold(int itemid)`：进行条件判定并返回布尔结果。
+  - `public boolean canHold(int itemid, int quantity)`：进行条件判定并返回布尔结果。
+  - `public boolean canHold(int itemid, int quantity, int removeItemid, int removeQuantity)`：进行条件判定并返回布尔结果。
+  - `private List<Integer> convertToIntegerList(List<Object> objects)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean canHoldAll(List<Object> itemids)`：进行条件判定并返回布尔结果。
+  - `public boolean canHoldAll(List<Object> itemids, List<Object> quantity)`：进行条件判定并返回布尔结果。
+  - `private boolean canHoldAll(List<Integer> itemids, List<Integer> quantity, boolean isInteger)`：进行条件判定并返回布尔结果。
+  - `public boolean canHoldAllAfterRemoving(List<Integer> toAddItemids, List<Integer> toAddQuantity, List<Integer> toRemoveItemids, List<Integer> toRemoveQuantity)`：进行条件判定并返回布尔结果。
+  - `public final QuestStatus getQuestRecord(final int id)`：读取并返回状态/数据。
+  - `public final QuestStatus getQuestNoRecord(final int id)`：读取并返回状态/数据。
+  - `public void openNpc(int npcid)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void openNpc(int npcid, String script)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public int getQuestStatus(int id)`：读取并返回状态/数据。
+  - `private QuestStatus.Status getQuestStat(int id)`：读取并返回状态/数据。
+  - `public boolean isQuestCompleted(int id)`：进行条件判定并返回布尔结果。
+  - `public boolean isQuestActive(int id)`：进行条件判定并返回布尔结果。
+  - `public boolean isQuestStarted(int id)`：进行条件判定并返回布尔结果。
+  - `public void setQuestProgress(int id, String progress)`：写入或更新状态字段。
+  - `public void setQuestProgress(int id, int progress)`：写入或更新状态字段。
+  - `public void setQuestProgress(int id, int infoNumber, int progress)`：写入或更新状态字段。
+  - `public void setQuestProgress(int id, int infoNumber, String progress)`：写入或更新状态字段。
+  - `public String getQuestProgress(int id)`：读取并返回状态/数据。
+  - `public String getQuestProgress(int id, int infoNumber)`：读取并返回状态/数据。
+  - `public int getQuestProgressInt(int id)`：读取并返回状态/数据。
+  - `public int getQuestProgressInt(int id, int infoNumber)`：读取并返回状态/数据。
+  - `public void resetAllQuestProgress(int id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void resetQuestProgress(int id, int infoNumber)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean forceStartQuest(int id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean forceStartQuest(int id, int npc)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean forceCompleteQuest(int id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean forceCompleteQuest(int id, int npc)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startQuest(short id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean completeQuest(short id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startQuest(int id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean completeQuest(int id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startQuest(short id, int npc)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean completeQuest(short id, int npc)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startQuest(int id, int npc)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean completeQuest(int id, int npc)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public Item evolvePet(byte slot, int afterId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void gainItem(int id, short quantity)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void gainItem(int id, short quantity, boolean show)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void gainItem(int id, boolean show)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void gainItem(int id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public Item gainItem(int id, short quantity, boolean randomStats, boolean showMessage)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public Item gainItem(int id, short quantity, boolean randomStats, boolean showMessage, long expires)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public Item gainItem(int id, short quantity, boolean randomStats, boolean showMessage, long expires, Pet from)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void gainFame(int delta)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void changeMusic(String songName)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void playerMessage(int type, String message)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void message(String message)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void dropMessage(int type, String message)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void mapMessage(int type, String message)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void mapEffect(String path)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void mapSound(String path)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void displayAranIntro()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void showIntro(String path)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void showInfo(String path)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void guildMessage(int type, String message)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public Guild getGuild()`：读取并返回状态/数据。
+  - `public Party getParty()`：读取并返回状态/数据。
+  - `public boolean isLeader()`：进行条件判定并返回布尔结果。
+  - `public boolean isGuildLeader()`：进行条件判定并返回布尔结果。
+  - `public boolean isPartyLeader()`：进行条件判定并返回布尔结果。
+  - `public boolean isEventLeader()`：进行条件判定并返回布尔结果。
+  - `public void givePartyItems(int id, short quantity, List<Character> party)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void removeHPQItems()`：删除对象、关系或临时状态。
+  - `public void removePartyItems(int id)`：删除对象、关系或临时状态。
+  - `public void giveCharacterExp(int amount, Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void givePartyExp(int amount, List<Character> party)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void givePartyExp(String PQ)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void givePartyExp(String PQ, boolean instance)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void removeFromParty(int id, List<Character> party)`：删除对象、关系或临时状态。
+  - `public void removeAll(int id)`：删除对象、关系或临时状态。
+  - `public void removeAll(int id, Client cl)`：删除对象、关系或临时状态。
+  - `public void removeAllByInventory(int invType)`：删除对象、关系或临时状态。
+  - `public void removeAllByInventorySlot(int invType, short slot)`：删除对象、关系或临时状态。
+  - `public int getMapId()`：读取并返回状态/数据。
+  - `public int getPlayerCount(int mapid)`：读取并返回状态/数据。
+  - `public void showInstruction(String msg, int width, int height)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void disableMinimap()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean isAllReactorState(final int reactorId, final int state)`：进行条件判定并返回布尔结果。
+  - `public void resetMap(int mapid)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void useItem(int id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void cancelItem(final int id)`：进行条件判定并返回布尔结果。
+  - `public void teachSkill(int skillid, byte level, byte masterLevel, long expiration)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void teachSkill(int skillid, byte level, byte masterLevel, long expiration, boolean force)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void removeEquipFromSlot(short slot)`：删除对象、关系或临时状态。
+  - `public void gainAndEquip(int itemid, short slot)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void spawnNpc(int npcId, Point pos, MapleMap map)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void spawnMonster(int id, int x, int y)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public Monster getMonsterLifeFactory(int mid)`：读取并返回状态/数据。
+  - `public void spawnGuide()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void removeGuide()`：删除对象、关系或临时状态。
+  - `public void displayGuide(int num)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void goDojoUp()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void resetDojoEnergy()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void resetPartyDojoEnergy()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void enableActions()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void showEffect(String effect)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void dojoEnergy()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void talkGuide(String message)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void guideHint(int hint)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void updateAreaInfo(Short area, String info)`：更新已有对象/配置/缓存。
+  - `public boolean containsAreaInfo(short area, String info)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void earnTitle(String msg)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void showInfoText(String msg)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void openUI(byte ui)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void lockUI()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void unlockUI()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void playSound(String sound)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void environmentChange(String env, int mode)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public String numberWithCommas(int number)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public Pyramid getPyramid()`：读取并返回状态/数据。
+  - `public int createExpedition(ExpeditionType type)`：创建对象、会话或业务记录。
+  - `public int createExpedition(ExpeditionType type, boolean silent, int minPlayers, int maxPlayers)`：创建对象、会话或业务记录。
+  - `public void endExpedition(Expedition exped)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public Expedition getExpedition(ExpeditionType type)`：读取并返回状态/数据。
+  - `public String getExpeditionMemberNames(ExpeditionType type)`：读取并返回状态/数据。
+  - `public boolean isLeaderExpedition(ExpeditionType type)`：进行条件判定并返回布尔结果。
+  - `public long getJailTimeLeft()`：读取并返回状态/数据。
+  - `public List<Pet> getDriedPets()`：读取并返回状态/数据。
+  - `public List<Item> getUnclaimedMarriageGifts()`：读取并返回状态/数据。
+  - `public boolean startDungeonInstance(int dungeonid)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean canGetFirstJob(int jobType)`：进行条件判定并返回布尔结果。
+  - `public String getFirstJobStatRequirement(int jobType)`：读取并返回状态/数据。
+  - `public void npcTalk(int npcid, String message)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public long getCurrentTime()`：读取并返回状态/数据。
+  - `public void weakenAreaBoss(int monsterId, String message)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private void applySealSkill(Monster monster)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private void applyReduceAvoid(Monster monster)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private void sendBlueNotice(MapleMap map, String message)`：向外发送响应、消息或网络包。
+  - `public String getCharacterExtendValue(String extendName)`：读取并返回状态/数据。
+  - `public String getCharacterExtendValue(String extendName, boolean isDaily)`：读取并返回状态/数据。
+  - `public String getAccountExtendValue(String extendName)`：读取并返回状态/数据。
+  - `public String getAccountExtendValue(String extendName, boolean isDaily)`：读取并返回状态/数据。
+  - `public void saveOrUpdateCharacterExtendValue(String extendName, String extendValue)`：持久化当前状态到存储层。
+  - `public void saveOrUpdateCharacterExtendValue(String extendName, String extendValue, boolean isDaily)`：持久化当前状态到存储层。
+  - `public void saveOrUpdateAccountExtendValue(String extendName, String extendValue)`：持久化当前状态到存储层。
+  - `public void saveOrUpdateAccountExtendValue(String extendName, String extendValue, boolean isDaily)`：持久化当前状态到存储层。
+  - `public void gainEquip(Equip equip)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public int getOnlineTime()`：读取并返回状态/数据。
+
+## `scripting/AbstractScriptManager.java`
+
+- `class AbstractScriptManager`：领域类型或功能模块，职责由同名文件实现定义。
+  - `protected AbstractScriptManager()`：通用业务逻辑入口，需结合实现查看细节。
+  - `protected ScriptEngine getInvocableScriptEngine(String path)`：读取并返回状态/数据。
+  - `protected ScriptEngine getInvocableScriptEngine(String path, Client c)`：读取并返回状态/数据。
+  - `private void enableScriptHostAccess(GraalJSScriptEngine engine)`：通用业务逻辑入口，需结合实现查看细节。
+  - `protected void resetContext(String path, Client c)`：通用业务逻辑入口，需结合实现查看细节。
+
+## `scripting/SynchronizedInvocable.java`
+
+- `class SynchronizedInvocable`：领域类型或功能模块，职责由同名文件实现定义。
+  - `private SynchronizedInvocable(Invocable invocable)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public static Invocable of(Invocable invocable)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public synchronized Object invokeMethod(Object thiz, String name, Object... args) throws ScriptException, NoSuchMethodException`：通用业务逻辑入口，需结合实现查看细节。
+  - `public synchronized Object invokeFunction(String name, Object... args) throws ScriptException, NoSuchMethodException`：通用业务逻辑入口，需结合实现查看细节。
+  - `public synchronized <T> T getInterface(Class<T> clasz)`：读取并返回状态/数据。
+  - `public synchronized <T> T getInterface(Object thiz, Class<T> clasz)`：读取并返回状态/数据。
+
+## `scripting/event/EventInstanceManager.java`
+
+- `class EventInstanceManager`：领域类型或功能模块，职责由同名文件实现定义。
+  - `public EventInstanceManager(EventManager em, String name)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void setName(String name)`：写入或更新状态字段。
+  - `public EventManager getEm()`：读取并返回状态/数据。
+  - `public int getEventPlayersJobs()`：读取并返回状态/数据。
+  - `public void applyEventPlayersItemBuff(int itemId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void applyEventPlayersSkillBuff(int skillId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void applyEventPlayersSkillBuff(int skillId, int skillLv)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void giveEventPlayersExp(int gain)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void giveEventPlayersExp(int gain, int mapId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void giveEventPlayersMeso(int gain)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void giveEventPlayersMeso(int gain, int mapId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public Object invokeScriptFunction(String name, Object... args) throws ScriptException, NoSuchMethodException`：通用业务逻辑入口，需结合实现查看细节。
+  - `public synchronized void registerPlayer(final Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public synchronized void registerPlayer(final Character chr, boolean runEntryScript)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void exitPlayer(final Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void dropMessage(int type, String message)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void restartEventTimer(long time)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void startEventTimer(long time)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void addEventTimer(long time)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private void dismissEventTimer()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void stopEventTimer()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean isTimerStarted()`：进行条件判定并返回布尔结果。
+  - `public long getTimeLeft()`：读取并返回状态/数据。
+  - `public void registerParty(Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void registerParty(Party party, MapleMap map)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void registerExpedition(Expedition exped)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private void registerExpeditionTeam(Expedition exped, int recruitMap)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void unregisterPlayer(final Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public int getPlayerCount()`：读取并返回状态/数据。
+  - `public Character getPlayerById(int id)`：读取并返回状态/数据。
+  - `public List<Character> getPlayers()`：读取并返回状态/数据。
+  - `private List<Character> getPlayerList()`：读取并返回状态/数据。
+  - `public void registerMonster(Monster mob)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void movePlayer(final Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void changedMap(final Character chr, final int mapId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void afterChangedMap(final Character chr, final int mapId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public synchronized void changedLeader(final PartyCharacter ldr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void monsterKilled(final Monster mob, final boolean hasKiller)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void friendlyKilled(final Monster mob, final boolean hasKiller)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void friendlyDamaged(final Monster mob)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void friendlyItemDrop(final Monster mob)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void playerKilled(final Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void reviveMonster(final Monster mob)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean revivePlayer(final Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void playerDisconnected(final Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void monsterKilled(Character chr, final Monster mob)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public int getKillCount(Character chr)`：读取并返回状态/数据。
+  - `public void dispose()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public synchronized void dispose(boolean shutdown)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public MapManager getMapFactory()`：读取并返回状态/数据。
+  - `public void schedule(final String methodName, long delay)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public String getName()`：读取并返回状态/数据。
+  - `public MapleMap getMapInstance(int mapId)`：读取并返回状态/数据。
+  - `public void setIntProperty(String key, Integer value)`：写入或更新状态字段。
+  - `public void setProperty(String key, Integer value)`：写入或更新状态字段。
+  - `public void setProperty(String key, String value)`：写入或更新状态字段。
+  - `public Object setProperty(String key, String value, boolean prev)`：写入或更新状态字段。
+  - `public void setObjectProperty(String key, Object obj)`：写入或更新状态字段。
+  - `public String getProperty(String key)`：读取并返回状态/数据。
+  - `public int getIntProperty(String key)`：读取并返回状态/数据。
+  - `public Object getObjectProperty(String key)`：读取并返回状态/数据。
+  - `public void leftParty(final Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void disbandParty()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void clearPQ()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void removePlayer(final Character chr)`：删除对象、关系或临时状态。
+  - `public boolean isLeader(Character chr)`：进行条件判定并返回布尔结果。
+  - `public boolean isEventLeader(Character chr)`：进行条件判定并返回布尔结果。
+  - `public final MapleMap getInstanceMap(final int mapid)`：读取并返回状态/数据。
+  - `public final boolean disposeIfPlayerBelow(final byte size, final int towarp)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void spawnNpc(int npcId, Point pos, MapleMap map)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void dispatchRaiseQuestMobCount(int mobid, int mapid)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public Monster getMonster(int mid)`：读取并返回状态/数据。
+  - `private List<Integer> convertToIntegerList(List<Object> objects)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void setEventClearStageExp(List<Object> gain)`：写入或更新状态字段。
+  - `public void setEventClearStageMeso(List<Object> gain)`：写入或更新状态字段。
+  - `public Integer getClearStageExp(int stage)`：读取并返回状态/数据。
+  - `public Integer getClearStageMeso(int stage)`：读取并返回状态/数据。
+  - `public List<Integer> getClearStageBonus(int stage)`：读取并返回状态/数据。
+  - `private void dropExclusiveItems(Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void dropAllExclusiveItems()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void setExclusiveItems(List<Object> items)`：写入或更新状态字段。
+  - `public final void setEventRewards(List<Object> rwds, List<Object> qtys, int expGiven)`：写入或更新状态字段。
+  - `public final void setEventRewards(List<Object> rwds, List<Object> qtys)`：写入或更新状态字段。
+  - `public final void setEventRewards(int eventLevel, List<Object> rwds, List<Object> qtys)`：写入或更新状态字段。
+  - `public final void setEventRewards(int eventLevel, List<Object> rwds, List<Object> qtys, int expGiven)`：写入或更新状态字段。
+  - `private byte getRewardListRequirements(int level)`：读取并返回状态/数据。
+  - `private boolean hasRewardSlot(Character player, int eventLevel)`：进行条件判定并返回布尔结果。
+  - `public final boolean giveEventReward(Character player)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final boolean giveEventReward(Character player, int eventLevel)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private void disposeExpedition()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final synchronized void startEvent()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void setEventCleared()`：写入或更新状态字段。
+  - `public final boolean isEventCleared()`：进行条件判定并返回布尔结果。
+  - `public final boolean isEventDisposed()`：进行条件判定并返回布尔结果。
+  - `private boolean isEventTeamLeaderOn()`：进行条件判定并返回布尔结果。
+  - `public final boolean checkEventTeamLacking(boolean leavingEventMap, int minPlayers)`：校验输入参数或业务约束。
+  - `public final boolean isExpeditionTeamLackingNow(boolean leavingEventMap, int minPlayers, Character quitter)`：进行条件判定并返回布尔结果。
+  - `public final boolean isEventTeamLackingNow(boolean leavingEventMap, int minPlayers, Character quitter)`：进行条件判定并返回布尔结果。
+  - `public final boolean isEventTeamTogether()`：进行条件判定并返回布尔结果。
+  - `public final void warpEventTeam(int warpFrom, int warpTo)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void warpEventTeam(int warpTo)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void warpEventTeamToMapSpawnPoint(int warpFrom, int warpTo, int toSp)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void warpEventTeamToMapSpawnPoint(int warpTo, int toSp)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final int getLeaderId()`：读取并返回状态/数据。
+  - `public Character getLeader()`：读取并返回状态/数据。
+  - `public final void setLeader(Character chr)`：写入或更新状态字段。
+  - `public final void showWrongEffect()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void showWrongEffect(int mapId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void showClearEffect()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void showClearEffect(boolean hasGate)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void showClearEffect(int mapId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void showClearEffect(boolean hasGate, int mapId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void showClearEffect(int mapId, String mapObj, int newState)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void showClearEffect(boolean hasGate, int mapId, String mapObj, int newState)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void recoverOpenedGate(Character chr, int thisMapId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void giveEventPlayersStageReward(int thisStage)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void linkToNextStage(int thisStage, String eventFamily, int thisMapId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void linkPortalToScript(int thisStage, String portalName, String scriptName, int thisMapId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void gridInsert(Character chr, int newStatus)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void gridRemove(Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final int gridCheck(Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final int gridSize()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public final void gridClear()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean activatedAllReactorsOnMap(int mapId, int minReactorId, int maxReactorId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean activatedAllReactorsOnMap(MapleMap map, int minReactorId, int maxReactorId)`：通用业务逻辑入口，需结合实现查看细节。
+
+## `scripting/event/EventManager.java`
+
+- `class EventManager`：领域类型或功能模块，职责由同名文件实现定义。
+- `class EventManagerTask`：领域类型或功能模块，职责由同名文件实现定义。
+  - `public EventManager(Channel cserv, Invocable iv, String name)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private boolean isDisposed()`：进行条件判定并返回布尔结果。
+  - `public void cancel()`：进行条件判定并返回布尔结果。
+  - `private List<Integer> convertToIntegerList(List<Object> objects)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public long getLobbyDelay()`：读取并返回状态/数据。
+  - `private int getMaxLobbies()`：读取并返回状态/数据。
+  - `public EventScheduledFuture schedule(String methodName, long delay)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public EventScheduledFuture schedule(final String methodName, final EventInstanceManager eim, long delay)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public EventScheduledFuture scheduleAtTimestamp(final String methodName, long timestamp)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public World getWorldServer()`：读取并返回状态/数据。
+  - `public Channel getChannelServer()`：读取并返回状态/数据。
+  - `public Invocable getIv()`：读取并返回状态/数据。
+  - `public EventInstanceManager getInstance(String name)`：读取并返回状态/数据。
+  - `public Collection<EventInstanceManager> getInstances()`：读取并返回状态/数据。
+  - `public EventInstanceManager newInstance(String name) throws EventInstanceInProgressException`：创建对象、会话或业务记录。
+  - `public Marriage newMarriage(String name) throws EventInstanceInProgressException`：创建对象、会话或业务记录。
+  - `public void disposeInstance(final String name)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void setProperty(String key, String value)`：写入或更新状态字段。
+  - `public void setIntProperty(String key, int value)`：写入或更新状态字段。
+  - `public void setProperty(String key, int value)`：写入或更新状态字段。
+  - `public String getProperty(String key)`：读取并返回状态/数据。
+  - `public int getIntProperty(String key)`：读取并返回状态/数据。
+  - `private void setLockLobby(int lobbyId, boolean lock)`：写入或更新状态字段。
+  - `private boolean startLobbyInstance(int lobbyId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private void freeLobbyInstance(String lobbyName)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public String getName()`：读取并返回状态/数据。
+  - `private int availableLobbyInstance()`：通用业务逻辑入口，需结合实现查看细节。
+  - `private String getInternalScriptExceptionMessage(Throwable a)`：读取并返回状态/数据。
+  - `private EventInstanceManager createInstance(String name, Object... args) throws ScriptException, NoSuchMethodException`：创建对象、会话或业务记录。
+  - `private void registerEventInstance(String eventName, int lobbyId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startInstance(Expedition exped)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startInstance(int lobbyId, Expedition exped)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startInstance(int lobbyId, Expedition exped, Character leader)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startInstance(Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startInstance(int lobbyId, Character leader)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startInstance(int lobbyId, Character chr, Character leader, int difficulty)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startInstance(Party party, MapleMap map)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startInstance(int lobbyId, Party party, MapleMap map)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startInstance(int lobbyId, Party party, MapleMap map, Character leader)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startInstance(Party party, MapleMap map, int difficulty)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startInstance(int lobbyId, Party party, MapleMap map, int difficulty)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startInstance(int lobbyId, Party party, MapleMap map, int difficulty, Character leader)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startInstance(EventInstanceManager eim, String ldr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startInstance(EventInstanceManager eim, Character ldr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startInstance(int lobbyId, EventInstanceManager eim, String ldr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startInstance(int lobbyId, EventInstanceManager eim, String ldr, Character leader)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public List<PartyCharacter> getEligibleParty(Party party)`：读取并返回状态/数据。
+  - `public void clearPQ(EventInstanceManager eim)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void clearPQ(EventInstanceManager eim, MapleMap toMap)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public long getEventTimeout()`：读取并返回状态/数据。
+  - `public boolean isNobodyInPQ()`：进行条件判定并返回布尔结果。
+  - `public Monster getMonster(int mid)`：读取并返回状态/数据。
+  - `private void exportReadyGuild(Integer guildId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private void exportMovedQueueToGuild(Integer guildId, int place)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private List<Integer> getNextGuildQueue()`：读取并返回状态/数据。
+  - `public boolean isQueueFull()`：进行条件判定并返回布尔结果。
+  - `public int getQueueSize()`：读取并返回状态/数据。
+  - `public byte addGuildToQueue(Integer guildId, Integer leaderId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean attemptStartGuildInstance()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void startQuest(Character chr, int id, int npcid)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void completeQuest(Character chr, int id, int npcid)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public int getTransportationTime(int travelTime)`：读取并返回状态/数据。
+  - `public int getBossTime(int BossTime)`：读取并返回状态/数据。
+  - `private void fillEimQueue()`：通用业务逻辑入口，需结合实现查看细节。
+  - `private EventInstanceManager getReadyInstance()`：读取并返回状态/数据。
+  - `private void instantiateQueuedInstance()`：通用业务逻辑入口，需结合实现查看细节。
+
+## `scripting/event/EventScheduledFuture.java`
+
+- `class EventScheduledFuture`：领域类型或功能模块，职责由同名文件实现定义。
+  - `public EventScheduledFuture(Runnable r, EventScriptScheduler ess)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void cancel(boolean dummy)`：进行条件判定并返回布尔结果。
+
+## `scripting/event/EventScriptManager.java`
+
+- `class EventScriptManager`：领域类型或功能模块，职责由同名文件实现定义。
+  - `public EventScriptManager(final Channel channel, String[] scripts)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public EventManager getEventManager(String event)`：读取并返回状态/数据。
+  - `public boolean isActive()`：进行条件判定并返回布尔结果。
+  - `public final void init()`：初始化模块、资源或运行时状态。
+  - `private void reloadScripts()`：通用业务逻辑入口，需结合实现查看细节。
+  - `private EventEntry initializeEventEntry(String script, Channel channel)`：初始化模块、资源或运行时状态。
+  - `public void reload()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void cancel()`：进行条件判定并返回布尔结果。
+  - `public void dispose()`：通用业务逻辑入口，需结合实现查看细节。
+
+## `scripting/event/scheduler/EventScriptScheduler.java`
+
+- `class EventScriptScheduler`：领域类型或功能模块，职责由同名文件实现定义。
+  - `private void runBaseSchedule()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void registerEntry(final Runnable scheduledAction, final long duration)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void cancelEntry(final Runnable scheduledAction)`：进行条件判定并返回布尔结果。
+  - `public void dispose()`：通用业务逻辑入口，需结合实现查看细节。
+
+## `scripting/item/ItemScriptManager.java`
+
+- `class ItemScriptManager`：领域类型或功能模块，职责由同名文件实现定义。
+  - `public static ItemScriptManager getInstance()`：读取并返回状态/数据。
+  - `public void runItemScript(Client c, ScriptedItem scriptItem)`：通用业务逻辑入口，需结合实现查看细节。
+
+## `scripting/item/ItemScriptMethods.java`
+
+- `class ItemScriptMethods`：领域类型或功能模块，职责由同名文件实现定义。
+  - `public ItemScriptMethods(Client c)`：通用业务逻辑入口，需结合实现查看细节。
+
+## `scripting/map/MapScriptManager.java`
+
+- `class MapScriptManager`：领域类型或功能模块，职责由同名文件实现定义。
+  - `public static MapScriptManager getInstance()`：读取并返回状态/数据。
+  - `public void reloadScripts()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean runMapScript(Client c, String mapScriptPath, boolean firstUser)`：通用业务逻辑入口，需结合实现查看细节。
+
+## `scripting/map/MapScriptMethods.java`
+
+- `class MapScriptMethods`：领域类型或功能模块，职责由同名文件实现定义。
+  - `public MapScriptMethods(Client c)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void displayCygnusIntro()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void displayAranIntro()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void startExplorerExperience()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void goAdventure()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void goLith()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void explorerQuest(short questid, String questName)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void touchTheSky()`：通用业务逻辑入口，需结合实现查看细节。
+
+## `scripting/npc/NPCConversationManager.java`
+
+- `class NPCConversationManager`：领域类型或功能模块，职责由同名文件实现定义。
+  - `private String getDefaultTalk(int npcid)`：读取并返回状态/数据。
+  - `public NPCConversationManager(Client c, int npc, String scriptName)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public NPCConversationManager(Client c, int npc, List<PartyCharacter> otherParty, boolean test)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public NPCConversationManager(Client c, int npc, int oid, String scriptName, boolean itemScript)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public int getNpc()`：读取并返回状态/数据。
+  - `public int getNpcObjectId()`：读取并返回状态/数据。
+  - `public String getScriptName()`：读取并返回状态/数据。
+  - `public boolean isItemScript()`：进行条件判定并返回布尔结果。
+  - `public void resetItemScript()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void dispose()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void sendNext(String text)`：向外发送响应、消息或网络包。
+  - `public void sendPrev(String text)`：向外发送响应、消息或网络包。
+  - `public void sendNextPrev(String text)`：向外发送响应、消息或网络包。
+  - `public void sendOk(String text)`：向外发送响应、消息或网络包。
+  - `public void sendDefault()`：向外发送响应、消息或网络包。
+  - `public void sendYesNo(String text)`：向外发送响应、消息或网络包。
+  - `public void sendAcceptDecline(String text)`：向外发送响应、消息或网络包。
+  - `public void sendSimple(String text)`：向外发送响应、消息或网络包。
+  - `public void sendNext(String text, byte speaker)`：向外发送响应、消息或网络包。
+  - `public void sendPrev(String text, byte speaker)`：向外发送响应、消息或网络包。
+  - `public void sendNextPrev(String text, byte speaker)`：向外发送响应、消息或网络包。
+  - `public void sendOk(String text, byte speaker)`：向外发送响应、消息或网络包。
+  - `public void sendYesNo(String text, byte speaker)`：向外发送响应、消息或网络包。
+  - `public void sendAcceptDecline(String text, byte speaker)`：向外发送响应、消息或网络包。
+  - `public void sendSimple(String text, byte speaker)`：向外发送响应、消息或网络包。
+  - `public void sendStyle(String text, int[] styles)`：向外发送响应、消息或网络包。
+  - `public void sendGetNumber(String text, int def, int min, int max)`：向外发送响应、消息或网络包。
+  - `public void sendGetText(String text)`：向外发送响应、消息或网络包。
+  - `public void sendGetNumber(String text, int def, int min, int max,byte speaker)`：向外发送响应、消息或网络包。
+  - `public void sendGetText(String text,byte speaker)`：向外发送响应、消息或网络包。
+  - `public void sendDimensionalMirror(String text)`：向外发送响应、消息或网络包。
+  - `public void setGetText(String text)`：写入或更新状态字段。
+  - `public String getText()`：读取并返回状态/数据。
+  - `public boolean forceStartQuest(int id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean forceCompleteQuest(int id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startQuest(short id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean completeQuest(short id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean startQuest(int id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean completeQuest(int id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public int getMeso()`：读取并返回状态/数据。
+  - `public void gainMeso(int gain)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void gainMeso(Double gain)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void gainExp(int gain)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void showEffect(String effect)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void setHair(int hair)`：写入或更新状态字段。
+  - `public void setFace(int face)`：写入或更新状态字段。
+  - `public void setSkin(int color)`：写入或更新状态字段。
+  - `public int itemQuantity(int itemid)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void displayGuildRanks()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean canSpawnPlayerNpc(int mapid)`：进行条件判定并返回布尔结果。
+  - `public PlayerNPC getPlayerNPCByScriptid(int scriptId)`：读取并返回状态/数据。
+  - `public Party getParty()`：读取并返回状态/数据。
+  - `public void resetMap(int mapid)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void gainTameness(int tameness)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public String getName()`：读取并返回状态/数据。
+  - `public int getGender()`：读取并返回状态/数据。
+  - `public void changeJobById(int a)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void changeJob(Job job)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public String getJobName(int id)`：读取并返回状态/数据。
+  - `public StatEffect getItemEffect(int itemId)`：读取并返回状态/数据。
+  - `public void resetStats()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void openShopNPC(int id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void maxMastery()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void doGachapon()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void upgradeAlliance()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void disbandAlliance(Client c, int allianceId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean canBeUsedAllianceName(String name)`：进行条件判定并返回布尔结果。
+  - `public Alliance createAlliance(String name)`：创建对象、会话或业务记录。
+  - `public int getAllianceCapacity()`：读取并返回状态/数据。
+  - `public boolean hasMerchant()`：进行条件判定并返回布尔结果。
+  - `public boolean hasMerchantItems()`：进行条件判定并返回布尔结果。
+  - `public void showFredrick()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public int partyMembersInMap()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public Event getEvent()`：读取并返回状态/数据。
+  - `public void divideTeams()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public Character getMapleCharacter(String player)`：读取并返回状态/数据。
+  - `public void logLeaf(String prize)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean createPyramid(String mode, boolean party)`：创建对象、会话或业务记录。
+  - `public boolean itemExists(int itemid)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public int getCosmeticItem(int itemid)`：读取并返回状态/数据。
+  - `private int getEquippedCosmeticid(int itemid)`：读取并返回状态/数据。
+  - `public boolean isCosmeticEquipped(int itemid)`：进行条件判定并返回布尔结果。
+  - `public boolean isUsingOldPqNpcStyle()`：进行条件判定并返回布尔结果。
+  - `public Object[] getAvailableMasteryBooks()`：读取并返回状态/数据。
+  - `public Object[] getAvailableSkillBooks()`：读取并返回状态/数据。
+  - `public Object[] getNamesWhoDropsItem(Integer itemId)`：读取并返回状态/数据。
+  - `public String getSkillBookInfo(int itemid)`：读取并返回状态/数据。
+  - `public int cpqCalcAvgLvl(int map)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean sendCPQMapLists()`：向外发送响应、消息或网络包。
+  - `public boolean fieldTaken(int field)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean fieldLobbied(int field)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void cpqLobby(int field)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public Character getChrById(int id)`：读取并返回状态/数据。
+  - `public void cancelCPQLobby()`：进行条件判定并返回布尔结果。
+  - `private void warpoutCPQLobby(MapleMap lobbyMap)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private int isCPQParty(MapleMap lobby, Party party)`：进行条件判定并返回布尔结果。
+  - `private int canStartCPQ(MapleMap lobby, Party party, Party challenger)`：进行条件判定并返回布尔结果。
+  - `public void startCPQ(final Character challenger, final int field)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void startCPQ2(final Character challenger, final int field)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean sendCPQMapLists2()`：向外发送响应、消息或网络包。
+  - `public boolean fieldTaken2(int field)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean fieldLobbied2(int field)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void cpqLobby2(int field)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void mapClock(int time)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private boolean sendCPQChallenge(String cpqType, int leaderid)`：向外发送响应、消息或网络包。
+  - `public void answerCPQChallenge(boolean accept)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void challengeParty2(int field)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void challengeParty(int field)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private synchronized boolean setupAriantBattle(Expedition exped, int mapid)`：写入或更新状态字段。
+  - `public String startAriantBattle(ExpeditionType expedType, int mapid)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void sendMarriageWishlist(boolean groom)`：向外发送响应、消息或网络包。
+  - `public void sendMarriageGifts(List<Item> gifts)`：向外发送响应、消息或网络包。
+  - `public boolean createMarriageWishlist()`：创建对象、会话或业务记录。
+  - `public void sendNextLevel(String nextLevel, String text)`：向外发送响应、消息或网络包。
+  - `public void sendLastLevel(String lastLevel, String text)`：向外发送响应、消息或网络包。
+  - `public void sendLastNextLevel(String lastLevel, String nextLevel, String text)`：向外发送响应、消息或网络包。
+  - `public void sendOkLevel(String nextLevel, String text)`：向外发送响应、消息或网络包。
+  - `public void sendSelectLevel(String text)`：向外发送响应、消息或网络包。
+  - `public void sendSelectLevel(String prefix, String text)`：向外发送响应、消息或网络包。
+  - `public void sendNextSelectLevel(String nextLevel, String text)`：向外发送响应、消息或网络包。
+  - `public void getInputNumberLevel(String nextLevel, String text, int def, int min, int max)`：读取并返回状态/数据。
+  - `public void getInputTextLevel(String nextLevel, String text)`：读取并返回状态/数据。
+  - `public void sendAcceptDeclineLevel(String decLineLevel, String acceptLevel, String text)`：向外发送响应、消息或网络包。
+  - `public void sendYesNoLevel(String noLevel, String yesLevel, String text)`：向外发送响应、消息或网络包。
+  - `public void sendNextLevel(String nextLevel, String text, byte speaker)`：向外发送响应、消息或网络包。
+  - `public void sendLastLevel(String lastLevel, String text, byte speaker)`：向外发送响应、消息或网络包。
+  - `public void sendLastNextLevel(String lastLevel, String nextLevel, String text, byte speaker)`：向外发送响应、消息或网络包。
+  - `public void sendOkLevel(String nextLevel, String text, byte speaker)`：向外发送响应、消息或网络包。
+  - `public void sendSelectLevel(String text, byte speaker)`：向外发送响应、消息或网络包。
+  - `public void sendSelectLevel(String prefix, String text, byte speaker)`：向外发送响应、消息或网络包。
+  - `public void sendNextSelectLevel(String nextLevel, String text, byte speaker)`：向外发送响应、消息或网络包。
+  - `public void getPnpcInputNumberLevel(String nextLevel, String text, int def, int min, int max, byte speaker)`：读取并返回状态/数据。
+  - `public void getPnpcInputTextLevel(String nextLevel, String text, byte speaker)`：读取并返回状态/数据。
+  - `public void sendAcceptDeclineLevel(String decLineLevel, String acceptLevel, String text, byte speaker)`：向外发送响应、消息或网络包。
+  - `public void sendYesNoLevel(String noLevel, String yesLevel, String text, byte speaker)`：向外发送响应、消息或网络包。
+
+## `scripting/npc/NPCScriptManager.java`
+
+- `class NPCScriptManager`：领域类型或功能模块，职责由同名文件实现定义。
+  - `public static NPCScriptManager getInstance()`：读取并返回状态/数据。
+  - `public boolean isNpcScriptAvailable(Client c, String fileName)`：进行条件判定并返回布尔结果。
+  - `public boolean start(Client c, int npc, Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean start(Client c, int npc, int oid, Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean start(Client c, int npc, String fileName, Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean start(Client c, int npc, int oid, String fileName, Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean start(Client c, ScriptedItem scriptItem, Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void start(String filename, Client c, int npc, List<PartyCharacter> chrs)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private boolean start(Client c, int npc, int oid, String fileName, Character chr, boolean itemScript, String engineName)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void action(Client c, byte mode, byte type, int selection)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void nextLevel(Client c, byte mode, byte type, int selection)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void dispose(NPCConversationManager cm)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void dispose(Client c)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void dispose(Client c, boolean action)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public NPCConversationManager getCM(Client c)`：读取并返回状态/数据。
+
+## `scripting/portal/PortalPlayerInteraction.java`
+
+- `class PortalPlayerInteraction`：领域类型或功能模块，职责由同名文件实现定义。
+  - `public PortalPlayerInteraction(Client c, Portal portal)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public Portal getPortal()`：读取并返回状态/数据。
+  - `public void runMapScript()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean hasLevel30Character()`：进行条件判定并返回布尔结果。
+  - `public void blockPortal()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void unblockPortal()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void playPortalSound()`：通用业务逻辑入口，需结合实现查看细节。
+
+## `scripting/portal/PortalScript.java`
+
+- `interface PortalScript`：领域类型或功能模块，职责由同名文件实现定义。
+  - `boolean enter(PortalPlayerInteraction ppi)`：通用业务逻辑入口，需结合实现查看细节。
+
+## `scripting/portal/PortalScriptManager.java`
+
+- `class PortalScriptManager`：领域类型或功能模块，职责由同名文件实现定义。
+  - `public static PortalScriptManager getInstance()`：读取并返回状态/数据。
+  - `private PortalScript getPortalScript(String scriptName) throws ScriptException`：读取并返回状态/数据。
+  - `public boolean executePortalScript(Portal portal, Client c)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void reloadPortalScripts()`：通用业务逻辑入口，需结合实现查看细节。
+
+## `scripting/quest/QuestActionManager.java`
+
+- `class QuestActionManager`：领域类型或功能模块，职责由同名文件实现定义。
+  - `public QuestActionManager(Client c, int quest, int npc, boolean start)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public int getQuest()`：读取并返回状态/数据。
+  - `public boolean isStart()`：进行条件判定并返回布尔结果。
+  - `public void dispose()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean forceStartQuest()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean forceCompleteQuest()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void startQuest()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void completeQuest()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void gainExp(int gain)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void gainMeso(int gain)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public String getMedalName()`：读取并返回状态/数据。
+
+## `scripting/quest/QuestScriptManager.java`
+
+- `class QuestScriptManager`：领域类型或功能模块，职责由同名文件实现定义。
+  - `public static QuestScriptManager getInstance()`：读取并返回状态/数据。
+  - `private ScriptEngine getQuestScriptEngine(Client c, short questid)`：读取并返回状态/数据。
+  - `public void start(Client c, short questid, int npc)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void start(Client c, byte mode, byte type, int selection)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void end(Client c, short questid, int npc)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void end(Client c, byte mode, byte type, int selection)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void raiseOpen(Client c, short questid, int npc)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void dispose(QuestActionManager qm, Client c)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void dispose(Client c)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public QuestActionManager getQM(Client c)`：读取并返回状态/数据。
+  - `public void reloadQuestScripts()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public boolean checkFunctionExists(Client c, short questid, int npc, String functionName)`：校验输入参数或业务约束。
+
+## `scripting/reactor/ReactorActionManager.java`
+
+- `class ReactorActionManager`：领域类型或功能模块，职责由同名文件实现定义。
+  - `public ReactorActionManager(Client c, Reactor reactor, Invocable iv)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void hitReactor()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void destroyNpc(int npcId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private static void sortDropEntries(List<ReactorDropEntry> from, List<ReactorDropEntry> item, List<ReactorDropEntry> visibleQuest, List<ReactorDropEntry> otherQuest, Character chr)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private static List<ReactorDropEntry> assembleReactorDropEntries(Character chr, List<ReactorDropEntry> items)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void sprayItems()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void sprayItems(boolean meso, int mesoChance, int minMeso, int maxMeso)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void sprayItems(boolean meso, int mesoChance, int minMeso, int maxMeso, int minItems)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void sprayItems(int posX, int posY, boolean meso, int mesoChance, int minMeso, int maxMeso, int minItems)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void dropItems()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void dropItems(boolean meso, int mesoChance, int minMeso, int maxMeso)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void dropItems(boolean meso, int mesoChance, int minMeso, int maxMeso, int minItems)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void dropItems(int posX, int posY, boolean meso, int mesoChance, int minMeso, int maxMeso, int minItems)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void dropItems(boolean delayed, int posX, int posY, boolean meso, int mesoChance, final int minMeso, final int maxMeso, int minItems)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private List<ReactorDropEntry> getDropChances()`：读取并返回状态/数据。
+  - `private List<ReactorDropEntry> generateDropList(List<ReactorDropEntry> drops, float dropRate, boolean meso, int mesoChance, int minItems)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void spawnMonster(int id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void createMapMonitor(int mapId, String portal)`：创建对象、会话或业务记录。
+  - `public void spawnMonster(int id, int qty)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void spawnMonster(int id, int qty, int x, int y)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void spawnMonster(int id, int qty, Point pos)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void killMonster(int id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void killMonster(int id, boolean withDrops)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public Point getPosition()`：读取并返回状态/数据。
+  - `public void spawnNpc(int npcId)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void spawnNpc(int npcId, Point pos)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public Reactor getReactor()`：读取并返回状态/数据。
+  - `public void spawnFakeMonster(int id)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void summonBossDelayed(final int mobId, final int delayMs, final int x, final int y, final String bgm, final String summonMessage)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private void summonBoss(int mobId, int x, int y, String bgmName, String summonMessage)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void dispelAllMonsters(int num, int team)`：通用业务逻辑入口，需结合实现查看细节。
+
+## `scripting/reactor/ReactorScriptManager.java`
+
+- `class ReactorScriptManager`：领域类型或功能模块，职责由同名文件实现定义。
+  - `public static ReactorScriptManager getInstance()`：读取并返回状态/数据。
+  - `public void onHit(Client c, Reactor reactor)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void act(Client c, Reactor reactor)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public List<ReactorDropEntry> getDrops(int reactorId)`：读取并返回状态/数据。
+  - `public void clearDrops()`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void touch(Client c, Reactor reactor)`：通用业务逻辑入口，需结合实现查看细节。
+  - `public void untouch(Client c, Reactor reactor)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private void touching(Client c, Reactor reactor, boolean touching)`：通用业务逻辑入口，需结合实现查看细节。
+  - `private Invocable initializeInvocable(Client c, Reactor reactor)`：初始化模块、资源或运行时状态。
