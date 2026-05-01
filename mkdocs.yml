@@ -64,6 +64,7 @@ nav:
       - 源码深度导读: 09-源码深度导读.md
       - ijl15 源码详解: 10-BeiDou-ijl15-源码详解.md
       - 全量符号与生成说明: 11-全量源码符号文档说明.md
+      - 源码模块精读（人机撰写）: 12-源码模块精读-人机撰写.md
   - gms-server 逐符号职责（分卷）:
       - 分卷索引: reference/gms-server-symbol-notes-README.md
       - （跳转）单文件入口: reference/gms-server-symbol-notes.md

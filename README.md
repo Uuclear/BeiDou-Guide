@@ -38,6 +38,7 @@ mkdocs serve
 | [09-源码深度导读](docs/09-源码深度导读.md) | gms-server / gms-ui 源码阅读路径、包职责说明 |
 | [10-BeiDou-ijl15-源码详解](docs/10-BeiDou-ijl15-源码详解.md) | 客户端 DLL（ezorsia）按文件的类与函数说明 |
 | [11-全量源码符号文档说明](docs/11-全量源码符号文档说明.md) | “我就要全部”场景：全量符号索引入口与生成方式 |
+| [12-源码模块精读（人机撰写）](docs/12-源码模块精读-人机撰写.md) | 按阅读源码写的模块/关键入口说明（非脚本批量释义） |
 
 ### 源码索引（需本地克隆 BeiDou-Server 后生成）
 
@@ -49,11 +50,13 @@ mkdocs serve
 - [docs/reference/gms-ui-full-symbols.md](docs/reference/gms-ui-full-symbols.md)
 - [docs/reference/beidou-ijl15-full-symbols.md](docs/reference/beidou-ijl15-full-symbols.md)
 
-若你需要“全部 + 逐符号中文职责摘要”，运行 `python3 scripts/generate-symbol-notes.py` 生成：
+若你需要「清单式」逐符号附注（**按命名启发式生成，不是读代码写出的设计说明**），运行 `python3 scripts/generate-symbol-notes.py`：
 
 - **gms-server（按 `org/gms` 一级目录分卷）**：[分卷索引](docs/reference/gms-server-symbol-notes-README.md) · [各卷目录](docs/reference/gms-server-symbol-notes/)
 - [docs/reference/gms-ui-symbol-notes.md](docs/reference/gms-ui-symbol-notes.md)
 - [docs/reference/beidou-ijl15-symbol-notes.md](docs/reference/beidou-ijl15-symbol-notes.md)
+
+**按理解撰写的模块说明**请以 [12-源码模块精读（人机撰写）](docs/12-源码模块精读-人机撰写.md) 为准；该文档会随指定模块逐步扩写。
 
 ## 项目结构
 
@@ -72,6 +75,7 @@ BeiDou-Guide/
 │   ├── 09-源码深度导读.md       # 服务端/前端源码阅读指南
 │   ├── 10-BeiDou-ijl15-源码详解.md  # 客户端 DLL 逐文件说明
 │   ├── 11-全量源码符号文档说明.md   # 全量索引入口与生成说明
+│   ├── 12-源码模块精读-人机撰写.md # 按阅读源码写的模块说明（非脚本释义）
 │   ├── reference/               # 自动生成的 gms-server API 索引等
 │   └── images/                  # 文档配图目录
 ```
