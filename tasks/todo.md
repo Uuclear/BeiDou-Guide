@@ -25,6 +25,7 @@
 - [x] 12-源码模块精读：MOVE_PLAYER（0x29）、AbstractMovementPacketHandler、setChasing 与 SET_FIELD
 - [x] 12-源码模块精读：AbstractDealDamageHandler、攻击框、teleport/movement 距离上下文与 DISTANCE_HACK
 - [x] 12-源码模块精读：召唤兽 MOVE_SUMMON / SUMMON_ATTACK / DAMAGE_SUMMON 与 MapleMap.spawnSummon
+- [x] 12-源码模块精读：ITEM_PICKUP、MapItem 归属、spawnItemDrop 与 pickItemDrop
 
 ## 评审
 
