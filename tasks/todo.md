@@ -51,6 +51,7 @@
 - [x] 12-源码模块精读：EnterCashShopHandler、CashOperationHandler（action 表格摘要）、CashShopController/CashShopService REST
 - [x] 12-源码模块精读：GuildPackets 分包、`GuildOperationHandler` type 表、DenyGuildRequest、BBS/Alliance Handler、登入公会
 - [x] 12-源码模块精读：MapleMap destroy/limit/reset/shuffle reactors、clearMapObjects/resetPQ、EIM shuffleReactors、activatedAllReactorsOnMap、嘉年华 guardian
+- [x] 12-源码模块精读：MTSHandler（op 表）、mts_items/mts_cart、EnterMTSHandler、含税价与交割 transfer 语义
 
 ## 评审
 
