@@ -46,7 +46,7 @@
 - [x] 12-源码模块精读：PlayerShop（访客、buy、Trade fee、售罄关店）
 - [x] 12-源码模块精读：HiredMerchant（saveItems、World 144×10min、forceClose）
 - [x] 12-源码模块精读：AbstractPlayerInteraction / NPCConversationManager / NPCScriptManager
-- [x] 12-源码模块精读：BuddyList、Party、Guild 骨架
+- [x] 12-源码模块精读：World.updateParty、PartyOperationHandler、mapParty、silentPartyUpdate、partyChat
 
 ## 评审
 
