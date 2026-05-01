@@ -48,6 +48,7 @@
 - [x] 12-源码模块精读：AbstractPlayerInteraction / NPCConversationManager / NPCScriptManager
 - [x] 12-源码模块精读：World.updateParty、PartyOperationHandler、mapParty、silentPartyUpdate、partyChat
 - [x] 12-源码模块精读：Reactor hit/touch 链路、ReactorScriptManager、ReactorActionManager、reactordrops
+- [x] 12-源码模块精读：EnterCashShopHandler、CashOperationHandler（action 表格摘要）、CashShopController/CashShopService REST
 
 ## 评审
 
