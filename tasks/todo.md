@@ -13,6 +13,7 @@
 - [ ] 为 `gms-ui` 增加类似的「页面/接口」索引脚本
 - [x] gms-server 逐符号中文职责按 `org/gms` 一级目录分卷（`gms-server-symbol-notes-README.md` + `gms-server-symbol-notes/`）
 - [x] 12-源码模块精读：补充 REST 全链路（Security、JWT、Controller、Service、与游戏进程交界）
+- [x] 12-源码模块精读：游戏登录链（LoginPasswordHandler、Client.login、finishLogin、SessionCoordinator、Server.registerLoginState）
 
 ## 评审
 
