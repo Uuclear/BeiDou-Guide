@@ -1,0 +1,102 @@
+# BeiDou-Guide 文档站（GitHub Pages）
+# 构建：pip install -r requirements-docs.txt && mkdocs build
+# 若仓库名或用户名不同，请修改 site_url（影响站内绝对链接与 sitemap）
+
+site_name: BeiDou 开发文档
+site_description: BeiDou 游戏系统开发文档与源码索引
+site_author: BeiDou-Guide
+
+# GitHub Pages 默认地址：<owner>.github.io/<repo>/
+site_url: https://uuclear.github.io/BeiDou-Guide/
+
+repo_url: https://github.com/Uuclear/BeiDou-Guide
+repo_name: BeiDou-Guide
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换深色模式
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换浅色模式
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - md_in_html
+
+nav:
+  - 首页: index.md
+  - 环境与架构:
+      - 环境搭建: 01-环境搭建指南.md
+      - 架构设计: 02-架构设计文档.md
+      - API 接口: 03-API接口文档.md
+      - 数据库: 04-数据库设计文档.md
+      - 配置说明: 05-配置说明文档.md
+      - 运维部署: 06-运维部署文档.md
+      - 用户手册: 07-用户使用手册.md
+      - 技术规范: 08-技术规范文档.md
+  - 源码与索引:
+      - 源码深度导读: 09-源码深度导读.md
+      - ijl15 源码详解: 10-BeiDou-ijl15-源码详解.md
+      - 全量符号与生成说明: 11-全量源码符号文档说明.md
+  - gms-server 逐符号职责（分卷）:
+      - 分卷索引: reference/gms-server-symbol-notes-README.md
+      - （跳转）单文件入口: reference/gms-server-symbol-notes.md
+      - org.gms 根: reference/gms-server-symbol-notes/_root.md
+      - aop: reference/gms-server-symbol-notes/aop.md
+      - client: reference/gms-server-symbol-notes/client.md
+      - config: reference/gms-server-symbol-notes/config.md
+      - constants: reference/gms-server-symbol-notes/constants.md
+      - controller: reference/gms-server-symbol-notes/controller.md
+      - dao: reference/gms-server-symbol-notes/dao.md
+      - exception: reference/gms-server-symbol-notes/exception.md
+      - manager: reference/gms-server-symbol-notes/manager.md
+      - model: reference/gms-server-symbol-notes/model.md
+      - net: reference/gms-server-symbol-notes/net.md
+      - property: reference/gms-server-symbol-notes/property.md
+      - provider: reference/gms-server-symbol-notes/provider.md
+      - scripting: reference/gms-server-symbol-notes/scripting.md
+      - server: reference/gms-server-symbol-notes/server.md
+      - service: reference/gms-server-symbol-notes/service.md
+      - util: reference/gms-server-symbol-notes/util.md
+  - 全量符号与 API 索引:
+      - gms-server 全量符号: reference/gms-server-full-symbols.md
+      - gms-server public 索引: reference/gms-server-api-index.md
+      - gms-ui 全量符号: reference/gms-ui-full-symbols.md
+      - gms-ui 逐符号职责: reference/gms-ui-symbol-notes.md
+      - ijl15 全量符号: reference/beidou-ijl15-full-symbols.md
+      - ijl15 逐符号职责: reference/beidou-ijl15-symbol-notes.md
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+
+extra:
+  generator: false

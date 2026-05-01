@@ -6,6 +6,23 @@ BeiDou 游戏系统完整开发文档套件。
 
 本项目为 BeiDou 游戏系统的纯文档项目，记录了客户端和服务端的完整开发文档，涵盖环境搭建、架构设计、API接口、数据库设计、配置说明、运维部署、用户手册和技术规范等各个方面。
 
+## 在线文档（GitHub Pages）
+
+推送 `main` 后，由 [`.github/workflows/docs-pages.yml`](.github/workflows/docs-pages.yml) 自动构建并发布到 **`gh-pages`** 分支。
+
+1. 在 GitHub 打开仓库 **Settings → Pages**
+2. **Build and deployment** 选 **Deploy from a branch**
+3. **Branch** 选 **`gh-pages`** / **`/ (root)`**
+
+默认站点地址为：`https://uuclear.github.io/BeiDou-Guide/`（若仓库所有者或仓库名不同，请修改根目录 `mkdocs.yml` 中的 `site_url` 后重新部署。）
+
+本地预览：
+
+```bash
+pip install -r requirements-docs.txt
+mkdocs serve
+```
+
 ## 文档目录
 
 | 文档 | 描述 |

@@ -1,2 +1,5 @@
 # Local clone of upstream server repo (used only to regenerate docs/reference)
 BeiDou-Server/
+
+# MkDocs build output
+site/
