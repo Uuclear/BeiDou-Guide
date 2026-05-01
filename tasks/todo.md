@@ -17,6 +17,7 @@
 - [x] 12-源码模块精读：PlayerLoggedinHandler 与 CharacterService.loadCharFromDB、进频道时序
 - [x] 12-源码模块精读：Channel、PlayerStorage、MapleMap.addPlayer/removePlayer 与可见性
 - [x] 12-源码模块精读：setCharacteridInTransition / setCharacterOnSessionTransitionState 调用链
+- [x] 12-源码模块精读：Character.changeMap 与 Portal（ChangeMapHandler、GenericPortal、changeMapInternal）
 
 ## 评审
 
