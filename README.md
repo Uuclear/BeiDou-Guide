@@ -16,6 +16,8 @@ BeiDou 游戏系统完整开发文档套件。
 
 默认站点地址为：`https://uuclear.github.io/BeiDou-Guide/`（若仓库所有者或仓库名不同，请修改根目录 `mkdocs.yml` 中的 `site_url` 后重新部署。）
 
+站点内 **[阅读指引](docs/read-guide.md)** 说明了「精读 vs 自动生成索引」的分层与推荐阅读顺序；MkDocs 导航按「环境与架构 / 源码精读 / 自动生成索引」分组，便于区分叙述文档与大体积检索页。
+
 本地预览：
 
 ```bash

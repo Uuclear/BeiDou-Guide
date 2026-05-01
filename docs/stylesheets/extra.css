@@ -1,0 +1,64 @@
+/*
+  GitHub Pages / Material：加强长文与表格可读性（不改变正文语义）
+*/
+
+/* 宽屏下限制正文栏宽度，减轻一行过长导致的阅读疲劳 */
+@media screen and (min-width: 60em) {
+  .md-content__inner {
+    max-width: 48rem;
+  }
+}
+
+.md-typeset {
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* 小节层级更清晰（精读类文档标题多） */
+.md-typeset h2 {
+  margin-top: 1.75em;
+  padding-bottom: 0.35em;
+  border-bottom: 1px solid color-mix(in srgb, var(--md-default-fg-color) 12%, transparent);
+}
+
+.md-typeset h3 {
+  margin-top: 1.35em;
+}
+
+.md-typeset h4 {
+  margin-top: 1.1em;
+}
+
+/* 自动生成索引里表格多：斑马纹 + 表头强调 */
+.md-typeset table:not([class]) {
+  font-size: 0.88em;
+}
+
+.md-typeset table:not([class]) th {
+  font-weight: 600;
+  white-space: nowrap;
+  background-color: color-mix(in srgb, var(--md-default-fg-color) 6%, transparent);
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: color-mix(in srgb, var(--md-default-fg-color) 4%, transparent);
+}
+
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+  border-color: color-mix(in srgb, var(--md-default-fg-color) 12%, transparent);
+}
+
+/* 代码与正文对比 */
+.md-typeset code {
+  font-size: 0.9em;
+}
+
+.md-typeset pre > code {
+  font-size: 0.82em;
+}
