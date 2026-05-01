@@ -49,6 +49,7 @@
 - [x] 12-源码模块精读：World.updateParty、PartyOperationHandler、mapParty、silentPartyUpdate、partyChat
 - [x] 12-源码模块精读：Reactor hit/touch 链路、ReactorScriptManager、ReactorActionManager、reactordrops
 - [x] 12-源码模块精读：EnterCashShopHandler、CashOperationHandler（action 表格摘要）、CashShopController/CashShopService REST
+- [x] 12-源码模块精读：GuildPackets 分包、`GuildOperationHandler` type 表、DenyGuildRequest、BBS/Alliance Handler、登入公会
 
 ## 评审
 
