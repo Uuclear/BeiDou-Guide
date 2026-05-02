@@ -1,0 +1,6428 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BeiDou 游戏系统开发文档与源码索引">
+      
+      
+        <meta name="author" content="BeiDou-Guide">
+      
+      
+        <link rel="canonical" href="https://uuclear.github.io/BeiDou-Guide/reference/gms-server-symbol-notes/dao/">
+      
+      
+        <link rel="prev" href="../controller/">
+      
+      
+        <link rel="next" href="../exception/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>dao - BeiDou 开发文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gms-server-dao" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="BeiDou 开发文档" class="md-header__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BeiDou 开发文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              dao
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../read-guide/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  阅读指引
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  环境与架构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  源码精读与导读
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../gms-server-symbol-notes-README/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  自动生成索引
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="BeiDou 开发文档" class="md-nav__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    BeiDou 开发文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../read-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阅读指引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境与架构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    环境与架构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03-API%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 接口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05-%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../06-%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运维部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../07-%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用户手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../08-%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    技术规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码精读与导读
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    源码精读与导读
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码深度导读
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../10-BeiDou-ijl15-%E6%BA%90%E7%A0%81%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 源码详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11-%E5%85%A8%E9%87%8F%E6%BA%90%E7%A0%81%E7%AC%A6%E5%8F%B7%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与生成说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../12-%E6%BA%90%E7%A0%81%E6%A8%A1%E5%9D%97%E7%B2%BE%E8%AF%BB-%E4%BA%BA%E6%9C%BA%E6%92%B0%E5%86%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码模块精读（人机撰写）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自动生成索引
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    自动生成索引
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 逐符号职责（分卷）
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    gms-server 逐符号职责（分卷）
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-server-symbol-notes-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    分卷索引与用法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    （跳转）单文件入口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_root/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    org.gms 根
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    controller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dao
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dao
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityaccountsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/AccountsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityalliancedojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/AllianceDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityallianceguildsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/AllianceguildsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityareainfodojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/AreaInfoDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityautobanconfigdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/AutobanConfigDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitybbsrepliesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/BbsRepliesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitybbsthreadsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/BbsThreadsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitybosslogdailydojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/BosslogDailyDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitybosslogweeklydojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/BosslogWeeklyDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitybuddiesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/BuddiesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitycharactersdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/CharactersDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitycommandinfodojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/CommandInfoDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitycooldownsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/CooldownsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitydropdatadojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/DropDataDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitydropdataglobaldojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/DropDataGlobalDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitydueyitemsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/DueyitemsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitydueypackagesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/DueypackagesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityeventstatsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/EventstatsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityextendvaluedojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/ExtendValueDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityfamelogdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/FamelogDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityfamilycharacterdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/FamilyCharacterDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityfamilyentitlementdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/FamilyEntitlementDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityflywayschemahistorydojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/FlywaySchemaHistoryDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityfredstoragedojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/FredstorageDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitygachaponrewarddojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/GachaponRewardDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitygachaponrewardpooldojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/GachaponRewardPoolDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitygameconfigdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/GameConfigDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitygiftsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/GiftsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityguildsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/GuildsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityhpmpalertdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/HpMpAlertDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityhwidaccountsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/HwidaccountsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityhwidbansdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/HwidbansDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityinventoryequipmentdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/InventoryequipmentDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityinventoryitemsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/InventoryitemsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityinventorymerchantdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/InventorymerchantDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityipbansdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/IpbansDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitykeymapdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/KeymapDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitylangresourcesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/LangResourcesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymacbansdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MacbansDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymacfiltersdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MacfiltersDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymakercreatedatadojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MakercreatedataDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymakerreagentdatadojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MakerreagentdataDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymakerrecipedatadojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MakerrecipedataDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymakerrewarddatadojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MakerrewarddataDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymarriagesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MarriagesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymedalmapsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MedalmapsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymodifiedcashitemdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/ModifiedCashItemDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymonsterbookdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MonsterbookDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymonstercarddatadojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MonstercarddataDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymtscartdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MtsCartDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymtsitemsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MtsItemsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitynamechangesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/NamechangesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitynewyeardojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/NewyearDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitynotesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/NotesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitynxcodedojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/NxcodeDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitynxcodeitemsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/NxcodeItemsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitynxcouponsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/NxcouponsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitypetignoresdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/PetignoresDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitypetsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/PetsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityplayerdiseasesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/PlayerdiseasesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityplayernpcsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/PlayernpcsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityplayernpcsequipdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/PlayernpcsEquipDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityplayernpcsfielddojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/PlayernpcsFieldDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityplifedojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/PlifeDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityquestactionsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/QuestactionsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityquestprogressdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/QuestprogressDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityquestrequirementsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/QuestrequirementsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityqueststatusdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/QueststatusDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityquickslotkeymappeddojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/QuickslotkeymappedDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityreactordropsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/ReactordropsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityreportsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/ReportsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityresponsesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/ResponsesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityringsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/RingsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitysavedlocationsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/SavedlocationsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityserverqueuedojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/ServerQueueDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityshopitemsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/ShopitemsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityshopsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/ShopsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityskillmacrosdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/SkillmacrosDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityskillsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/SkillsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityspecialcashitemsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/SpecialcashitemsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitystoragesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/StoragesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitytrocklocationsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/TrocklocationsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitywishlistsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/WishlistsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityworldtransfersdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/WorldtransfersDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperaccountsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/AccountsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperalliancemapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/AllianceMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperallianceguildsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/AllianceguildsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperareainfomapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/AreaInfoMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperautobanconfigmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/AutobanConfigMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperbbsrepliesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/BbsRepliesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperbbsthreadsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/BbsThreadsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperbosslogdailymapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/BosslogDailyMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperbosslogweeklymapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/BosslogWeeklyMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperbuddiesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/BuddiesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappercharactersmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/CharactersMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappercommandinfomapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/CommandInfoMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappercooldownsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/CooldownsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperdropdataglobalmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/DropDataGlobalMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperdropdatamapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/DropDataMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperdueyitemsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/DueyitemsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperdueypackagesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/DueypackagesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappereventstatsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/EventstatsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperextendvaluemapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/ExtendValueMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperfamelogmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/FamelogMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperfamilycharactermapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/FamilyCharacterMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperfamilyentitlementmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/FamilyEntitlementMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperflywayschemahistorymapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/FlywaySchemaHistoryMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperfredstoragemapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/FredstorageMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappergachaponrewardmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/GachaponRewardMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappergachaponrewardpoolmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/GachaponRewardPoolMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappergameconfigmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/GameConfigMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappergiftsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/GiftsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperguildsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/GuildsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperhpmpalertmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/HpMpAlertMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperhwidaccountsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/HwidaccountsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperhwidbansmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/HwidbansMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperinventoryequipmentmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/InventoryequipmentMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperinventoryitemsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/InventoryitemsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperinventorymerchantmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/InventorymerchantMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperipbansmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/IpbansMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperkeymapmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/KeymapMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperlangresourcesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/LangResourcesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermacbansmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MacbansMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermacfiltersmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MacfiltersMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermakercreatedatamapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MakercreatedataMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermakerreagentdatamapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MakerreagentdataMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermakerrecipedatamapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MakerrecipedataMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermakerrewarddatamapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MakerrewarddataMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermarriagesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MarriagesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermedalmapsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MedalmapsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermodifiedcashitemmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/ModifiedCashItemMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermonsterbookmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MonsterbookMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermonstercarddatamapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MonstercarddataMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermtscartmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MtsCartMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermtsitemsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MtsItemsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappernamechangesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/NamechangesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappernewyearmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/NewyearMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappernotesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/NotesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappernxcodeitemsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/NxcodeItemsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappernxcodemapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/NxcodeMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappernxcouponsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/NxcouponsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperpetignoresmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/PetignoresMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperpetsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/PetsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperplayerdiseasesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/PlayerdiseasesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperplayernpcsequipmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/PlayernpcsEquipMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperplayernpcsfieldmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/PlayernpcsFieldMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperplayernpcsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/PlayernpcsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperplifemapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/PlifeMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperquestactionsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/QuestactionsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperquestprogressmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/QuestprogressMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperquestrequirementsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/QuestrequirementsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperqueststatusmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/QueststatusMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperquickslotkeymappedmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/QuickslotkeymappedMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperreactordropsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/ReactordropsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperreportsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/ReportsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperresponsesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/ResponsesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperringsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/RingsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappersavedlocationsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/SavedlocationsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperserverqueuemapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/ServerQueueMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappershopitemsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/ShopitemsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappershopsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/ShopsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperskillmacrosmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/SkillmacrosMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperskillsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/SkillsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperspecialcashitemsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/SpecialcashitemsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperstoragesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/StoragesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappertrocklocationsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/TrocklocationsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperwishlistsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/WishlistsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperworldtransfersmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/WorldtransfersMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    exception
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    net
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    property
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../util/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    util
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与 API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    全量符号与 API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-server-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-server-api-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server public 索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-ui-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-ui-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../beidou-ijl15-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../beidou-ijl15-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityaccountsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/AccountsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityalliancedojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/AllianceDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityallianceguildsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/AllianceguildsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityareainfodojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/AreaInfoDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityautobanconfigdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/AutobanConfigDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitybbsrepliesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/BbsRepliesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitybbsthreadsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/BbsThreadsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitybosslogdailydojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/BosslogDailyDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitybosslogweeklydojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/BosslogWeeklyDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitybuddiesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/BuddiesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitycharactersdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/CharactersDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitycommandinfodojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/CommandInfoDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitycooldownsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/CooldownsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitydropdatadojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/DropDataDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitydropdataglobaldojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/DropDataGlobalDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitydueyitemsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/DueyitemsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitydueypackagesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/DueypackagesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityeventstatsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/EventstatsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityextendvaluedojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/ExtendValueDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityfamelogdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/FamelogDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityfamilycharacterdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/FamilyCharacterDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityfamilyentitlementdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/FamilyEntitlementDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityflywayschemahistorydojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/FlywaySchemaHistoryDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityfredstoragedojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/FredstorageDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitygachaponrewarddojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/GachaponRewardDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitygachaponrewardpooldojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/GachaponRewardPoolDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitygameconfigdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/GameConfigDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitygiftsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/GiftsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityguildsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/GuildsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityhpmpalertdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/HpMpAlertDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityhwidaccountsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/HwidaccountsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityhwidbansdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/HwidbansDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityinventoryequipmentdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/InventoryequipmentDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityinventoryitemsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/InventoryitemsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityinventorymerchantdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/InventorymerchantDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityipbansdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/IpbansDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitykeymapdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/KeymapDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitylangresourcesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/LangResourcesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymacbansdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MacbansDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymacfiltersdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MacfiltersDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymakercreatedatadojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MakercreatedataDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymakerreagentdatadojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MakerreagentdataDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymakerrecipedatadojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MakerrecipedataDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymakerrewarddatadojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MakerrewarddataDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymarriagesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MarriagesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymedalmapsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MedalmapsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymodifiedcashitemdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/ModifiedCashItemDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymonsterbookdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MonsterbookDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymonstercarddatadojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MonstercarddataDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymtscartdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MtsCartDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitymtsitemsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/MtsItemsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitynamechangesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/NamechangesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitynewyeardojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/NewyearDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitynotesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/NotesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitynxcodedojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/NxcodeDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitynxcodeitemsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/NxcodeItemsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitynxcouponsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/NxcouponsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitypetignoresdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/PetignoresDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitypetsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/PetsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityplayerdiseasesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/PlayerdiseasesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityplayernpcsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/PlayernpcsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityplayernpcsequipdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/PlayernpcsEquipDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityplayernpcsfielddojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/PlayernpcsFieldDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityplifedojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/PlifeDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityquestactionsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/QuestactionsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityquestprogressdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/QuestprogressDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityquestrequirementsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/QuestrequirementsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityqueststatusdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/QueststatusDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityquickslotkeymappeddojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/QuickslotkeymappedDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityreactordropsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/ReactordropsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityreportsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/ReportsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityresponsesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/ResponsesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityringsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/RingsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitysavedlocationsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/SavedlocationsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityserverqueuedojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/ServerQueueDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityshopitemsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/ShopitemsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityshopsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/ShopsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityskillmacrosdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/SkillmacrosDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityskillsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/SkillsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityspecialcashitemsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/SpecialcashitemsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitystoragesdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/StoragesDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitytrocklocationsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/TrocklocationsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentitywishlistsdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/WishlistsDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daoentityworldtransfersdojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/entity/WorldtransfersDO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperaccountsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/AccountsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperalliancemapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/AllianceMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperallianceguildsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/AllianceguildsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperareainfomapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/AreaInfoMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperautobanconfigmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/AutobanConfigMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperbbsrepliesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/BbsRepliesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperbbsthreadsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/BbsThreadsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperbosslogdailymapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/BosslogDailyMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperbosslogweeklymapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/BosslogWeeklyMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperbuddiesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/BuddiesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappercharactersmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/CharactersMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappercommandinfomapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/CommandInfoMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappercooldownsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/CooldownsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperdropdataglobalmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/DropDataGlobalMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperdropdatamapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/DropDataMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperdueyitemsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/DueyitemsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperdueypackagesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/DueypackagesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappereventstatsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/EventstatsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperextendvaluemapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/ExtendValueMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperfamelogmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/FamelogMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperfamilycharactermapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/FamilyCharacterMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperfamilyentitlementmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/FamilyEntitlementMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperflywayschemahistorymapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/FlywaySchemaHistoryMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperfredstoragemapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/FredstorageMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappergachaponrewardmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/GachaponRewardMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappergachaponrewardpoolmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/GachaponRewardPoolMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappergameconfigmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/GameConfigMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappergiftsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/GiftsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperguildsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/GuildsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperhpmpalertmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/HpMpAlertMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperhwidaccountsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/HwidaccountsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperhwidbansmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/HwidbansMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperinventoryequipmentmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/InventoryequipmentMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperinventoryitemsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/InventoryitemsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperinventorymerchantmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/InventorymerchantMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperipbansmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/IpbansMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperkeymapmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/KeymapMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperlangresourcesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/LangResourcesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermacbansmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MacbansMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermacfiltersmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MacfiltersMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermakercreatedatamapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MakercreatedataMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermakerreagentdatamapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MakerreagentdataMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermakerrecipedatamapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MakerrecipedataMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermakerrewarddatamapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MakerrewarddataMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermarriagesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MarriagesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermedalmapsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MedalmapsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermodifiedcashitemmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/ModifiedCashItemMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermonsterbookmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MonsterbookMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermonstercarddatamapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MonstercarddataMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermtscartmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MtsCartMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappermtsitemsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/MtsItemsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappernamechangesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/NamechangesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappernewyearmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/NewyearMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappernotesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/NotesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappernxcodeitemsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/NxcodeItemsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappernxcodemapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/NxcodeMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappernxcouponsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/NxcouponsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperpetignoresmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/PetignoresMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperpetsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/PetsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperplayerdiseasesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/PlayerdiseasesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperplayernpcsequipmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/PlayernpcsEquipMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperplayernpcsfieldmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/PlayernpcsFieldMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperplayernpcsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/PlayernpcsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperplifemapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/PlifeMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperquestactionsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/QuestactionsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperquestprogressmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/QuestprogressMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperquestrequirementsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/QuestrequirementsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperqueststatusmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/QueststatusMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperquickslotkeymappedmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/QuickslotkeymappedMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperreactordropsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/ReactordropsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperreportsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/ReportsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperresponsesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/ResponsesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperringsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/RingsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappersavedlocationsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/SavedlocationsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperserverqueuemapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/ServerQueueMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappershopitemsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/ShopitemsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappershopsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/ShopsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperskillmacrosmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/SkillmacrosMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperskillsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/SkillsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperspecialcashitemsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/SpecialcashitemsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperstoragesmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/StoragesMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomappertrocklocationsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/TrocklocationsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperwishlistsmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/WishlistsMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daomapperworldtransfersmapperjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dao/mapper/WorldtransfersMapper.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/Uuclear/BeiDou-Guide/edit/main/docs/reference/gms-server-symbol-notes/dao.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="gms-server-dao">gms-server 逐符号中文职责 · 分卷 <code>dao</code><a class="headerlink" href="#gms-server-dao" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>自动生成：<code>scripts/generate-symbol-notes.py</code>
+源码路径：<code>BeiDou-Server</code>
+本分卷 Java 文件数：168</p>
+</blockquote>
+<p><a href="../../gms-server-symbol-notes-README/">← 返回分卷索引</a></p>
+<hr />
+<h2 id="daoentityaccountsdojava"><code>dao/entity/AccountsDO.java</code><a class="headerlink" href="#daoentityaccountsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class AccountsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityalliancedojava"><code>dao/entity/AllianceDO.java</code><a class="headerlink" href="#daoentityalliancedojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class AllianceDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityallianceguildsdojava"><code>dao/entity/AllianceguildsDO.java</code><a class="headerlink" href="#daoentityallianceguildsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class AllianceguildsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityareainfodojava"><code>dao/entity/AreaInfoDO.java</code><a class="headerlink" href="#daoentityareainfodojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class AreaInfoDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityautobanconfigdojava"><code>dao/entity/AutobanConfigDO.java</code><a class="headerlink" href="#daoentityautobanconfigdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class AutobanConfigDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitybbsrepliesdojava"><code>dao/entity/BbsRepliesDO.java</code><a class="headerlink" href="#daoentitybbsrepliesdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class BbsRepliesDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitybbsthreadsdojava"><code>dao/entity/BbsThreadsDO.java</code><a class="headerlink" href="#daoentitybbsthreadsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class BbsThreadsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitybosslogdailydojava"><code>dao/entity/BosslogDailyDO.java</code><a class="headerlink" href="#daoentitybosslogdailydojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class BosslogDailyDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitybosslogweeklydojava"><code>dao/entity/BosslogWeeklyDO.java</code><a class="headerlink" href="#daoentitybosslogweeklydojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class BosslogWeeklyDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitybuddiesdojava"><code>dao/entity/BuddiesDO.java</code><a class="headerlink" href="#daoentitybuddiesdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class BuddiesDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitycharactersdojava"><code>dao/entity/CharactersDO.java</code><a class="headerlink" href="#daoentitycharactersdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class CharactersDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitycommandinfodojava"><code>dao/entity/CommandInfoDO.java</code><a class="headerlink" href="#daoentitycommandinfodojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class CommandInfoDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitycooldownsdojava"><code>dao/entity/CooldownsDO.java</code><a class="headerlink" href="#daoentitycooldownsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class CooldownsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitydropdatadojava"><code>dao/entity/DropDataDO.java</code><a class="headerlink" href="#daoentitydropdatadojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class DropDataDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitydropdataglobaldojava"><code>dao/entity/DropDataGlobalDO.java</code><a class="headerlink" href="#daoentitydropdataglobaldojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class DropDataGlobalDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitydueyitemsdojava"><code>dao/entity/DueyitemsDO.java</code><a class="headerlink" href="#daoentitydueyitemsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class DueyitemsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitydueypackagesdojava"><code>dao/entity/DueypackagesDO.java</code><a class="headerlink" href="#daoentitydueypackagesdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class DueypackagesDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityeventstatsdojava"><code>dao/entity/EventstatsDO.java</code><a class="headerlink" href="#daoentityeventstatsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class EventstatsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityextendvaluedojava"><code>dao/entity/ExtendValueDO.java</code><a class="headerlink" href="#daoentityextendvaluedojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ExtendValueDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityfamelogdojava"><code>dao/entity/FamelogDO.java</code><a class="headerlink" href="#daoentityfamelogdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class FamelogDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityfamilycharacterdojava"><code>dao/entity/FamilyCharacterDO.java</code><a class="headerlink" href="#daoentityfamilycharacterdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class FamilyCharacterDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityfamilyentitlementdojava"><code>dao/entity/FamilyEntitlementDO.java</code><a class="headerlink" href="#daoentityfamilyentitlementdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class FamilyEntitlementDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityflywayschemahistorydojava"><code>dao/entity/FlywaySchemaHistoryDO.java</code><a class="headerlink" href="#daoentityflywayschemahistorydojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class FlywaySchemaHistoryDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityfredstoragedojava"><code>dao/entity/FredstorageDO.java</code><a class="headerlink" href="#daoentityfredstoragedojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class FredstorageDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitygachaponrewarddojava"><code>dao/entity/GachaponRewardDO.java</code><a class="headerlink" href="#daoentitygachaponrewarddojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class GachaponRewardDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitygachaponrewardpooldojava"><code>dao/entity/GachaponRewardPoolDO.java</code><a class="headerlink" href="#daoentitygachaponrewardpooldojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class GachaponRewardPoolDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitygameconfigdojava"><code>dao/entity/GameConfigDO.java</code><a class="headerlink" href="#daoentitygameconfigdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class GameConfigDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitygiftsdojava"><code>dao/entity/GiftsDO.java</code><a class="headerlink" href="#daoentitygiftsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class GiftsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityguildsdojava"><code>dao/entity/GuildsDO.java</code><a class="headerlink" href="#daoentityguildsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class GuildsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityhpmpalertdojava"><code>dao/entity/HpMpAlertDO.java</code><a class="headerlink" href="#daoentityhpmpalertdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class HpMpAlertDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityhwidaccountsdojava"><code>dao/entity/HwidaccountsDO.java</code><a class="headerlink" href="#daoentityhwidaccountsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class HwidaccountsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityhwidbansdojava"><code>dao/entity/HwidbansDO.java</code><a class="headerlink" href="#daoentityhwidbansdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class HwidbansDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityinventoryequipmentdojava"><code>dao/entity/InventoryequipmentDO.java</code><a class="headerlink" href="#daoentityinventoryequipmentdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class InventoryequipmentDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityinventoryitemsdojava"><code>dao/entity/InventoryitemsDO.java</code><a class="headerlink" href="#daoentityinventoryitemsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class InventoryitemsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityinventorymerchantdojava"><code>dao/entity/InventorymerchantDO.java</code><a class="headerlink" href="#daoentityinventorymerchantdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class InventorymerchantDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityipbansdojava"><code>dao/entity/IpbansDO.java</code><a class="headerlink" href="#daoentityipbansdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class IpbansDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitykeymapdojava"><code>dao/entity/KeymapDO.java</code><a class="headerlink" href="#daoentitykeymapdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class KeymapDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitylangresourcesdojava"><code>dao/entity/LangResourcesDO.java</code><a class="headerlink" href="#daoentitylangresourcesdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class LangResourcesDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitymacbansdojava"><code>dao/entity/MacbansDO.java</code><a class="headerlink" href="#daoentitymacbansdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class MacbansDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitymacfiltersdojava"><code>dao/entity/MacfiltersDO.java</code><a class="headerlink" href="#daoentitymacfiltersdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class MacfiltersDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitymakercreatedatadojava"><code>dao/entity/MakercreatedataDO.java</code><a class="headerlink" href="#daoentitymakercreatedatadojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class MakercreatedataDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitymakerreagentdatadojava"><code>dao/entity/MakerreagentdataDO.java</code><a class="headerlink" href="#daoentitymakerreagentdatadojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class MakerreagentdataDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitymakerrecipedatadojava"><code>dao/entity/MakerrecipedataDO.java</code><a class="headerlink" href="#daoentitymakerrecipedatadojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class MakerrecipedataDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitymakerrewarddatadojava"><code>dao/entity/MakerrewarddataDO.java</code><a class="headerlink" href="#daoentitymakerrewarddatadojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class MakerrewarddataDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitymarriagesdojava"><code>dao/entity/MarriagesDO.java</code><a class="headerlink" href="#daoentitymarriagesdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class MarriagesDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitymedalmapsdojava"><code>dao/entity/MedalmapsDO.java</code><a class="headerlink" href="#daoentitymedalmapsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class MedalmapsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitymodifiedcashitemdojava"><code>dao/entity/ModifiedCashItemDO.java</code><a class="headerlink" href="#daoentitymodifiedcashitemdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ModifiedCashItemDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public boolean isSelling()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public Item toItem()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public ModifiedCashItemDO clone()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="daoentitymonsterbookdojava"><code>dao/entity/MonsterbookDO.java</code><a class="headerlink" href="#daoentitymonsterbookdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class MonsterbookDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitymonstercarddatadojava"><code>dao/entity/MonstercarddataDO.java</code><a class="headerlink" href="#daoentitymonstercarddatadojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class MonstercarddataDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitymtscartdojava"><code>dao/entity/MtsCartDO.java</code><a class="headerlink" href="#daoentitymtscartdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class MtsCartDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitymtsitemsdojava"><code>dao/entity/MtsItemsDO.java</code><a class="headerlink" href="#daoentitymtsitemsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class MtsItemsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitynamechangesdojava"><code>dao/entity/NamechangesDO.java</code><a class="headerlink" href="#daoentitynamechangesdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class NamechangesDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitynewyeardojava"><code>dao/entity/NewyearDO.java</code><a class="headerlink" href="#daoentitynewyeardojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class NewyearDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitynotesdojava"><code>dao/entity/NotesDO.java</code><a class="headerlink" href="#daoentitynotesdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class NotesDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitynxcodedojava"><code>dao/entity/NxcodeDO.java</code><a class="headerlink" href="#daoentitynxcodedojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class NxcodeDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitynxcodeitemsdojava"><code>dao/entity/NxcodeItemsDO.java</code><a class="headerlink" href="#daoentitynxcodeitemsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class NxcodeItemsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitynxcouponsdojava"><code>dao/entity/NxcouponsDO.java</code><a class="headerlink" href="#daoentitynxcouponsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class NxcouponsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitypetignoresdojava"><code>dao/entity/PetignoresDO.java</code><a class="headerlink" href="#daoentitypetignoresdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class PetignoresDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitypetsdojava"><code>dao/entity/PetsDO.java</code><a class="headerlink" href="#daoentitypetsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class PetsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityplayerdiseasesdojava"><code>dao/entity/PlayerdiseasesDO.java</code><a class="headerlink" href="#daoentityplayerdiseasesdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class PlayerdiseasesDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityplayernpcsdojava"><code>dao/entity/PlayernpcsDO.java</code><a class="headerlink" href="#daoentityplayernpcsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class PlayernpcsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityplayernpcsequipdojava"><code>dao/entity/PlayernpcsEquipDO.java</code><a class="headerlink" href="#daoentityplayernpcsequipdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class PlayernpcsEquipDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityplayernpcsfielddojava"><code>dao/entity/PlayernpcsFieldDO.java</code><a class="headerlink" href="#daoentityplayernpcsfielddojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class PlayernpcsFieldDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityplifedojava"><code>dao/entity/PlifeDO.java</code><a class="headerlink" href="#daoentityplifedojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class PlifeDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityquestactionsdojava"><code>dao/entity/QuestactionsDO.java</code><a class="headerlink" href="#daoentityquestactionsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class QuestactionsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityquestprogressdojava"><code>dao/entity/QuestprogressDO.java</code><a class="headerlink" href="#daoentityquestprogressdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class QuestprogressDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityquestrequirementsdojava"><code>dao/entity/QuestrequirementsDO.java</code><a class="headerlink" href="#daoentityquestrequirementsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class QuestrequirementsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityqueststatusdojava"><code>dao/entity/QueststatusDO.java</code><a class="headerlink" href="#daoentityqueststatusdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class QueststatusDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityquickslotkeymappeddojava"><code>dao/entity/QuickslotkeymappedDO.java</code><a class="headerlink" href="#daoentityquickslotkeymappeddojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class QuickslotkeymappedDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityreactordropsdojava"><code>dao/entity/ReactordropsDO.java</code><a class="headerlink" href="#daoentityreactordropsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ReactordropsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityreportsdojava"><code>dao/entity/ReportsDO.java</code><a class="headerlink" href="#daoentityreportsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ReportsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityresponsesdojava"><code>dao/entity/ResponsesDO.java</code><a class="headerlink" href="#daoentityresponsesdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ResponsesDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityringsdojava"><code>dao/entity/RingsDO.java</code><a class="headerlink" href="#daoentityringsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class RingsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitysavedlocationsdojava"><code>dao/entity/SavedlocationsDO.java</code><a class="headerlink" href="#daoentitysavedlocationsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class SavedlocationsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityserverqueuedojava"><code>dao/entity/ServerQueueDO.java</code><a class="headerlink" href="#daoentityserverqueuedojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ServerQueueDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityshopitemsdojava"><code>dao/entity/ShopitemsDO.java</code><a class="headerlink" href="#daoentityshopitemsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ShopitemsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityshopsdojava"><code>dao/entity/ShopsDO.java</code><a class="headerlink" href="#daoentityshopsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ShopsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityskillmacrosdojava"><code>dao/entity/SkillmacrosDO.java</code><a class="headerlink" href="#daoentityskillmacrosdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class SkillmacrosDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityskillsdojava"><code>dao/entity/SkillsDO.java</code><a class="headerlink" href="#daoentityskillsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class SkillsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityspecialcashitemsdojava"><code>dao/entity/SpecialcashitemsDO.java</code><a class="headerlink" href="#daoentityspecialcashitemsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class SpecialcashitemsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitystoragesdojava"><code>dao/entity/StoragesDO.java</code><a class="headerlink" href="#daoentitystoragesdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class StoragesDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitytrocklocationsdojava"><code>dao/entity/TrocklocationsDO.java</code><a class="headerlink" href="#daoentitytrocklocationsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class TrocklocationsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentitywishlistsdojava"><code>dao/entity/WishlistsDO.java</code><a class="headerlink" href="#daoentitywishlistsdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class WishlistsDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daoentityworldtransfersdojava"><code>dao/entity/WorldtransfersDO.java</code><a class="headerlink" href="#daoentityworldtransfersdojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class WorldtransfersDO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="daomapperaccountsmapperjava"><code>dao/mapper/AccountsMapper.java</code><a class="headerlink" href="#daomapperaccountsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface AccountsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+<li><code>void updateAllLoggedIn(Integer value)</code>：更新已有对象/配置/缓存。</li>
+<li><code>AccountsDO selectOneByName(String name)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>void addAccount(AccountsDO accountsDO)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="daomapperalliancemapperjava"><code>dao/mapper/AllianceMapper.java</code><a class="headerlink" href="#daomapperalliancemapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface AllianceMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperallianceguildsmapperjava"><code>dao/mapper/AllianceguildsMapper.java</code><a class="headerlink" href="#daomapperallianceguildsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface AllianceguildsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperareainfomapperjava"><code>dao/mapper/AreaInfoMapper.java</code><a class="headerlink" href="#daomapperareainfomapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface AreaInfoMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperautobanconfigmapperjava"><code>dao/mapper/AutobanConfigMapper.java</code><a class="headerlink" href="#daomapperautobanconfigmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface AutobanConfigMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperbbsrepliesmapperjava"><code>dao/mapper/BbsRepliesMapper.java</code><a class="headerlink" href="#daomapperbbsrepliesmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface BbsRepliesMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperbbsthreadsmapperjava"><code>dao/mapper/BbsThreadsMapper.java</code><a class="headerlink" href="#daomapperbbsthreadsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface BbsThreadsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperbosslogdailymapperjava"><code>dao/mapper/BosslogDailyMapper.java</code><a class="headerlink" href="#daomapperbosslogdailymapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface BosslogDailyMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperbosslogweeklymapperjava"><code>dao/mapper/BosslogWeeklyMapper.java</code><a class="headerlink" href="#daomapperbosslogweeklymapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface BosslogWeeklyMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperbuddiesmapperjava"><code>dao/mapper/BuddiesMapper.java</code><a class="headerlink" href="#daomapperbuddiesmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface BuddiesMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappercharactersmapperjava"><code>dao/mapper/CharactersMapper.java</code><a class="headerlink" href="#daomappercharactersmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface CharactersMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+<li><code>void updateAllHasMerchant(Integer value)</code>：更新已有对象/配置/缓存。</li>
+<li><code>List&lt;CharactersDO&gt; selectIdAndWorldListByAccountId(int accountId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="daomappercommandinfomapperjava"><code>dao/mapper/CommandInfoMapper.java</code><a class="headerlink" href="#daomappercommandinfomapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface CommandInfoMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappercooldownsmapperjava"><code>dao/mapper/CooldownsMapper.java</code><a class="headerlink" href="#daomappercooldownsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface CooldownsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperdropdataglobalmapperjava"><code>dao/mapper/DropDataGlobalMapper.java</code><a class="headerlink" href="#daomapperdropdataglobalmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface DropDataGlobalMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperdropdatamapperjava"><code>dao/mapper/DropDataMapper.java</code><a class="headerlink" href="#daomapperdropdatamapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface DropDataMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperdueyitemsmapperjava"><code>dao/mapper/DueyitemsMapper.java</code><a class="headerlink" href="#daomapperdueyitemsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface DueyitemsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperdueypackagesmapperjava"><code>dao/mapper/DueypackagesMapper.java</code><a class="headerlink" href="#daomapperdueypackagesmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface DueypackagesMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappereventstatsmapperjava"><code>dao/mapper/EventstatsMapper.java</code><a class="headerlink" href="#daomappereventstatsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface EventstatsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperextendvaluemapperjava"><code>dao/mapper/ExtendValueMapper.java</code><a class="headerlink" href="#daomapperextendvaluemapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface ExtendValueMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+<li><code>void clean(@Param("extendType") String extendType, @Param("createTime") Date createTime)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="daomapperfamelogmapperjava"><code>dao/mapper/FamelogMapper.java</code><a class="headerlink" href="#daomapperfamelogmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface FamelogMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperfamilycharactermapperjava"><code>dao/mapper/FamilyCharacterMapper.java</code><a class="headerlink" href="#daomapperfamilycharactermapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface FamilyCharacterMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperfamilyentitlementmapperjava"><code>dao/mapper/FamilyEntitlementMapper.java</code><a class="headerlink" href="#daomapperfamilyentitlementmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface FamilyEntitlementMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperflywayschemahistorymapperjava"><code>dao/mapper/FlywaySchemaHistoryMapper.java</code><a class="headerlink" href="#daomapperflywayschemahistorymapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface FlywaySchemaHistoryMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperfredstoragemapperjava"><code>dao/mapper/FredstorageMapper.java</code><a class="headerlink" href="#daomapperfredstoragemapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface FredstorageMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappergachaponrewardmapperjava"><code>dao/mapper/GachaponRewardMapper.java</code><a class="headerlink" href="#daomappergachaponrewardmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface GachaponRewardMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappergachaponrewardpoolmapperjava"><code>dao/mapper/GachaponRewardPoolMapper.java</code><a class="headerlink" href="#daomappergachaponrewardpoolmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface GachaponRewardPoolMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappergameconfigmapperjava"><code>dao/mapper/GameConfigMapper.java</code><a class="headerlink" href="#daomappergameconfigmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface GameConfigMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappergiftsmapperjava"><code>dao/mapper/GiftsMapper.java</code><a class="headerlink" href="#daomappergiftsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface GiftsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperguildsmapperjava"><code>dao/mapper/GuildsMapper.java</code><a class="headerlink" href="#daomapperguildsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface GuildsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperhpmpalertmapperjava"><code>dao/mapper/HpMpAlertMapper.java</code><a class="headerlink" href="#daomapperhpmpalertmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface HpMpAlertMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperhwidaccountsmapperjava"><code>dao/mapper/HwidaccountsMapper.java</code><a class="headerlink" href="#daomapperhwidaccountsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface HwidaccountsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperhwidbansmapperjava"><code>dao/mapper/HwidbansMapper.java</code><a class="headerlink" href="#daomapperhwidbansmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface HwidbansMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperinventoryequipmentmapperjava"><code>dao/mapper/InventoryequipmentMapper.java</code><a class="headerlink" href="#daomapperinventoryequipmentmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface InventoryequipmentMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperinventoryitemsmapperjava"><code>dao/mapper/InventoryitemsMapper.java</code><a class="headerlink" href="#daomapperinventoryitemsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface InventoryitemsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperinventorymerchantmapperjava"><code>dao/mapper/InventorymerchantMapper.java</code><a class="headerlink" href="#daomapperinventorymerchantmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface InventorymerchantMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperipbansmapperjava"><code>dao/mapper/IpbansMapper.java</code><a class="headerlink" href="#daomapperipbansmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface IpbansMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperkeymapmapperjava"><code>dao/mapper/KeymapMapper.java</code><a class="headerlink" href="#daomapperkeymapmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface KeymapMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperlangresourcesmapperjava"><code>dao/mapper/LangResourcesMapper.java</code><a class="headerlink" href="#daomapperlangresourcesmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface LangResourcesMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappermacbansmapperjava"><code>dao/mapper/MacbansMapper.java</code><a class="headerlink" href="#daomappermacbansmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface MacbansMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappermacfiltersmapperjava"><code>dao/mapper/MacfiltersMapper.java</code><a class="headerlink" href="#daomappermacfiltersmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface MacfiltersMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappermakercreatedatamapperjava"><code>dao/mapper/MakercreatedataMapper.java</code><a class="headerlink" href="#daomappermakercreatedatamapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface MakercreatedataMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappermakerreagentdatamapperjava"><code>dao/mapper/MakerreagentdataMapper.java</code><a class="headerlink" href="#daomappermakerreagentdatamapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface MakerreagentdataMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappermakerrecipedatamapperjava"><code>dao/mapper/MakerrecipedataMapper.java</code><a class="headerlink" href="#daomappermakerrecipedatamapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface MakerrecipedataMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappermakerrewarddatamapperjava"><code>dao/mapper/MakerrewarddataMapper.java</code><a class="headerlink" href="#daomappermakerrewarddatamapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface MakerrewarddataMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappermarriagesmapperjava"><code>dao/mapper/MarriagesMapper.java</code><a class="headerlink" href="#daomappermarriagesmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface MarriagesMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappermedalmapsmapperjava"><code>dao/mapper/MedalmapsMapper.java</code><a class="headerlink" href="#daomappermedalmapsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface MedalmapsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappermodifiedcashitemmapperjava"><code>dao/mapper/ModifiedCashItemMapper.java</code><a class="headerlink" href="#daomappermodifiedcashitemmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface ModifiedCashItemMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappermonsterbookmapperjava"><code>dao/mapper/MonsterbookMapper.java</code><a class="headerlink" href="#daomappermonsterbookmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface MonsterbookMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappermonstercarddatamapperjava"><code>dao/mapper/MonstercarddataMapper.java</code><a class="headerlink" href="#daomappermonstercarddatamapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface MonstercarddataMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappermtscartmapperjava"><code>dao/mapper/MtsCartMapper.java</code><a class="headerlink" href="#daomappermtscartmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface MtsCartMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappermtsitemsmapperjava"><code>dao/mapper/MtsItemsMapper.java</code><a class="headerlink" href="#daomappermtsitemsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface MtsItemsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappernamechangesmapperjava"><code>dao/mapper/NamechangesMapper.java</code><a class="headerlink" href="#daomappernamechangesmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface NamechangesMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappernewyearmapperjava"><code>dao/mapper/NewyearMapper.java</code><a class="headerlink" href="#daomappernewyearmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface NewyearMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappernotesmapperjava"><code>dao/mapper/NotesMapper.java</code><a class="headerlink" href="#daomappernotesmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface NotesMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappernxcodeitemsmapperjava"><code>dao/mapper/NxcodeItemsMapper.java</code><a class="headerlink" href="#daomappernxcodeitemsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface NxcodeItemsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+<li><code>void clearExpirations(long timeClear)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="daomappernxcodemapperjava"><code>dao/mapper/NxcodeMapper.java</code><a class="headerlink" href="#daomappernxcodemapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface NxcodeMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+<li><code>void clearExpirations(long timeClear)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="daomappernxcouponsmapperjava"><code>dao/mapper/NxcouponsMapper.java</code><a class="headerlink" href="#daomappernxcouponsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface NxcouponsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+<li><code>List&lt;Integer&gt; selectActiveCouponIds(@Param("weekDay") int weekDay, @Param("hourDay") int hourDay)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="daomapperpetignoresmapperjava"><code>dao/mapper/PetignoresMapper.java</code><a class="headerlink" href="#daomapperpetignoresmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface PetignoresMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperpetsmapperjava"><code>dao/mapper/PetsMapper.java</code><a class="headerlink" href="#daomapperpetsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface PetsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperplayerdiseasesmapperjava"><code>dao/mapper/PlayerdiseasesMapper.java</code><a class="headerlink" href="#daomapperplayerdiseasesmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface PlayerdiseasesMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperplayernpcsequipmapperjava"><code>dao/mapper/PlayernpcsEquipMapper.java</code><a class="headerlink" href="#daomapperplayernpcsequipmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface PlayernpcsEquipMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperplayernpcsfieldmapperjava"><code>dao/mapper/PlayernpcsFieldMapper.java</code><a class="headerlink" href="#daomapperplayernpcsfieldmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface PlayernpcsFieldMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperplayernpcsmapperjava"><code>dao/mapper/PlayernpcsMapper.java</code><a class="headerlink" href="#daomapperplayernpcsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface PlayernpcsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperplifemapperjava"><code>dao/mapper/PlifeMapper.java</code><a class="headerlink" href="#daomapperplifemapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface PlifeMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperquestactionsmapperjava"><code>dao/mapper/QuestactionsMapper.java</code><a class="headerlink" href="#daomapperquestactionsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface QuestactionsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperquestprogressmapperjava"><code>dao/mapper/QuestprogressMapper.java</code><a class="headerlink" href="#daomapperquestprogressmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface QuestprogressMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperquestrequirementsmapperjava"><code>dao/mapper/QuestrequirementsMapper.java</code><a class="headerlink" href="#daomapperquestrequirementsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface QuestrequirementsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperqueststatusmapperjava"><code>dao/mapper/QueststatusMapper.java</code><a class="headerlink" href="#daomapperqueststatusmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface QueststatusMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperquickslotkeymappedmapperjava"><code>dao/mapper/QuickslotkeymappedMapper.java</code><a class="headerlink" href="#daomapperquickslotkeymappedmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface QuickslotkeymappedMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperreactordropsmapperjava"><code>dao/mapper/ReactordropsMapper.java</code><a class="headerlink" href="#daomapperreactordropsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface ReactordropsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperreportsmapperjava"><code>dao/mapper/ReportsMapper.java</code><a class="headerlink" href="#daomapperreportsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface ReportsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperresponsesmapperjava"><code>dao/mapper/ResponsesMapper.java</code><a class="headerlink" href="#daomapperresponsesmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface ResponsesMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperringsmapperjava"><code>dao/mapper/RingsMapper.java</code><a class="headerlink" href="#daomapperringsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface RingsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappersavedlocationsmapperjava"><code>dao/mapper/SavedlocationsMapper.java</code><a class="headerlink" href="#daomappersavedlocationsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface SavedlocationsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperserverqueuemapperjava"><code>dao/mapper/ServerQueueMapper.java</code><a class="headerlink" href="#daomapperserverqueuemapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface ServerQueueMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappershopitemsmapperjava"><code>dao/mapper/ShopitemsMapper.java</code><a class="headerlink" href="#daomappershopitemsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface ShopitemsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappershopsmapperjava"><code>dao/mapper/ShopsMapper.java</code><a class="headerlink" href="#daomappershopsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface ShopsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperskillmacrosmapperjava"><code>dao/mapper/SkillmacrosMapper.java</code><a class="headerlink" href="#daomapperskillmacrosmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface SkillmacrosMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperskillsmapperjava"><code>dao/mapper/SkillsMapper.java</code><a class="headerlink" href="#daomapperskillsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface SkillsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperspecialcashitemsmapperjava"><code>dao/mapper/SpecialcashitemsMapper.java</code><a class="headerlink" href="#daomapperspecialcashitemsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface SpecialcashitemsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperstoragesmapperjava"><code>dao/mapper/StoragesMapper.java</code><a class="headerlink" href="#daomapperstoragesmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface StoragesMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomappertrocklocationsmapperjava"><code>dao/mapper/TrocklocationsMapper.java</code><a class="headerlink" href="#daomappertrocklocationsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface TrocklocationsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperwishlistsmapperjava"><code>dao/mapper/WishlistsMapper.java</code><a class="headerlink" href="#daomapperwishlistsmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface WishlistsMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+<h2 id="daomapperworldtransfersmapperjava"><code>dao/mapper/WorldtransfersMapper.java</code><a class="headerlink" href="#daomapperworldtransfersmapperjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface WorldtransfersMapper</code>：数据访问层，负责 SQL 映射与实体读写。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

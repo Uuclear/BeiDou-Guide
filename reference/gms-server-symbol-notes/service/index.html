@@ -1,0 +1,3022 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BeiDou 游戏系统开发文档与源码索引">
+      
+      
+        <meta name="author" content="BeiDou-Guide">
+      
+      
+        <link rel="canonical" href="https://uuclear.github.io/BeiDou-Guide/reference/gms-server-symbol-notes/service/">
+      
+      
+        <link rel="prev" href="../server/">
+      
+      
+        <link rel="next" href="../util/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>service - BeiDou 开发文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gms-server-service" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="BeiDou 开发文档" class="md-header__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BeiDou 开发文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              service
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../read-guide/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  阅读指引
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  环境与架构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  源码精读与导读
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../gms-server-symbol-notes-README/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  自动生成索引
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="BeiDou 开发文档" class="md-nav__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    BeiDou 开发文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../read-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阅读指引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境与架构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    环境与架构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03-API%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 接口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05-%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../06-%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运维部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../07-%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用户手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../08-%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    技术规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码精读与导读
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    源码精读与导读
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码深度导读
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../10-BeiDou-ijl15-%E6%BA%90%E7%A0%81%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 源码详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11-%E5%85%A8%E9%87%8F%E6%BA%90%E7%A0%81%E7%AC%A6%E5%8F%B7%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与生成说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../12-%E6%BA%90%E7%A0%81%E6%A8%A1%E5%9D%97%E7%B2%BE%E8%AF%BB-%E4%BA%BA%E6%9C%BA%E6%92%B0%E5%86%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码模块精读（人机撰写）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自动生成索引
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    自动生成索引
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 逐符号职责（分卷）
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    gms-server 逐符号职责（分卷）
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-server-symbol-notes-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    分卷索引与用法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    （跳转）单文件入口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_root/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    org.gms 根
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    controller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dao
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    exception
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    net
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    property
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    service
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#serviceaccountservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/AccountService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceauthservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/AuthService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceautobanconfigservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/AutobanConfigService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicecashshopservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/CashShopService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicecharacterservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/CharacterService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicecommandservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/CommandService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicecommonservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/CommonService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceconfigservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/ConfigService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicedropservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/DropService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicefamilyservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/FamilyService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicefiletreeservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/FileTreeService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicegachaponservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/GachaponService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicegiveservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/GiveService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicehpmpalertservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/HpMpAlertService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceinventoryservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/InventoryService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceitemservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/ItemService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicelangresourceservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/LangResourceService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicemonsterbookservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/MonsterBookService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicemtsservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/MtsService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicenamechangeservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/NameChangeService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicenewyearcardservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/NewYearCardService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicenoteservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/NoteService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicenpcservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/NpcService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicenxcodeservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/NxCodeService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicenxcouponservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/NxCouponService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicequestservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/QuestService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceserverservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/ServerService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceshopservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/ShopService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceuserdetailsimpljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/UserDetailsImpl.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceuserdetailsserviceimpljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/UserDetailsServiceImpl.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceworldtransferservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/WorldTransferService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../util/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    util
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与 API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    全量符号与 API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-server-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-server-api-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server public 索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-ui-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-ui-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../beidou-ijl15-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../beidou-ijl15-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#serviceaccountservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/AccountService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceauthservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/AuthService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceautobanconfigservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/AutobanConfigService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicecashshopservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/CashShopService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicecharacterservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/CharacterService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicecommandservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/CommandService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicecommonservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/CommonService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceconfigservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/ConfigService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicedropservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/DropService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicefamilyservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/FamilyService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicefiletreeservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/FileTreeService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicegachaponservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/GachaponService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicegiveservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/GiveService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicehpmpalertservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/HpMpAlertService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceinventoryservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/InventoryService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceitemservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/ItemService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicelangresourceservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/LangResourceService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicemonsterbookservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/MonsterBookService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicemtsservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/MtsService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicenamechangeservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/NameChangeService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicenewyearcardservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/NewYearCardService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicenoteservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/NoteService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicenpcservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/NpcService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicenxcodeservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/NxCodeService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicenxcouponservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/NxCouponService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servicequestservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/QuestService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceserverservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/ServerService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceshopservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/ShopService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceuserdetailsimpljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/UserDetailsImpl.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceuserdetailsserviceimpljava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/UserDetailsServiceImpl.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceworldtransferservicejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        service/WorldTransferService.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/Uuclear/BeiDou-Guide/edit/main/docs/reference/gms-server-symbol-notes/service.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="gms-server-service">gms-server 逐符号中文职责 · 分卷 <code>service</code><a class="headerlink" href="#gms-server-service" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>自动生成：<code>scripts/generate-symbol-notes.py</code>
+源码路径：<code>BeiDou-Server</code>
+本分卷 Java 文件数：31</p>
+</blockquote>
+<p><a href="../../gms-server-symbol-notes-README/">← 返回分卷索引</a></p>
+<hr />
+<h2 id="serviceaccountservicejava"><code>service/AccountService.java</code><a class="headerlink" href="#serviceaccountservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class AccountService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public AccountsDO findByName(String name)</code>：查询并返回匹配集合或单项结果。</li>
+<li><code>public AccountsDO findById(int id)</code>：查询并返回匹配集合或单项结果。</li>
+<li><code>public AccountsDO getCurrentUser()</code>：读取并返回状态/数据。</li>
+<li><code>public Page&lt;AccountsDO&gt; getAccountList(Integer page, Integer size, Integer id, String name, String lastLoginStart, String lastLoginEnd, String createdAtStart, String createdAtEnd)</code>：读取并返回状态/数据。</li>
+</ul>
+<h2 id="serviceauthservicejava"><code>service/AuthService.java</code><a class="headerlink" href="#serviceauthservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class AuthService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+</ul>
+<h2 id="serviceautobanconfigservicejava"><code>service/AutobanConfigService.java</code><a class="headerlink" href="#serviceautobanconfigservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class AutobanConfigService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public void loadConfigs()</code>：从外部来源加载数据（数据库/文件/配置）。</li>
+<li><code>public List&lt;AutobanConfigDTO&gt; getConfigList()</code>：读取并返回状态/数据。</li>
+<li><code>public void updateConfig(AutobanConfigDTO dto)</code>：更新已有对象/配置/缓存。</li>
+</ul>
+<h2 id="servicecashshopservicejava"><code>service/CashShopService.java</code><a class="headerlink" href="#servicecashshopservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class CashShopService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public List&lt;ModifiedCashItemDO&gt; loadAllModifiedCashItems()</code>：从外部来源加载数据（数据库/文件/配置）。</li>
+<li><code>public List&lt;CashCategory&gt; getAllCategoryList()</code>：读取并返回状态/数据。</li>
+<li><code>public Page&lt;CashShopSearchRtnDTO&gt; getCommodityByCategory(CashCategory data)</code>：读取并返回状态/数据。</li>
+<li><code>public CashShopSearchRtnDTO getCommodityBySn(Integer sn)</code>：读取并返回状态/数据。</li>
+<li><code>public void changeOnSale(ModifiedCashItemDO data)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private CashCategory getCategory(Integer id, Integer subId)</code>：读取并返回状态/数据。</li>
+<li><code>private CashShopSearchRtnDTO fromCashItem(CashCategory cashCategory, ModifiedCashItemDO cashItem)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void setDbItemValue(CashShopSearchRtnDTO rtnDTO, ModifiedCashItemDO dbCashItem)</code>：写入或更新状态字段。</li>
+<li><code>public void batchChangeOnSale(CashShopBatchOnSaleReqDTO submit)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="servicecharacterservicejava"><code>service/CharacterService.java</code><a class="headerlink" href="#servicecharacterservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class CharacterService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public CharactersDO findById(int id)</code>：查询并返回匹配集合或单项结果。</li>
+<li><code>public void update(CharactersDO condition)</code>：更新已有对象/配置/缓存。</li>
+<li><code>public Page&lt;ChrOnlineListRtnDTO&gt; getChrOnlineList(ChrOnlineListReqDTO request)</code>：读取并返回状态/数据。</li>
+<li><code>public void updateRate(ExtendValueDO data)</code>：更新已有对象/配置/缓存。</li>
+<li><code>public void resetRate(ExtendValueDO data)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void resetRates(ExtendValueDO data)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void resetMerchant()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public List&lt;List&lt;CharactersDO&gt;&gt; getWorldsRankPlayers(int worldSize)</code>：读取并返回状态/数据。</li>
+<li><code>public List&lt;CharactersDO&gt; getWorldRankPlayers(int worldId)</code>：读取并返回状态/数据。</li>
+<li><code>public CharactersDO findByName(String name)</code>：查询并返回匹配集合或单项结果。</li>
+<li><code>public void removeSkill(SkillsDO skillsDO)</code>：删除对象、关系或临时状态。</li>
+<li><code>public void deleteGuild(GuildsDO guildsDO)</code>：删除对象、关系或临时状态。</li>
+<li><code>public void deleteCharFromDB(Character player, int senderAccId)</code>：删除对象、关系或临时状态。</li>
+<li><code>public void saveCharToDB(Character player, boolean notAutosave)</code>：持久化当前状态到存储层。</li>
+<li><code>public Character loadCharFromDB(int cid, Client client, boolean channelServer)</code>：从外部来源加载数据（数据库/文件/配置）。</li>
+<li><code>public List&lt;TrocklocationsDO&gt; getTrockLocationByCharacter(Integer cid)</code>：读取并返回状态/数据。</li>
+<li><code>public List&lt;AreaInfoDO&gt; getAreaInfoByCharacter(Integer cid)</code>：读取并返回状态/数据。</li>
+<li><code>public List&lt;EventstatsDO&gt; getEventStatsByCharacter(Integer cid)</code>：读取并返回状态/数据。</li>
+<li><code>public List&lt;WishlistsDO&gt; getWishlistsByCharacter(Integer cid)</code>：读取并返回状态/数据。</li>
+<li><code>public List&lt;CharactersDO&gt; getCharacterByAccountId(int accountId)</code>：读取并返回状态/数据。</li>
+<li><code>private void checkName(ExtendValueDO data)</code>：校验输入参数或业务约束。</li>
+<li><code>private void check(ExtendValueDO data)</code>：校验输入参数或业务约束。</li>
+<li><code>private Character getCharacter(ExtendValueDO data)</code>：读取并返回状态/数据。</li>
+</ul>
+<h2 id="servicecommandservicejava"><code>service/CommandService.java</code><a class="headerlink" href="#servicecommandservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class CommandService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public void loadCommands(final HashMap&lt;String, Command&gt; registeredCommands, final List&lt;Pair&lt;List&lt;String&gt;, List&lt;String&gt;&gt;&gt; commandsNameDesc)</code>：从外部来源加载数据（数据库/文件/配置）。</li>
+<li><code>updateRegisteredCommands(commandInfoDO)</code>：更新已有对象/配置/缓存。</li>
+</ul>
+<h2 id="servicecommonservicejava"><code>service/CommonService.java</code><a class="headerlink" href="#servicecommonservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class CommonService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public EquipmentInfoRtnDTO getEquipmentInfoByItemId(EquipmentInfoReqDTO submitData)</code>：读取并返回状态/数据。</li>
+<li><code>public Integer getOnlinePlayerCountByWorldId(Integer worldId)</code>：读取并返回状态/数据。</li>
+<li><code>public Integer getAllWorldsOnlinePlayersCount(List&lt;Integer&gt; worldIdList)</code>：读取并返回状态/数据。</li>
+<li><code>public List&lt;InformationResult&gt; getInformation(InformationSearch condition)</code>：读取并返回状态/数据。</li>
+</ul>
+<h2 id="serviceconfigservicejava"><code>service/ConfigService.java</code><a class="headerlink" href="#serviceconfigservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ConfigService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public List&lt;GameConfigDO&gt; loadGameConfigs()</code>：从外部来源加载数据（数据库/文件/配置）。</li>
+<li><code>public ConfigTypeDTO getConfigTypeList()</code>：读取并返回状态/数据。</li>
+<li><code>public Page&lt;GameConfigDO&gt; getConfigList(GameConfigReqDTO condition)</code>：读取并返回状态/数据。</li>
+<li><code>public void addConfig(GameConfigDO condition)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void updateConfig(GameConfigDO condition)</code>：更新已有对象/配置/缓存。</li>
+<li><code>public void deleteConfig(Long id)</code>：删除对象、关系或临时状态。</li>
+<li><code>public void deleteConfigList(List&lt;Long&gt; ids)</code>：删除对象、关系或临时状态。</li>
+<li><code>public int importYml(MultipartFile file)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private Object parseObject(Object obj)</code>：解析输入文本或二进制内容。</li>
+<li><code>private String replaceWithEquals(String src, String[]... fts)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private String replaceWithContains(String src, String[]... fts)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public ResponseEntity&lt;Resource&gt; exportYml()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="servicedropservicejava"><code>service/DropService.java</code><a class="headerlink" href="#servicedropservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class DropService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public Page&lt;DropSearchRtnDTO&gt; getDropList(DropSearchReqDTO data, boolean isGlobal)</code>：读取并返回状态/数据。</li>
+<li><code>public Long modifyDropData(DropSearchRtnDTO data, boolean isGlobal, boolean isDelete)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private String getItemName(Integer itemId)</code>：读取并返回状态/数据。</li>
+<li><code>private String getMobName(Integer mobId)</code>：读取并返回状态/数据。</li>
+<li><code>private String getQuestName(Integer questId)</code>：读取并返回状态/数据。</li>
+</ul>
+<h2 id="servicefamilyservicejava"><code>service/FamilyService.java</code><a class="headerlink" href="#servicefamilyservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class FamilyService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public void loadAllFamilies()</code>：从外部来源加载数据（数据库/文件/配置）。</li>
+</ul>
+<h2 id="servicefiletreeservicejava"><code>service/FileTreeService.java</code><a class="headerlink" href="#servicefiletreeservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class FileTreeService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public String readFile(String currentKey, String filename)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void writeFile(String currentKey, String filename, String content)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public List&lt;FileTreeNodeDTO&gt; tree(String currentKey)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public File resolveByTreeKey(String currentKey)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private boolean matchAnyLimitPattern(Path path)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="servicegachaponservicejava"><code>service/GachaponService.java</code><a class="headerlink" href="#servicegachaponservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class GachaponService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public void updatePool(GachaponRewardPoolDO submit)</code>：更新已有对象/配置/缓存。</li>
+<li><code>public void deletePool(Integer id)</code>：删除对象、关系或临时状态。</li>
+<li><code>public Page&lt;GachaponPoolSearchRtnDTO&gt; getPools(GachaponPoolSearchReqDTO condition)</code>：读取并返回状态/数据。</li>
+<li><code>public List&lt;GachaponRewardDO&gt; getRewards(Integer poolId)</code>：读取并返回状态/数据。</li>
+<li><code>public void updateReward(GachaponRewardDO reward)</code>：更新已有对象/配置/缓存。</li>
+<li><code>public void deleteReward(Integer id)</code>：删除对象、关系或临时状态。</li>
+<li><code>private void setRealProb(List&lt;GachaponPoolSearchRtnDTO&gt; pools)</code>：写入或更新状态字段。</li>
+<li><code>private List&lt;GachaponRewardPoolDO&gt; getActivePools(Integer gachaponId)</code>：读取并返回状态/数据。</li>
+<li><code>public void doGachapon(Character player, int gachaponId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public List&lt;GachaponRewardDO&gt; getRewardsByNpcId(Integer npcId)</code>：读取并返回状态/数据。</li>
+<li><code>private void doReward(Character player, GachaponRewardPoolDO pool)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private List&lt;GachaponRewardDO&gt; getPoolRewards(Integer poolId)</code>：读取并返回状态/数据。</li>
+</ul>
+<h2 id="servicegiveservicejava"><code>service/GiveService.java</code><a class="headerlink" href="#servicegiveservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class GiveService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public void give(GiveResourceReqDTO submitData)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void giveAllOnlineChr(GiveResourceReqDTO submitData)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void giveChr(GiveResourceReqDTO submitData)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void giveNxAllOnlineChr(int quantity, int type)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void giveNxChr(Character chr, int quantity, int type)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private String getCashTypeName(int type)</code>：读取并返回状态/数据。</li>
+<li><code>private void giveMesosAllOnlineChr(int quantity)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void giveMesosChr(Character chr, int quantity)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void giveExpAllOnlineChr(int quantity)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void giveExpChr(Character chr, int quantity)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void giveItemAllOnlineChr(int itemId, short quantity)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void giveItemChr(Character chr, int itemId, short quantity)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void giveEquipAllOnlineChr(GiveResourceReqDTO submitData)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void giveEquipChr(Character chr, GiveResourceReqDTO submitData)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void giveRateChr(Character chr, String type, float rate)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void giveGMChr(Character chr, Integer level)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void giveFameChr(Character chr, Integer fame)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void changeMap(Character chr, Integer mapId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void doGainCash(Character chr, int type, int quantity)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void doGainExp(Character chr, int quantity)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void doGainMeso(Character chr, int quantity)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="servicehpmpalertservicejava"><code>service/HpMpAlertService.java</code><a class="headerlink" href="#servicehpmpalertservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class HpMpAlertService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>private static byte normalizeAlertStep(byte step)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public byte getHpAlert(int characterId)</code>：读取并返回状态/数据。</li>
+<li><code>public void setHpAlert(int characterId, byte alert)</code>：写入或更新状态字段。</li>
+<li><code>public float getHpAlertPer(int characterId)</code>：读取并返回状态/数据。</li>
+<li><code>public byte getMpAlert(int characterId)</code>：读取并返回状态/数据。</li>
+<li><code>public void setMpAlert(int characterId, byte alert)</code>：写入或更新状态字段。</li>
+<li><code>public float getMpAlertPer(int characterId)</code>：读取并返回状态/数据。</li>
+<li><code>public void saveAll()</code>：持久化当前状态到存储层。</li>
+<li><code>public void clear()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="serviceinventoryservicejava"><code>service/InventoryService.java</code><a class="headerlink" href="#serviceinventoryservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class InventoryService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public List&lt;InventoryTypeRtnDTO&gt; getInventoryTypeList()</code>：读取并返回状态/数据。</li>
+<li><code>public Page&lt;InventorySearchReqDTO&gt; getCharacterList(InventorySearchReqDTO data)</code>：读取并返回状态/数据。</li>
+<li><code>public List&lt;InventorySearchRtnDTO&gt; getInventoryList(InventorySearchReqDTO data)</code>：读取并返回状态/数据。</li>
+<li><code>public void deleteInventoryByCharacterId(int cid)</code>：删除对象、关系或临时状态。</li>
+<li><code>private Character getCharacterById(int characterId)</code>：读取并返回状态/数据。</li>
+<li><code>private InventorySearchRtnDTO buildByDb(Row obj)</code>：构建输出对象、包体或配置。</li>
+<li><code>private List&lt;InventorySearchRtnDTO&gt; buildByOnline(Character character, InventoryType type)</code>：构建输出对象、包体或配置。</li>
+<li><code>public void updateInventory(InventorySearchRtnDTO data)</code>：更新已有对象/配置/缓存。</li>
+<li><code>private void updateOnline(InventorySearchRtnDTO data, Character character)</code>：更新已有对象/配置/缓存。</li>
+<li><code>private void updateDb(InventorySearchRtnDTO data)</code>：更新已有对象/配置/缓存。</li>
+<li><code>public void deleteInventory(InventorySearchRtnDTO data)</code>：删除对象、关系或临时状态。</li>
+<li><code>public List&lt;PetignoresDO&gt; getPetIgnoreByPetId(Integer petId)</code>：读取并返回状态/数据。</li>
+<li><code>private void modifyInventoryCheck(InventorySearchRtnDTO data)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private Item getModifyItemOnline(InventorySearchRtnDTO data, Inventory inventory)</code>：读取并返回状态/数据。</li>
+<li><code>private InventoryitemsDO getModifyItemOffline(InventorySearchRtnDTO data)</code>：读取并返回状态/数据。</li>
+</ul>
+<h2 id="serviceitemservicejava"><code>service/ItemService.java</code><a class="headerlink" href="#serviceitemservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ItemService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public Equip getEquipmentInfoByItemId(Integer itemId)</code>：读取并返回状态/数据。</li>
+</ul>
+<h2 id="servicelangresourceservicejava"><code>service/LangResourceService.java</code><a class="headerlink" href="#servicelangresourceservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class LangResourceService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public String getI18n(LangResourcesDO langResourcesDO)</code>：读取并返回状态/数据。</li>
+<li><code>public void insertOrUpdateI18n(LangResourcesDO langResourcesDO)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void deleteI18n(LangResourcesDO langResourcesDO)</code>：删除对象、关系或临时状态。</li>
+</ul>
+<h2 id="servicemonsterbookservicejava"><code>service/MonsterBookService.java</code><a class="headerlink" href="#servicemonsterbookservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class MonsterBookService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public List&lt;MonsterbookDO&gt; getByCharacterId(int cid)</code>：读取并返回状态/数据。</li>
+</ul>
+<h2 id="servicemtsservicejava"><code>service/MtsService.java</code><a class="headerlink" href="#servicemtsservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class MtsService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public void deleteMtsByCharacterId(int cid)</code>：删除对象、关系或临时状态。</li>
+</ul>
+<h2 id="servicenamechangeservicejava"><code>service/NameChangeService.java</code><a class="headerlink" href="#servicenamechangeservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class NameChangeService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public void applyAllNameChange()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void applyNameChange(int characterId, String characterName)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public List&lt;NamechangesDO&gt; getAllNameChanges()</code>：读取并返回状态/数据。</li>
+<li><code>public void doNameChange(NamechangesDO data)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean registerNameChange(Character chr, String newName)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void cancelPendingNameChange(Character chr, boolean needFinish)</code>：进行条件判定并返回布尔结果。</li>
+</ul>
+<h2 id="servicenewyearcardservicejava"><code>service/NewYearCardService.java</code><a class="headerlink" href="#servicenewyearcardservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class NewYearCardService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public void startPendingNewYearCardRequests()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public List&lt;NewyearDO&gt; loadPlayerNewYearCards(Character chr)</code>：从外部来源加载数据（数据库/文件/配置）。</li>
+</ul>
+<h2 id="servicenoteservicejava"><code>service/NoteService.java</code><a class="headerlink" href="#servicenoteservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class NoteService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public void sendNormal(String message, String senderName, String receiverName)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendWithFame(String message, String senderName, String receiverName)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void show(Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Optional&lt;NotesDO&gt; delete(int noteId)</code>：删除对象、关系或临时状态。</li>
+</ul>
+<h2 id="servicenpcservicejava"><code>service/NpcService.java</code><a class="headerlink" href="#servicenpcservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class NpcService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public List&lt;PlayernpcsFieldDO&gt; getPlayerNpcFields(PlayernpcsFieldDO condition)</code>：读取并返回状态/数据。</li>
+<li><code>public List&lt;PlayernpcsDO&gt; getPlayerNpcDOs(PlayernpcsDO condition)</code>：读取并返回状态/数据。</li>
+<li><code>public List&lt;PlayernpcsEquipDO&gt; getPlayerNpcEquipDOs(PlayernpcsEquipDO condition)</code>：读取并返回状态/数据。</li>
+<li><code>public List&lt;PlayerNPC&gt; getPlayerNPC(PlayernpcsDO condition)</code>：读取并返回状态/数据。</li>
+<li><code>public PlayerNPC createPlayerNPC(PlayernpcsDO playerNpcDO, List&lt;PlayernpcsEquipDO&gt; playerNpcEquipDOS)</code>：创建对象、会话或业务记录。</li>
+</ul>
+<h2 id="servicenxcodeservicejava"><code>service/NxCodeService.java</code><a class="headerlink" href="#servicenxcodeservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class NxCodeService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public void clearExpirations()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="servicenxcouponservicejava"><code>service/NxCouponService.java</code><a class="headerlink" href="#servicenxcouponservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class NxCouponService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public List&lt;Integer&gt; selectActiveCouponIds(int weekDay, int hourDay)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public List&lt;NxcouponsDO&gt; getNxCoupons(NxcouponsDO condition)</code>：读取并返回状态/数据。</li>
+</ul>
+<h2 id="servicequestservicejava"><code>service/QuestService.java</code><a class="headerlink" href="#servicequestservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class QuestService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public void deleteQuestProgressByCharacter(int cid)</code>：删除对象、关系或临时状态。</li>
+<li><code>public List&lt;QuestStatus&gt; getQuestStatusByCharacter(int cid)</code>：读取并返回状态/数据。</li>
+</ul>
+<h2 id="serviceserverservicejava"><code>service/ServerService.java</code><a class="headerlink" href="#serviceserverservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ServerService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public List&lt;WorldListRtnDTO&gt; worldList()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public List&lt;ChannelListRtnDTO&gt; channelList(int worldId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="serviceshopservicejava"><code>service/ShopService.java</code><a class="headerlink" href="#serviceshopservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ShopService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public Page&lt;ShopSearchRtnDTO&gt; getShopList(ShopSearchReqDTO data)</code>：读取并返回状态/数据。</li>
+<li><code>public Page&lt;ShopItemSearchRtnDTO&gt; getShopItemList(ShopSearchReqDTO data)</code>：读取并返回状态/数据。</li>
+<li><code>public ShopItemSearchRtnDTO getShopItem(Long id)</code>：读取并返回状态/数据。</li>
+<li><code>public Long modifyShopItem(ShopItemSearchRtnDTO data, boolean isDelete)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private ShopItemSearchRtnDTO fromShopItemDO(ShopitemsDO shopitemsDO)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="serviceuserdetailsimpljava"><code>service/UserDetailsImpl.java</code><a class="headerlink" href="#serviceuserdetailsimpljava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class UserDetailsImpl</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public UserDetailsImpl(Integer id, String name, String password, Collection&lt;? extends GrantedAuthority&gt; authorities)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="serviceuserdetailsserviceimpljava"><code>service/UserDetailsServiceImpl.java</code><a class="headerlink" href="#serviceuserdetailsserviceimpljava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class UserDetailsServiceImpl</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public UserDetailsServiceImpl(AccountsMapper userRepository)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException</code>：从外部来源加载数据（数据库/文件/配置）。</li>
+</ul>
+<h2 id="serviceworldtransferservicejava"><code>service/WorldTransferService.java</code><a class="headerlink" href="#serviceworldtransferservicejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class WorldTransferService</code>：业务编排层，组织领域逻辑与持久化调用。</li>
+<li><code>public void applyAllWorldTransfer()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean checkWorldTransferEligibility(WorldtransfersDO data)</code>：校验输入参数或业务约束。</li>
+<li><code>public void doWorldTransfer(WorldtransfersDO data)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean registerWorldTransfer(Character chr, int newWorld)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void cancelPendingWorldTransfer(Character chr, boolean needFinish)</code>：进行条件判定并返回布尔结果。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

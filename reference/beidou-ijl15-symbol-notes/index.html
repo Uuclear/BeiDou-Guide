@@ -1,0 +1,3601 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BeiDou 游戏系统开发文档与源码索引">
+      
+      
+        <meta name="author" content="BeiDou-Guide">
+      
+      
+        <link rel="canonical" href="https://uuclear.github.io/BeiDou-Guide/reference/beidou-ijl15-symbol-notes/">
+      
+      
+        <link rel="prev" href="../beidou-ijl15-full-symbols/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>ijl15 逐符号职责 - BeiDou 开发文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#beidou-ijl15" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="BeiDou 开发文档" class="md-header__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BeiDou 开发文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ijl15 逐符号职责
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../read-guide/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  阅读指引
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  环境与架构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  源码精读与导读
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../gms-server-symbol-notes-README/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  自动生成索引
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="BeiDou 开发文档" class="md-nav__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    BeiDou 开发文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../read-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阅读指引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境与架构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    环境与架构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-API%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 接口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运维部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用户手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    技术规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码精读与导读
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    源码精读与导读
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码深度导读
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-BeiDou-ijl15-%E6%BA%90%E7%A0%81%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 源码详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-%E5%85%A8%E9%87%8F%E6%BA%90%E7%A0%81%E7%AC%A6%E5%8F%B7%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与生成说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-%E6%BA%90%E7%A0%81%E6%A8%A1%E5%9D%97%E7%B2%BE%E8%AF%BB-%E4%BA%BA%E6%9C%BA%E6%92%B0%E5%86%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码模块精读（人机撰写）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自动生成索引
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    自动生成索引
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 逐符号职责（分卷）
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    gms-server 逐符号职责（分卷）
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    分卷索引与用法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    （跳转）单文件入口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/_root/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    org.gms 根
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/aop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    controller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/dao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dao
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/exception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    exception
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/net/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    net
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    property
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/util/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    util
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与 API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    全量符号与 API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-api-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server public 索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-ui-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-ui-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beidou-ijl15-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#addylocationsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AddyLocations.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autotypesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AutoTypes.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bosshpcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BossHP.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bosshph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BossHP.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clientcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clienth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixbuddyh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FixBuddy.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fiximeh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FixIme.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hpmpalertcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HpMpAlert.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hpmpalerth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HpMpAlert.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inireaderh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INIReader.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypestsectypeh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/TSecType.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszallocanonselectorh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZAllocAnonSelector.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszallocbaseh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZAllocBase.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszallocexcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZAllocEx.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszallocexh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZAllocEx.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszallocstrselectorh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZAllocStrSelector.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszarrayh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZArray.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszfatalsectionh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZFatalSection.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszlisth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZList.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszmaph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZMap.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszrecyclableh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZRecyclable.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszrecyclableavbufferh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZRecyclableAvBuffer.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszrecyclablestatich" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZRecyclableStatic.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszrefh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZRef.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszrefcountedh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZRefCounted.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszrefcountedaccessorh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZRefCountedAccessor.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszrefcounteddummyh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZRefCountedDummy.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszxstringh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZXString.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypesztlsecureh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZtlSecure.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memorycpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memoryh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nmcocpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMCO.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nmcoh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMCO.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replacementfuncsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ReplacementFuncs.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zallocexcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ZAllocEx.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codecavesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        codecaves.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detoursh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        detours.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detverh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        detver.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dllmaincpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dllmain.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dllmainh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dllmain.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ijl15cpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ijl15.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ijl15h" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ijl15.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        resource.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdafxcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stdafx.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdafxh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stdafx.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syelogh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        syelog.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#targetverh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        targetver.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#addylocationsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AddyLocations.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autotypesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AutoTypes.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bosshpcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BossHP.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bosshph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BossHP.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clientcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clienth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixbuddyh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FixBuddy.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fiximeh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FixIme.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hpmpalertcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HpMpAlert.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hpmpalerth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HpMpAlert.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inireaderh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INIReader.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypestsectypeh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/TSecType.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszallocanonselectorh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZAllocAnonSelector.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszallocbaseh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZAllocBase.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszallocexcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZAllocEx.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszallocexh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZAllocEx.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszallocstrselectorh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZAllocStrSelector.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszarrayh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZArray.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszfatalsectionh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZFatalSection.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszlisth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZList.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszmaph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZMap.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszrecyclableh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZRecyclable.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszrecyclableavbufferh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZRecyclableAvBuffer.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszrecyclablestatich" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZRecyclableStatic.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszrefh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZRef.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszrefcountedh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZRefCounted.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszrefcountedaccessorh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZRefCountedAccessor.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszrefcounteddummyh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZRefCountedDummy.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypeszxstringh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZXString.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypesztlsecureh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MapleClientCollectionTypes/ZtlSecure.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memorycpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memoryh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nmcocpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMCO.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nmcoh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMCO.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replacementfuncsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ReplacementFuncs.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zallocexcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ZAllocEx.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codecavesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        codecaves.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detoursh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        detours.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detverh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        detver.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dllmaincpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dllmain.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dllmainh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dllmain.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ijl15cpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ijl15.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ijl15h" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ijl15.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resourceh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        resource.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdafxcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stdafx.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdafxh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stdafx.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syelogh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        syelog.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#targetverh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        targetver.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/Uuclear/BeiDou-Guide/edit/main/docs/reference/beidou-ijl15-symbol-notes.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="beidou-ijl15">BeiDou-ijl15 逐符号中文职责索引<a class="headerlink" href="#beidou-ijl15" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>自动生成：<code>scripts/generate-symbol-notes.py</code>
+源码路径：<code>/tmp/BeiDou-ijl15</code>
+文件数：48</p>
+</blockquote>
+<h2 id="addylocationsh"><code>AddyLocations.h</code><a class="headerlink" href="#addylocationsh" title="Permanent link">&para;</a></h2>
+<h2 id="autotypesh"><code>AutoTypes.h</code><a class="headerlink" href="#autotypesh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>_IWzFileSystem__Init(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>_IWzNameSpace__Mount(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="bosshpcpp"><code>BossHP.cpp</code><a class="headerlink" href="#bosshpcpp" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>BossHP::Hook(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>BossHP::HookInternal(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>BossHP::HookUpdate(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Memory::SetHook(...)</code>：写入或更新状态字段。</li>
+<li><code>BossHP::HookShowMobHPTag(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>BossHP::HookInitField(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>BossHP::DisposeBossHpNumber(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>BossHP::DisposeToolTip(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>BossHP::CreateToolTip(...)</code>：创建对象、会话或业务记录。</li>
+<li><code>BossHP::HookDisposeField(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>BossHP::DrawBossHpNumberIfNeed(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>BossHP::SetToolTip_String(...)</code>：写入或更新状态字段。</li>
+<li><code>BossHP::DrawBossHpNumber(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>BossHP::ClearToolTip(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>BossHP::GetMiniMapWidth(...)</code>：读取并返回状态/数据。</li>
+<li><code>ReadInt(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="bosshph"><code>BossHP.h</code><a class="headerlink" href="#bosshph" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class BossHP</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>Hook(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>HookInternal(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>HookUpdate(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>HookShowMobHPTag(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>HookDisposeField(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>HookInitField(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>SetToolTip_String(...)</code>：写入或更新状态字段。</li>
+<li><code>ClearToolTip(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DisposeToolTip(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>CreateToolTip(...)</code>：创建对象、会话或业务记录。</li>
+<li><code>DrawBossHpNumberIfNeed(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DrawBossHpNumber(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DisposeBossHpNumber(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>GetMiniMapWidth(...)</code>：读取并返回状态/数据。</li>
+</ul>
+<h2 id="clientcpp"><code>Client.cpp</code><a class="headerlink" href="#clientcpp" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>Client::UpdateGameStartup(...)</code>：更新已有对象/配置/缓存。</li>
+<li><code>Memory::FillBytes(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Memory::WriteInt(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Memory::WriteDouble(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::UpdateResolution(...)</code>：更新已有对象/配置/缓存。</li>
+<li><code>Memory::CodeCave(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Memory::WriteByteArray(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Memory::WriteByte(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::EnableNewIGCipher(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::UpdateLogin(...)</code>：更新已有对象/配置/缓存。</li>
+<li><code>Client::FixMouseWheel(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::Chinese(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>FixIme::HookOld(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>FixIme::HookNew(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>FixBuddy::Hook(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Memory::WriteString(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::LongQuickSlot(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::FixDateFormat(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::FixItemType(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::JumpCap(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::FixChatPosHook(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::NoPassword(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::MoreHook(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::WorldMap(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="clienth"><code>Client.h</code><a class="headerlink" href="#clienth" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class Client</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>UpdateGameStartup(...)</code>：更新已有对象/配置/缓存。</li>
+<li><code>EnableNewIGCipher(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>UpdateResolution(...)</code>：更新已有对象/配置/缓存。</li>
+<li><code>UpdateLogin(...)</code>：更新已有对象/配置/缓存。</li>
+<li><code>FixMouseWheel(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Chinese(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>LongQuickSlot(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>FixDateFormat(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>FixItemType(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>JumpCap(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>FixChatPosHook(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>NoPassword(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>MoreHook(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>WorldMap(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="fixbuddyh"><code>FixBuddy.h</code><a class="headerlink" href="#fixbuddyh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class FixBuddy</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>Memory::CodeCave(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>fixBuddyAccept(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Hook(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="fiximeh"><code>FixIme.h</code><a class="headerlink" href="#fiximeh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class FixIme</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>Memory::CodeCave(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Memory::FillBytes(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Memory::WriteByte(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DisableIme(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>setOnFocusFirstJudgement(...)</code>：写入或更新状态字段。</li>
+<li><code>switchIme(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>switchMLIme(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>newSwitchIme(...)</code>：创建对象、会话或业务记录。</li>
+<li><code>destroyWindow(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>newSwitchMLIme(...)</code>：创建对象、会话或业务记录。</li>
+<li><code>HookOld(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>HookNew(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>GeneralHook(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="hpmpalertcpp"><code>HpMpAlert.cpp</code><a class="headerlink" href="#hpmpalertcpp" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>Memory::WriteInt(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Memory::SetHook(...)</code>：写入或更新状态字段。</li>
+<li><code>TryReadDword(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ClampAlert(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>SendHpMpAlertFromStatusBar(...)</code>：向外发送响应、消息或网络包。</li>
+<li><code>ApplyHpMpAlertToStatusBar(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>HandleHpMpAlertPacket(...)</code>：处理事件/请求/消息分发。</li>
+<li><code>SaveGlobal_Hook(...)</code>：持久化当前状态到存储层。</li>
+<li><code>ProcessPacket_Hook(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>HookSaveGlobal(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>HookHpMpAlertRecv(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="hpmpalerth"><code>HpMpAlert.h</code><a class="headerlink" href="#hpmpalerth" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>HookSaveGlobal(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>HookHpMpAlertRecv(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="inireaderh"><code>INIReader.h</code><a class="headerlink" href="#inireaderh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class INIReader</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>INIReader::INIReader(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>INIReader::ParseError(...)</code>：解析输入文本或二进制内容。</li>
+<li><code>INIReader::Sections(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>INIReader::Get(...)</code>：读取并返回状态/数据。</li>
+<li><code>INIReader::GetInteger(...)</code>：读取并返回状态/数据。</li>
+<li><code>INIReader::GetReal(...)</code>：读取并返回状态/数据。</li>
+<li><code>INIReader::GetFloat(...)</code>：读取并返回状态/数据。</li>
+<li><code>INIReader::GetBoolean(...)</code>：读取并返回状态/数据。</li>
+<li><code>std::transform(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>INIReader::MakeKey(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>INIReader::ValueHandler(...)</code>：处理事件/请求/消息分发。</li>
+<li><code>ini_parse(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ini_parse_file(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ini_parse_stream(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="mapleclientcollectiontypestsectypeh"><code>MapleClientCollectionTypes/TSecType.h</code><a class="headerlink" href="#mapleclientcollectiontypestsectypeh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class TSecData</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>class TSecType</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>class SECPOINT</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="mapleclientcollectiontypeszallocanonselectorh"><code>MapleClientCollectionTypes/ZAllocAnonSelector.h</code><a class="headerlink" href="#mapleclientcollectiontypeszallocanonselectorh" title="Permanent link">&para;</a></h2>
+<h2 id="mapleclientcollectiontypeszallocbaseh"><code>MapleClientCollectionTypes/ZAllocBase.h</code><a class="headerlink" href="#mapleclientcollectiontypeszallocbaseh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ZAllocBase</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="mapleclientcollectiontypeszallocexcpp"><code>MapleClientCollectionTypes/ZAllocEx.cpp</code><a class="headerlink" href="#mapleclientcollectiontypeszallocexcpp" title="Permanent link">&para;</a></h2>
+<h2 id="mapleclientcollectiontypeszallocexh"><code>MapleClientCollectionTypes/ZAllocEx.h</code><a class="headerlink" href="#mapleclientcollectiontypeszallocexh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>malloc(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>malloc(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>new(...)</code>：创建对象、会话或业务记录。</li>
+<li><code>delete(...)</code>：删除对象、关系或临时状态。</li>
+</ul>
+<h2 id="mapleclientcollectiontypeszallocstrselectorh"><code>MapleClientCollectionTypes/ZAllocStrSelector.h</code><a class="headerlink" href="#mapleclientcollectiontypeszallocstrselectorh" title="Permanent link">&para;</a></h2>
+<h2 id="mapleclientcollectiontypeszarrayh"><code>MapleClientCollectionTypes/ZArray.h</code><a class="headerlink" href="#mapleclientcollectiontypeszarrayh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ZArray</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="mapleclientcollectiontypeszfatalsectionh"><code>MapleClientCollectionTypes/ZFatalSection.h</code><a class="headerlink" href="#mapleclientcollectiontypeszfatalsectionh" title="Permanent link">&para;</a></h2>
+<h2 id="mapleclientcollectiontypeszlisth"><code>MapleClientCollectionTypes/ZList.h</code><a class="headerlink" href="#mapleclientcollectiontypeszlisth" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ZList</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="mapleclientcollectiontypeszmaph"><code>MapleClientCollectionTypes/ZMap.h</code><a class="headerlink" href="#mapleclientcollectiontypeszmaph" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ZMap</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="mapleclientcollectiontypeszrecyclableh"><code>MapleClientCollectionTypes/ZRecyclable.h</code><a class="headerlink" href="#mapleclientcollectiontypeszrecyclableh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ZRecyclable</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="mapleclientcollectiontypeszrecyclableavbufferh"><code>MapleClientCollectionTypes/ZRecyclableAvBuffer.h</code><a class="headerlink" href="#mapleclientcollectiontypeszrecyclableavbufferh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ZRecyclableAvBuffer</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="mapleclientcollectiontypeszrecyclablestatich"><code>MapleClientCollectionTypes/ZRecyclableStatic.h</code><a class="headerlink" href="#mapleclientcollectiontypeszrecyclablestatich" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ZFakeStatAvBuff</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>class ZRecyclableStatic</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="mapleclientcollectiontypeszrefh"><code>MapleClientCollectionTypes/ZRef.h</code><a class="headerlink" href="#mapleclientcollectiontypeszrefh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ZRef</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="mapleclientcollectiontypeszrefcountedh"><code>MapleClientCollectionTypes/ZRefCounted.h</code><a class="headerlink" href="#mapleclientcollectiontypeszrefcountedh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ZRefCounted</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="mapleclientcollectiontypeszrefcountedaccessorh"><code>MapleClientCollectionTypes/ZRefCountedAccessor.h</code><a class="headerlink" href="#mapleclientcollectiontypeszrefcountedaccessorh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ZRefCountedAccessor</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="mapleclientcollectiontypeszrefcounteddummyh"><code>MapleClientCollectionTypes/ZRefCountedDummy.h</code><a class="headerlink" href="#mapleclientcollectiontypeszrefcounteddummyh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ZRefCountedDummy</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="mapleclientcollectiontypeszxstringh"><code>MapleClientCollectionTypes/ZXString.h</code><a class="headerlink" href="#mapleclientcollectiontypeszxstringh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ZXString</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>strlen(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>wcslen(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="mapleclientcollectiontypesztlsecureh"><code>MapleClientCollectionTypes/ZtlSecure.h</code><a class="headerlink" href="#mapleclientcollectiontypesztlsecureh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class SECRECT</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="memorycpp"><code>Memory.cpp</code><a class="headerlink" href="#memorycpp" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>Memory::SetHook(...)</code>：写入或更新状态字段。</li>
+<li><code>Memory::FillBytes(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Memory::ReplaceString(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Memory::WriteString(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Memory::WriteByte(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Memory::WriteShort(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Memory::WriteInt(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Memory::WriteDouble(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Memory::WriteByteArray(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Memory::CodeCave(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="memoryh"><code>Memory.h</code><a class="headerlink" href="#memoryh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class Memory</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>SetHook(...)</code>：写入或更新状态字段。</li>
+<li><code>FillBytes(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ReplaceString(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>WriteString(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>WriteString(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>WriteByte(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>WriteShort(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>WriteInt(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>WriteDouble(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>CodeCave(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>WriteByteArray(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>PatchNop(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="nmcocpp"><code>NMCO.cpp</code><a class="headerlink" href="#nmcocpp" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>NMCO::CreateHook(...)</code>：创建对象、会话或业务记录。</li>
+<li><code>NMCO_CallNMFunc(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>NMCO_CallNMFunc2(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>NMCO_MemoryFree(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="nmcoh"><code>NMCO.h</code><a class="headerlink" href="#nmcoh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class NMCO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>CreateHook(...)</code>：创建对象、会话或业务记录。</li>
+</ul>
+<h2 id="replacementfuncsh"><code>ReplacementFuncs.h</code><a class="headerlink" href="#replacementfuncsh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>Memory::SetHook(...)</code>：写入或更新状态字段。</li>
+<li><code>HookGetModuleFileName(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>HookCreateWindowExA(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>create_window_ex_a(...)</code>：创建对象、会话或业务记录。</li>
+<li><code>_CreateMutexA(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="zallocexcpp"><code>ZAllocEx.cpp</code><a class="headerlink" href="#zallocexcpp" title="Permanent link">&para;</a></h2>
+<h2 id="codecavesh"><code>codecaves.h</code><a class="headerlink" href="#codecavesh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>AdjustStatusBar(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>AdjustStatusBarBG(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>AdjustStatusBarInput(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>PositionLoginDlg(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>PositionLoginUsername(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>PositionLoginPassword(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>PositionBossBarY(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>PositionBossBarY1(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>PositionBossBarY2(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>CashShopFix(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>CashShopFix1(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>CashShopFix2(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>CashShopFix3(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>CashShopFix4(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>CashShopFix5(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>CashShopFix6(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>CashShopFix7(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>CashShopFix8(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>CashShopFixPrev(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ITCFix1(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ITCFix2(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ITCFix3(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ITCFix4(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ITCFix5(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ITCFix6(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ITCFix7(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ITCFix8(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>VersionNumberFix(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>AlwaysViewRestoreFix(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccLoginBackCanvasFix(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccLoginViewRecFix(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccLoginDescriptorFix(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccMoreGainMsgs(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccMoreGainMsgsFade(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccMoreGainMsgsFade1(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccMuruengraidPlayer(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccMuruengraidClock(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccMuruengraidMonster(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccMuruengraidMonster1(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccMuruengraidMonster2(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccMuruengraidEngBar(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccMuruengraidEngBar1(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccMuruengraidEngBar2(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccMuruengraidClearRoundUI(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccMuruengraidTimerCanvas(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccMuruengraidTimerMinutes(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccMuruengraidTimerSeconds(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccMuruengraidTimerBar(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccMuruengraidMonster1_2(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccStatsSubMov(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ccCLoginSendCheckPasswordPacket(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x0044E550(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x0044E5BE(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x0044E5DB(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x0044E6AC(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x0044E71D(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x0044E80C(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x0044E8B4(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x0044EA22(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x0044EA6F(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x0044EBD6(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x0044ECA1(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x0044ED32(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x0044ED52(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x0044EED3(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x00494943(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x00494BB6(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x00494CA9(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x00494CF0(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x00494D3B(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x00494EAF(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x00494EEC(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x00494F87(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F4E84(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F4EC3(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F4F12(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F4FC6(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F503C(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F51A7(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F526F(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F5653(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F5833(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F5C2C(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F5CA3(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F5FBD(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F631C(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F691F(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F6F36(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F6F5C(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F7CFA(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F7D83(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F81FB(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F84E9(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x009F8AD4(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x00A4BB39(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x00A4BC79(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x00A4BD05(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x00A4BD4E(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x00A4BD99(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x00A4BDE3(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x00A4BDFE(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>cc0x00A4BE47(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>testingCodeCave(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>testingCodeCave2(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>testingCodeCave3(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>testingCodeCave4(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>fixMouseWheelHook(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>fixDateFormat(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>fixDateFormat2(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>fixDateFormat3(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>fixDateFormat4(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>getItemType1(...)</code>：读取并返回状态/数据。</li>
+<li><code>getItemType2(...)</code>：读取并返回状态/数据。</li>
+<li><code>calcClimbSpeed(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>darkMap1cc(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>darkMap2cc(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>darkMap3cc(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="detoursh"><code>detours.h</code><a class="headerlink" href="#detoursh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>DetourTransactionBegin(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourTransactionAbort(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourTransactionCommit(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourTransactionCommitEx(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourUpdateThread(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourSetIgnoreTooSmall(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourSetRetainRegions(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourSetSystemRegionLowerBound(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourSetSystemRegionUpperBound(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourGetContainingModule(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourEnumerateModules(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourGetEntryPoint(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourGetModuleSize(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourGetSizeOfPayloads(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourBinaryOpen(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourBinaryDeletePayload(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourBinaryPurgePayloads(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourBinaryResetImports(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourBinaryWrite(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourBinaryClose(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourRestoreAfterWith(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourIsHelperProcess(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>LPAPI_VERSION(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DWORD(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DWORD(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>DetourLoadImageHlp(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>SetInstruction(...)</code>：写入或更新状态字段。</li>
+<li><code>SetInstruction0(...)</code>：写入或更新状态字段。</li>
+<li><code>SetInstruction1(...)</code>：写入或更新状态字段。</li>
+<li><code>SetInstruction2(...)</code>：写入或更新状态字段。</li>
+<li><code>GetBits(...)</code>：读取并返回状态/数据。</li>
+<li><code>SetBits(...)</code>：写入或更新状态字段。</li>
+<li><code>GetImm7a(...)</code>：读取并返回状态/数据。</li>
+<li><code>SetImm7a(...)</code>：写入或更新状态字段。</li>
+<li><code>GetImm13c(...)</code>：读取并返回状态/数据。</li>
+<li><code>SetImm13c(...)</code>：写入或更新状态字段。</li>
+<li><code>GetSignBit(...)</code>：读取并返回状态/数据。</li>
+<li><code>SetSignBit(...)</code>：写入或更新状态字段。</li>
+<li><code>GetImm20a(...)</code>：读取并返回状态/数据。</li>
+<li><code>SetImm20a(...)</code>：写入或更新状态字段。</li>
+<li><code>GetImm20b(...)</code>：读取并返回状态/数据。</li>
+<li><code>SetImm20b(...)</code>：写入或更新状态字段。</li>
+<li><code>SignExtend(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>SetInst(...)</code>：写入或更新状态字段。</li>
+<li><code>SetInst0(...)</code>：写入或更新状态字段。</li>
+<li><code>SetInst1(...)</code>：写入或更新状态字段。</li>
+<li><code>SetInst2(...)</code>：写入或更新状态字段。</li>
+<li><code>SetData(...)</code>：写入或更新状态字段。</li>
+<li><code>SetData0(...)</code>：写入或更新状态字段。</li>
+<li><code>SetData1(...)</code>：写入或更新状态字段。</li>
+<li><code>SetData2(...)</code>：写入或更新状态字段。</li>
+<li><code>SetNop(...)</code>：写入或更新状态字段。</li>
+<li><code>SetNop0(...)</code>：写入或更新状态字段。</li>
+<li><code>SetNop1(...)</code>：写入或更新状态字段。</li>
+<li><code>SetNop2(...)</code>：写入或更新状态字段。</li>
+<li><code>SetBrl(...)</code>：写入或更新状态字段。</li>
+<li><code>SetBrl(...)</code>：写入或更新状态字段。</li>
+<li><code>SetBrlTarget(...)</code>：写入或更新状态字段。</li>
+<li><code>SetBrlImm(...)</code>：写入或更新状态字段。</li>
+<li><code>SetMovlGp(...)</code>：写入或更新状态字段。</li>
+<li><code>SetStop(...)</code>：写入或更新状态字段。</li>
+</ul>
+<h2 id="detverh"><code>detver.h</code><a class="headerlink" href="#detverh" title="Permanent link">&para;</a></h2>
+<h2 id="dllmaincpp"><code>dllmain.cpp</code><a class="headerlink" href="#dllmaincpp" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>std::string(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::UpdateGameStartup(...)</code>：更新已有对象/配置/缓存。</li>
+<li><code>Client::UpdateResolution(...)</code>：更新已有对象/配置/缓存。</li>
+<li><code>Client::FixMouseWheel(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::Chinese(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::LongQuickSlot(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::FixDateFormat(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::FixItemType(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::JumpCap(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::FixChatPosHook(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::NoPassword(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::MoreHook(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>BossHP::Hook(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Client::WorldMap(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>ijl15::CreateHook(...)</code>：创建对象、会话或业务记录。</li>
+<li><code>CreateConsole(...)</code>：创建对象、会话或业务记录。</li>
+<li><code>reader(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="dllmainh"><code>dllmain.h</code><a class="headerlink" href="#dllmainh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>CreateConsole(...)</code>：创建对象、会话或业务记录。</li>
+<li><code>CreateHook(...)</code>：创建对象、会话或业务记录。</li>
+</ul>
+<h2 id="ijl15cpp"><code>ijl15.cpp</code><a class="headerlink" href="#ijl15cpp" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>ijl15::CreateHook(...)</code>：创建对象、会话或业务记录。</li>
+</ul>
+<h2 id="ijl15h"><code>ijl15.h</code><a class="headerlink" href="#ijl15h" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ijl15</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>CreateHook(...)</code>：创建对象、会话或业务记录。</li>
+</ul>
+<h2 id="resourceh"><code>resource.h</code><a class="headerlink" href="#resourceh" title="Permanent link">&para;</a></h2>
+<h2 id="stdafxcpp"><code>stdafx.cpp</code><a class="headerlink" href="#stdafxcpp" title="Permanent link">&para;</a></h2>
+<h2 id="stdafxh"><code>stdafx.h</code><a class="headerlink" href="#stdafxh" title="Permanent link">&para;</a></h2>
+<h2 id="syelogh"><code>syelog.h</code><a class="headerlink" href="#syelogh" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>SyelogOpen(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>Syelog(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>SyelogV(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>SyelogClose(...)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="targetverh"><code>targetver.h</code><a class="headerlink" href="#targetverh" title="Permanent link">&para;</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

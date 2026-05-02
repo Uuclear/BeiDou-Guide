@@ -1,0 +1,4053 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BeiDou 游戏系统开发文档与源码索引">
+      
+      
+        <meta name="author" content="BeiDou-Guide">
+      
+      
+        <link rel="canonical" href="https://uuclear.github.io/BeiDou-Guide/07-%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">
+      
+      
+        <link rel="prev" href="../06-%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/">
+      
+      
+        <link rel="next" href="../08-%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83%E6%96%87%E6%A1%A3/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>用户手册 - BeiDou 开发文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="BeiDou 开发文档" class="md-header__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BeiDou 开发文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              用户手册
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../read-guide/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  阅读指引
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  环境与架构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  源码精读与导读
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../reference/gms-server-symbol-notes-README/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  自动生成索引
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BeiDou 开发文档" class="md-nav__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    BeiDou 开发文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../read-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阅读指引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境与架构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    环境与架构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-API%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 接口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运维部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用户手册
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用户手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        玩家使用指南
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="玩家使用指南">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        客户端安装步骤
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="客户端安装步骤">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 下载客户端
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ijl15dll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 安装 ijl15.dll
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 复制配置文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 配置服务器地址
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 配置分辨率
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configini" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config.ini 配置指南
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="config.ini 配置指南">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        中文输入配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        窗口模式配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        属性上限突破
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        游戏功能说明
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="游戏功能说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        新增功能列表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        中文输入设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        装备汉化相关
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        游戏启动
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="游戏启动">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        启动步骤
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        首次登录
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        管理员操作手册
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="管理员操作手册">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web后台访问
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web后台访问">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        访问地址
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        登录账号
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用户管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="用户管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查询用户
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用户详情
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        封禁用户
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        解封用户
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        角色管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="角色管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查询角色
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        角色详情
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        修改角色
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        删除角色
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        服务器监控
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="服务器监控">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查看服务器状态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在线玩家列表
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置修改
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置修改">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        游戏参数配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置修改流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        商店管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="商店管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查看商店
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        修改商店物品
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见问题解答
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常见问题解答">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        玩家常见问题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="玩家常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 登录后崩溃怎么办？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 中文输入卡门怎么办？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 滚轮乱飞怎么解决？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 如何调整分辨率？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-boss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Boss血量显示在哪里？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 如何使用免密登录？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        管理员常见问题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="管理员常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 后台无法登录？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 配置修改不生效？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 数据库表没有创建？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 如何添加新用户？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 如何修改管理员密码？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附录
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附录">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        客户端目录结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        支持的WZ路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        技术支持
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        下一步
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    技术规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码精读与导读
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    源码精读与导读
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码深度导读
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-BeiDou-ijl15-%E6%BA%90%E7%A0%81%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 源码详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-%E5%85%A8%E9%87%8F%E6%BA%90%E7%A0%81%E7%AC%A6%E5%8F%B7%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与生成说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-%E6%BA%90%E7%A0%81%E6%A8%A1%E5%9D%97%E7%B2%BE%E8%AF%BB-%E4%BA%BA%E6%9C%BA%E6%92%B0%E5%86%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码模块精读（人机撰写）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自动生成索引
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    自动生成索引
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 逐符号职责（分卷）
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    gms-server 逐符号职责（分卷）
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    分卷索引与用法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    （跳转）单文件入口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/_root/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    org.gms 根
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/aop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    controller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/dao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dao
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/exception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    exception
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/net/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    net
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    property
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/util/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    util
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与 API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    全量符号与 API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-api-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server public 索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-ui-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-ui-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/beidou-ijl15-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/beidou-ijl15-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        玩家使用指南
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="玩家使用指南">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        客户端安装步骤
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="客户端安装步骤">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 下载客户端
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ijl15dll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 安装 ijl15.dll
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 复制配置文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 配置服务器地址
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 配置分辨率
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configini" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        config.ini 配置指南
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="config.ini 配置指南">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        中文输入配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        窗口模式配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        属性上限突破
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        游戏功能说明
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="游戏功能说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        新增功能列表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        中文输入设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        装备汉化相关
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        游戏启动
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="游戏启动">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        启动步骤
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        首次登录
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        管理员操作手册
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="管理员操作手册">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web后台访问
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Web后台访问">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        访问地址
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        登录账号
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用户管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="用户管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查询用户
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        用户详情
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        封禁用户
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        解封用户
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        角色管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="角色管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查询角色
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        角色详情
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        修改角色
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        删除角色
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        服务器监控
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="服务器监控">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查看服务器状态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在线玩家列表
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置修改
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置修改">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        游戏参数配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置修改流程
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        商店管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="商店管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查看商店
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        修改商店物品
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见问题解答
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常见问题解答">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        玩家常见问题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="玩家常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 登录后崩溃怎么办？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 中文输入卡门怎么办？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 滚轮乱飞怎么解决？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 如何调整分辨率？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-boss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: Boss血量显示在哪里？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 如何使用免密登录？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        管理员常见问题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="管理员常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 后台无法登录？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 配置修改不生效？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 数据库表没有创建？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 如何添加新用户？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q: 如何修改管理员密码？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附录
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="附录">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        客户端目录结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        支持的WZ路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        技术支持
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        下一步
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/Uuclear/BeiDou-Guide/edit/main/docs/07-用户使用手册.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="_1">用户使用手册<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>本文档介绍 BeiDou 系统的玩家使用指南和管理员后台操作手册。</p>
+<hr />
+<h2 id="_2">目录<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#玩家使用指南">玩家使用指南</a></li>
+<li><a href="#管理员操作手册">管理员操作手册</a></li>
+<li><a href="#常见问题解答">常见问题解答</a></li>
+</ol>
+<hr />
+<h2 id="_3">玩家使用指南<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">客户端安装步骤<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h4 id="1">1. 下载客户端<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<p>从官方 Release 下载完整的客户端和服务端打包文件：</p>
+<p>https://github.com/BeiDouMS/BeiDou-Server/releases</p>
+<h4 id="2-ijl15dll">2. 安装 ijl15.dll<a class="headerlink" href="#2-ijl15dll" title="Permanent link">&para;</a></h4>
+<p><strong>步骤：</strong></p>
+<ol>
+<li>进入游戏客户端目录</li>
+<li>找到原有的 <code>ijl15.dll</code> 文件</li>
+<li>将其重命名为 <code>2ijl15.dll</code>（作为备份）</li>
+<li>将新编译的 <code>ijl15.dll</code> 复制到客户端目录</li>
+</ol>
+<p><strong>文件来源：</strong></p>
+<ul>
+<li>自行编译：<code>BeiDou-ijl15/out/Release/ijl15.dll</code></li>
+<li>Release下载：解压后获取</li>
+</ul>
+<h4 id="3">3. 复制配置文件<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<p>将 <code>config.ini</code> 文件复制到游戏客户端目录。</p>
+<p><strong>配置文件位置：</strong></p>
+<ul>
+<li>自行编译：<code>BeiDou-ijl15/ezorsia/config.ini</code></li>
+<li>Release下载：解压后获取</li>
+</ul>
+<h4 id="4">4. 配置服务器地址<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
+<p>编辑 <code>config.ini</code>，设置服务器连接信息：</p>
+<div class="highlight"><pre><span></span><code><span class="k">[general]</span>
+<span class="c1">;服务器地址</span>
+<span class="na">ServerIP_Address</span><span class="o">=</span><span class="s">127.0.0.1</span><span class="w">    </span><span class="c1"># 修改为服务器IP</span>
+<span class="na">serverIP_Port</span><span class="o">=</span><span class="s">8484</span><span class="w">             </span><span class="c1"># 游戏端口，默认8484</span>
+</code></pre></div>
+<h4 id="5">5. 配置分辨率<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
+<p>根据显示器调整分辨率：</p>
+<div class="highlight"><pre><span></span><code><span class="k">[general]</span>
+<span class="na">width</span><span class="o">=</span><span class="s">1280</span><span class="w">    </span><span class="c1"># 分辨率宽度</span>
+<span class="na">height</span><span class="o">=</span><span class="s">720</span><span class="w">    </span><span class="c1"># 分辨率高度</span>
+</code></pre></div>
+<p><strong>推荐分辨率：</strong>
+- 1280x720
+- 1366x768
+- 1600x900
+- 1920x1080</p>
+<h3 id="configini">config.ini 配置指南<a class="headerlink" href="#configini" title="Permanent link">&para;</a></h3>
+<h4 id="_5">中文输入配置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">[general]</span>
+<span class="c1">;IME 修复方案</span>
+<span class="na">imeType</span><span class="o">=</span><span class="s">1</span><span class="w">           </span><span class="c1"># 优先尝试方案1</span>
+
+<span class="c1">;加载文字汉化</span>
+<span class="na">SwitchChinese</span><span class="o">=</span><span class="s">true</span><span class="w">  </span><span class="c1"># 开启汉化</span>
+</code></pre></div>
+<p>如果方案1导致"卡门"问题，请改为 <code>imeType=0</code>。</p>
+<h4 id="_6">窗口模式配置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">[general]</span>
+<span class="na">WindowedMode</span><span class="o">=</span><span class="s">true</span><span class="w">   </span><span class="c1"># 窗口模式</span>
+<span class="na">RemoveLogos</span><span class="o">=</span><span class="s">true</span><span class="w">    </span><span class="c1"># 跳过开场动画</span>
+</code></pre></div>
+<h4 id="_7">属性上限突破<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">[optional]</span>
+<span class="c1">;突破原版属性上限</span>
+<span class="na">setDamageCap</span><span class="o">=</span><span class="s">199999</span><span class="w">     </span><span class="c1"># 物理攻击上限</span>
+<span class="na">setMAtkCap</span><span class="o">=</span><span class="s">1999</span><span class="w">         </span><span class="c1"># 魔攻上限</span>
+<span class="na">setAccCap</span><span class="o">=</span><span class="s">999</span><span class="w">           </span><span class="c1"># 命中上限</span>
+<span class="na">setAvdCap</span><span class="o">=</span><span class="s">999</span><span class="w">           </span><span class="c1"># 回避上限</span>
+<span class="na">speedMovementCap</span><span class="o">=</span><span class="s">140</span><span class="w">    </span><span class="c1"># 移速上限</span>
+<span class="na">jumpCap</span><span class="o">=</span><span class="s">123</span><span class="w">             </span><span class="c1"># 跳跃上限</span>
+</code></pre></div>
+<h3 id="_8">游戏功能说明<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h4 id="_9">新增功能列表<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>BeiDou 相比原版新增以下功能：</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中文输入</td>
+<td>支持中文输入，解决卡门问题</td>
+</tr>
+<tr>
+<td>中文角色名</td>
+<td>支持创建中文角色名</td>
+</tr>
+<tr>
+<td>滚轮修复</td>
+<td>修复鼠标滚轮乱飞问题</td>
+</tr>
+<tr>
+<td>ToolTip修复</td>
+<td>修复提示框超出窗口问题</td>
+</tr>
+<tr>
+<td>长快捷键</td>
+<td>支持长键盘快捷键</td>
+</tr>
+<tr>
+<td>交易中心居中</td>
+<td>交易中心窗口居中显示</td>
+</tr>
+<tr>
+<td>中文汉化</td>
+<td>游戏界面中文汉化</td>
+</tr>
+<tr>
+<td>属性上限突破</td>
+<td>魔攻/魔防/命中/回避/跳跃上限突破</td>
+</tr>
+<tr>
+<td>Boss血量显示</td>
+<td>Boss血条头像下方显示百分比</td>
+</tr>
+<tr>
+<td>免密模式</td>
+<td>配合服务端实现免密登录</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_10">中文输入设置<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>BeiDou 完整支持中文输入：</p>
+<ul>
+<li>角色名支持中文</li>
+<li>聊天框支持中文</li>
+<li>搜索框支持中文</li>
+</ul>
+<p><strong>注意事项：</strong></p>
+<p>如果遇到中文输入卡顿或卡门：</p>
+<ol>
+<li>将 <code>imeType</code> 改为 <code>0</code></li>
+<li>重启游戏客户端</li>
+</ol>
+<h4 id="_11">装备汉化相关<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>针对中文环境的调整：</p>
+<ol>
+<li>装备tooltip字体大小优化</li>
+<li>道具有效期字体大小调整</li>
+<li>有效期日期顺序修复</li>
+<li>聊天栏选项汉化（远征队）</li>
+<li>解决 Eqp、Etc 汉化后崩溃问题</li>
+<li>解决 Use 汉化后吃药没声音问题</li>
+</ol>
+<h3 id="_12">游戏启动<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h4 id="_13">启动步骤<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<ol>
+<li>确认 <code>ijl15.dll</code> 和 <code>config.ini</code> 在客户端目录</li>
+<li>确认 <code>2ijl15.dll</code> 备份文件存在</li>
+<li>双击启动游戏</li>
+<li>输入账号密码登录</li>
+</ol>
+<h4 id="_14">首次登录<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<p>如果是首次登录且服务器开启自动注册：</p>
+<ul>
+<li>直接输入新账号名和密码</li>
+<li>系统自动创建账号</li>
+</ul>
+<hr />
+<h2 id="_15">管理员操作手册<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h3 id="web">Web后台访问<a class="headerlink" href="#web" title="Permanent link">&para;</a></h3>
+<h4 id="_16">访问地址<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>http://localhost:8787
+</code></pre></div>
+<p>或生产环境：</p>
+<div class="highlight"><pre><span></span><code>http://your-server:8787
+</code></pre></div>
+<h4 id="_17">登录账号<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
+<p>默认管理员账号：</p>
+<table>
+<thead>
+<tr>
+<th>账号</th>
+<th>密码</th>
+<th>角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>admin</td>
+<td>admin</td>
+<td>管理员</td>
+</tr>
+</tbody>
+</table>
+<p><strong>安全提醒：</strong> 生产环境必须修改默认密码。</p>
+<h3 id="_18">用户管理<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<h4 id="_19">查询用户<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
+<ol>
+<li>进入"用户管理"页面</li>
+<li>可搜索用户名或ID</li>
+<li>查看用户列表</li>
+</ol>
+<h4 id="_20">用户详情<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
+<p>点击用户可查看：</p>
+<ul>
+<li>账户信息</li>
+<li>角色列表</li>
+<li>登录记录</li>
+<li>封禁状态</li>
+</ul>
+<h4 id="_21">封禁用户<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
+<ol>
+<li>选择目标用户</li>
+<li>点击"封禁"按钮</li>
+<li>输入封禁原因</li>
+<li>设置封禁时长（可选）</li>
+<li>确认封禁</li>
+</ol>
+<p><strong>封禁类型：</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>临时封禁</td>
+<td>设置解封时间</td>
+</tr>
+<tr>
+<td>永久封禁</td>
+<td>不设置解封时间</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_22">解封用户<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
+<ol>
+<li>选择已封禁用户</li>
+<li>点击"解封"按钮</li>
+<li>确认解封</li>
+</ol>
+<h3 id="_23">角色管理<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<h4 id="_24">查询角色<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h4>
+<ol>
+<li>进入"角色管理"页面</li>
+<li>可搜索角色名或ID</li>
+<li>查看角色列表</li>
+</ol>
+<h4 id="_25">角色详情<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
+<p>点击角色可查看：</p>
+<ul>
+<li>基本信息（等级、职业、金币）</li>
+<li>属性详情（STR、DEX、INT、LUK）</li>
+<li>装备列表</li>
+<li>背包物品</li>
+</ul>
+<h4 id="_26">修改角色<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h4>
+<p>可修改角色属性：</p>
+<ul>
+<li>调整等级</li>
+<li>调整金币</li>
+<li>调整属性值</li>
+<li>添加/删除物品</li>
+</ul>
+<h4 id="_27">删除角色<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h4>
+<ol>
+<li>选择目标角色</li>
+<li>点击"删除"按钮</li>
+<li>确认删除</li>
+</ol>
+<p><strong>注意：</strong> 删除操作不可恢复，请谨慎操作。</p>
+<h3 id="_28">服务器监控<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<h4 id="_29">查看服务器状态<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h4>
+<p>进入"服务器状态"页面可查看：</p>
+<table>
+<thead>
+<tr>
+<th>信息</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>运行状态</td>
+<td>是否正常运行</td>
+</tr>
+<tr>
+<td>在线人数</td>
+<td>当前在线玩家数</td>
+</tr>
+<tr>
+<td>频道状态</td>
+<td>各频道状态</td>
+</tr>
+<tr>
+<td>系统负载</td>
+<td>CPU、内存使用率</td>
+</tr>
+<tr>
+<td>运行时间</td>
+<td>服务运行时长</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_30">在线玩家列表<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h4>
+<p>可查看在线玩家：</p>
+<ul>
+<li>角色名</li>
+<li>等级</li>
+<li>所在地图</li>
+<li>在线时长</li>
+</ul>
+<h3 id="_31">配置修改<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
+<h4 id="_32">游戏参数配置<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h4>
+<p>进入"游戏配置"页面可修改：</p>
+<p><strong>大区配置：</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经验倍率</td>
+<td>exp_rate</td>
+</tr>
+<tr>
+<td>金币倍率</td>
+<td>meso_rate</td>
+</tr>
+<tr>
+<td>掉落倍率</td>
+<td>drop_rate</td>
+</tr>
+<tr>
+<td>频道数</td>
+<td>channel_size</td>
+</tr>
+<tr>
+<td>服务器信息</td>
+<td>server_message</td>
+</tr>
+</tbody>
+</table>
+<p><strong>服务器配置：</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>频道容量</td>
+<td>channel_capacity</td>
+</tr>
+<tr>
+<td>怪物刷新间隔</td>
+<td>respawn_interval</td>
+</tr>
+<tr>
+<td>物品消失时间</td>
+<td>item_expire_time</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_33">配置修改流程<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h4>
+<ol>
+<li>找到目标配置项</li>
+<li>修改参数值</li>
+<li>点击保存</li>
+<li>配置自动生效（部分需重启）</li>
+</ol>
+<h3 id="_34">商店管理<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
+<h4 id="_35">查看商店<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h4>
+<p>可查看服务器商店：</p>
+<ul>
+<li>商店ID</li>
+<li>NPC ID</li>
+<li>商店物品列表</li>
+</ul>
+<h4 id="_36">修改商店物品<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h4>
+<p>可调整：</p>
+<ul>
+<li>物品价格</li>
+<li>物品库存</li>
+<li>物品顺序</li>
+</ul>
+<hr />
+<h2 id="_37">常见问题解答<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h2>
+<h3 id="_38">玩家常见问题<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h3>
+<h4 id="q">Q: 登录后崩溃怎么办？<a class="headerlink" href="#q" title="Permanent link">&para;</a></h4>
+<p>A: 检查以下问题：
+1. 确保 DLL 文件正确替换
+2. 尝试修改 <code>imeType=0</code>
+3. 检查分辨率设置是否兼容
+4. 确认服务器地址和端口正确</p>
+<h4 id="q_1">Q: 中文输入卡门怎么办？<a class="headerlink" href="#q_1" title="Permanent link">&para;</a></h4>
+<p>A: 将 config.ini 中的 <code>imeType</code> 改为 <code>0</code>。</p>
+<h4 id="q_2">Q: 滚轮乱飞怎么解决？<a class="headerlink" href="#q_2" title="Permanent link">&para;</a></h4>
+<p>A: BeiDou 已修复此问题，确保使用正确的 ijl15.dll。</p>
+<h4 id="q_3">Q: 如何调整分辨率？<a class="headerlink" href="#q_3" title="Permanent link">&para;</a></h4>
+<p>A: 编辑 config.ini：</p>
+<div class="highlight"><pre><span></span><code><span class="na">width</span><span class="o">=</span><span class="s">1920</span>
+<span class="na">height</span><span class="o">=</span><span class="s">1080</span>
+</code></pre></div>
+<h4 id="q-boss">Q: Boss血量显示在哪里？<a class="headerlink" href="#q-boss" title="Permanent link">&para;</a></h4>
+<p>A: 在 Boss 血条的头像下方显示百分比。</p>
+<h4 id="q_4">Q: 如何使用免密登录？<a class="headerlink" href="#q_4" title="Permanent link">&para;</a></h4>
+<p>A: 需要服务端配合开启免密模式：
+- 服务端：<code>game_config</code> 表设置 <code>no_password=true</code>
+- 客户端：<code>config.ini</code> 设置 <code>debug=true</code> 和 <code>noPassword=true</code></p>
+<h3 id="_39">管理员常见问题<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h3>
+<h4 id="q_5">Q: 后台无法登录？<a class="headerlink" href="#q_5" title="Permanent link">&para;</a></h4>
+<p>A: 检查：
+1. API服务是否运行（端口8686）
+2. 前端是否运行（端口8787）
+3. 账号密码是否正确
+4. JWT配置是否正确</p>
+<h4 id="q_6">Q: 配置修改不生效？<a class="headerlink" href="#q_6" title="Permanent link">&para;</a></h4>
+<p>A: 部分配置需要重启服务端：
+- 大区配置（倍率等）：通常即时生效
+- 核心配置：可能需要重启
+- 网络配置：需要重启</p>
+<h4 id="q_7">Q: 数据库表没有创建？<a class="headerlink" href="#q_7" title="Permanent link">&para;</a></h4>
+<p>A: 确保：
+1. MySQL服务已启动
+2. 数据库连接配置正确
+3. Flyway自动创建表</p>
+<h4 id="q_8">Q: 如何添加新用户？<a class="headerlink" href="#q_8" title="Permanent link">&para;</a></h4>
+<p>A: 两种方式：
+1. 开启自动注册，用户首次登录自动创建
+2. Web后台手动创建</p>
+<h4 id="q_9">Q: 如何修改管理员密码？<a class="headerlink" href="#q_9" title="Permanent link">&para;</a></h4>
+<p>A:
+1. 数据库修改：<code>UPDATE accounts SET password = 'new_password' WHERE name = 'admin'</code>
+2. Web后台修改：用户管理页面</p>
+<hr />
+<h2 id="_40">附录<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h2>
+<h3 id="_41">客户端目录结构<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>游戏客户端目录/
+├── ijl15.dll            # BeiDou DLL（新）
+├── 2ijl15.dll           # 原 DLL备份
+├── config.ini           # BeiDou配置文件
+├── MapleStory.exe       # 游戏主程序
+├── wz/                  # WZ资源文件
+├── Data/                # 其他数据文件
+└── ...其他文件
+</code></pre></div>
+<h3 id="wz">支持的WZ路径<a class="headerlink" href="#wz" title="Permanent link">&para;</a></h3>
+<p>BeiDou支持多语言WZ：</p>
+<table>
+<thead>
+<tr>
+<th>语言</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中文</td>
+<td>wz-zh-CN/</td>
+</tr>
+<tr>
+<td>英文</td>
+<td>wz-en-US/</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_42">技术支持<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h3>
+<p>如遇到问题：</p>
+<ol>
+<li>查阅 Wiki：https://github.com/BeiDouMS/BeiDou-Server/wiki</li>
+<li>提交 Issue：https://github.com/BeiDouMS/BeiDou-Server/issues</li>
+<li>Wiki 已开放编辑，欢迎补充内容</li>
+</ol>
+<hr />
+<h2 id="_43">下一步<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../08-%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83%E6%96%87%E6%A1%A3/">技术规范文档</a> - 开发规范与最佳实践</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

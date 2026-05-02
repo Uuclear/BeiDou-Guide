@@ -1,0 +1,3841 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BeiDou 游戏系统开发文档与源码索引">
+      
+      
+        <meta name="author" content="BeiDou-Guide">
+      
+      
+        <link rel="canonical" href="https://uuclear.github.io/BeiDou-Guide/05-%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/">
+      
+      
+        <link rel="prev" href="../04-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/">
+      
+      
+        <link rel="next" href="../06-%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>配置说明 - BeiDou 开发文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="BeiDou 开发文档" class="md-header__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BeiDou 开发文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              配置说明
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../read-guide/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  阅读指引
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  环境与架构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  源码精读与导读
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../reference/gms-server-symbol-notes-README/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  自动生成索引
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BeiDou 开发文档" class="md-nav__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    BeiDou 开发文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../read-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阅读指引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境与架构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    环境与架构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-API%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 接口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置说明
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        服务端配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="服务端配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置文件位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整配置说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置分类详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置分类详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 服务器端口配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. JWT认证配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 数据库配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-swagger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Swagger配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 多语言配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 限流配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. IP配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        客户端DLL配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="客户端DLL配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置文件位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整配置说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置分类详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置分类详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 基本配置 [general]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 属性上限配置 [optional]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 其他功能配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-debug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 调试配置 [debug]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        前端配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="前端配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置文件位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要配置项
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vite配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packagejson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        package.json配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据库配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据库配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        游戏配置表配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="游戏配置表配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#world" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        大区配置 (world)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servercore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        服务器核心配置 (server/Core)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servergame-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        游戏机制配置 (server/Game Mechanics)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serversafe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安全配置 (server/Safe)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gm-servergm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GM配置 (server/GM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置修改方式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置修改方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        服务端配置修改
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        客户端配置修改
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        游戏参数修改
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        下一步
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运维部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用户手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    技术规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码精读与导读
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    源码精读与导读
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码深度导读
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-BeiDou-ijl15-%E6%BA%90%E7%A0%81%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 源码详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-%E5%85%A8%E9%87%8F%E6%BA%90%E7%A0%81%E7%AC%A6%E5%8F%B7%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与生成说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-%E6%BA%90%E7%A0%81%E6%A8%A1%E5%9D%97%E7%B2%BE%E8%AF%BB-%E4%BA%BA%E6%9C%BA%E6%92%B0%E5%86%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码模块精读（人机撰写）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自动生成索引
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    自动生成索引
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 逐符号职责（分卷）
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    gms-server 逐符号职责（分卷）
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    分卷索引与用法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    （跳转）单文件入口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/_root/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    org.gms 根
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/aop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    controller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/dao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dao
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/exception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    exception
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/net/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    net
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    property
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/util/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    util
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与 API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    全量符号与 API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-api-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server public 索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-ui-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-ui-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/beidou-ijl15-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/beidou-ijl15-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        服务端配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="服务端配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置文件位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整配置说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置分类详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置分类详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 服务器端口配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. JWT认证配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 数据库配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-swagger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Swagger配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 多语言配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 限流配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. IP配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        客户端DLL配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="客户端DLL配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置文件位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整配置说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置分类详解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置分类详解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 基本配置 [general]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 属性上限配置 [optional]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 其他功能配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-debug" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 调试配置 [debug]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        前端配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="前端配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置文件位置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        主要配置项
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vite配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packagejson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        package.json配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据库配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据库配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        游戏配置表配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="游戏配置表配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#world" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        大区配置 (world)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servercore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        服务器核心配置 (server/Core)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servergame-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        游戏机制配置 (server/Game Mechanics)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serversafe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安全配置 (server/Safe)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gm-servergm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GM配置 (server/GM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置修改方式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置修改方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        服务端配置修改
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        客户端配置修改
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        游戏参数修改
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        下一步
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/Uuclear/BeiDou-Guide/edit/main/docs/05-配置说明文档.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="_1">配置说明文档<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>本文档详细介绍 BeiDou 服务端和客户端的配置文件参数。</p>
+<hr />
+<h2 id="_2">目录<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#服务端配置">服务端配置</a></li>
+<li><a href="#客户端dll配置">客户端DLL配置</a></li>
+<li><a href="#前端配置">前端配置</a></li>
+<li><a href="#数据库配置">数据库配置</a></li>
+</ol>
+<hr />
+<h2 id="_3">服务端配置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">配置文件位置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>gms-server/src/main/resources/application.yml
+</code></pre></div>
+<h3 id="_5">完整配置说明<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">server</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8686</span><span class="w">                      </span><span class="c1"># API服务端口</span>
+
+<span class="nt">app</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">vue</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://localhost:8787</span><span class="w">      </span><span class="c1"># 前端地址，用于跨域配置</span>
+
+<span class="nt">jwt</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;50da066e-6080-40f5-a173-86bd27d4f674&quot;</span><span class="w">  </span><span class="c1"># JWT签名密钥</span>
+<span class="w">  </span><span class="nt">duration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1800000</span><span class="w">               </span><span class="c1"># Token有效期（毫秒），默认30分钟</span>
+
+<span class="nt">mybatis-flex</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">datasource</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">mysql</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">com.alibaba.druid.pool.DruidDataSource</span><span class="w">  </span><span class="c1"># 数据源类型</span>
+<span class="w">      </span><span class="nt">driver-class-name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">com.mysql.cj.jdbc.Driver</span><span class="w">   </span><span class="c1"># 驱动类</span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jdbc:mysql://localhost:3306/beidou?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=Asia/Shanghai</span><span class="w">  </span><span class="c1"># 数据库连接URL</span>
+<span class="w">      </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w">               </span><span class="c1"># 数据库用户名</span>
+<span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w">               </span><span class="c1"># 数据库密码</span>
+<span class="w">  </span><span class="nt">global-config</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">print-banner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">           </span><span class="c1"># 是否打印MyBatis-Flex banner</span>
+
+<span class="nt">springdoc</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">api-docs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">                 </span><span class="c1"># 是否开启OpenApi</span>
+<span class="w">  </span><span class="nt">swagger-ui</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">                 </span><span class="c1"># 是否开启SwaggerUI</span>
+
+<span class="nt">spring</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">flyway</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">validate-on-migrate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">    </span><span class="c1"># 禁用迁移版本验证</span>
+<span class="w">  </span><span class="nt">servlet</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">multipart</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">max-file-size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1MB</span><span class="w">          </span><span class="c1"># 单文件大小限制</span>
+<span class="w">      </span><span class="nt">max-request-size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10MB</span><span class="w">      </span><span class="c1"># 总请求大小限制</span>
+<span class="w">  </span><span class="nt">jackson</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">time-zone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asia/Shanghai</span><span class="w">      </span><span class="c1"># JSON时区</span>
+<span class="w">    </span><span class="nt">date-format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yyyy-MM-dd HH:mm:ss</span><span class="w">  </span><span class="c1"># JSON日期格式</span>
+
+<span class="nt">gms</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">service</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zh-CN</span><span class="w">               </span><span class="c1"># 服务语言（zh-CN、en-US）</span>
+<span class="w">    </span><span class="nt">rate-limit</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">              </span><span class="c1"># 是否开启限流</span>
+<span class="w">      </span><span class="nt">limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w">                    </span><span class="c1"># 每IP最大请求数</span>
+<span class="w">      </span><span class="nt">duration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span><span class="w">              </span><span class="c1"># 重置时间（毫秒）</span>
+<span class="w">      </span><span class="nt">auto-ban</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">              </span><span class="c1"># 是否自动封禁</span>
+<span class="w">    </span><span class="nt">wan-host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span><span class="w">           </span><span class="c1"># 公网IP</span>
+<span class="w">    </span><span class="nt">lan-host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span><span class="w">           </span><span class="c1"># 局域网IP</span>
+<span class="w">    </span><span class="nt">localhost</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span><span class="w">          </span><span class="c1"># 本地IP</span>
+<span class="w">    </span><span class="nt">login-port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8484</span><span class="w">              </span><span class="c1"># 游戏登录端口</span>
+</code></pre></div>
+<h3 id="_6">配置分类详解<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h4 id="1">1. 服务器端口配置<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>server.port</td>
+<td>8686</td>
+<td>REST API 服务端口</td>
+</tr>
+<tr>
+<td>gms.service.login-port</td>
+<td>8484</td>
+<td>游戏客户端连接端口</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-jwt">2. JWT认证配置<a class="headerlink" href="#2-jwt" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jwt.secret</td>
+<td>UUID字符串</td>
+<td>Token签名密钥</td>
+</tr>
+<tr>
+<td>jwt.duration</td>
+<td>1800000</td>
+<td>Token有效期（30分钟）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>安全提醒：</strong> 生产环境必须修改 jwt.secret 为自定义 UUID。</p>
+<h4 id="3">3. 数据库配置<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td>jdbc:mysql://localhost:3306/beidou</td>
+<td>数据库连接地址</td>
+</tr>
+<tr>
+<td>username</td>
+<td>root</td>
+<td>数据库用户名</td>
+</tr>
+<tr>
+<td>password</td>
+<td>root</td>
+<td>数据库密码</td>
+</tr>
+</tbody>
+</table>
+<p><strong>连接参数说明：</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>useUnicode=true</td>
+<td>使用Unicode编码</td>
+</tr>
+<tr>
+<td>characterEncoding=utf-8</td>
+<td>字符编码UTF-8</td>
+</tr>
+<tr>
+<td>useSSL=false</td>
+<td>不使用SSL连接</td>
+</tr>
+<tr>
+<td>serverTimezone=Asia/Shanghai</td>
+<td>时区设置</td>
+</tr>
+</tbody>
+</table>
+<h4 id="4-swagger">4. Swagger配置<a class="headerlink" href="#4-swagger" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>springdoc.api-docs.enabled</td>
+<td>true</td>
+<td>开启OpenApi</td>
+</tr>
+<tr>
+<td>springdoc.swagger-ui.enabled</td>
+<td>true</td>
+<td>开启SwaggerUI</td>
+</tr>
+</tbody>
+</table>
+<p><strong>生产环境建议关闭：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">springdoc</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">api-docs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">swagger-ui</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+<h4 id="5">5. 多语言配置<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gms.service.language</td>
+<td>zh-CN</td>
+<td>服务语言</td>
+</tr>
+</tbody>
+</table>
+<p><strong>可选值：</strong>
+- <code>zh-CN</code> - 中文简体
+- <code>en-US</code> - 英文</p>
+<h4 id="6">6. 限流配置<a class="headerlink" href="#6" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rate-limit.enabled</td>
+<td>false</td>
+<td>是否开启限流</td>
+</tr>
+<tr>
+<td>rate-limit.limit</td>
+<td>10</td>
+<td>每IP最大请求数</td>
+</tr>
+<tr>
+<td>rate-limit.duration</td>
+<td>1000</td>
+<td>重置时间（毫秒）</td>
+</tr>
+<tr>
+<td>rate-limit.auto-ban</td>
+<td>false</td>
+<td>是否自动封禁</td>
+</tr>
+</tbody>
+</table>
+<h4 id="7-ip">7. IP配置<a class="headerlink" href="#7-ip" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wan-host</td>
+<td>127.0.0.1</td>
+<td>公网IP</td>
+</tr>
+<tr>
+<td>lan-host</td>
+<td>127.0.0.1</td>
+<td>局域网IP</td>
+</tr>
+<tr>
+<td>localhost</td>
+<td>127.0.0.1</td>
+<td>本地IP</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="dll">客户端DLL配置<a class="headerlink" href="#dll" title="Permanent link">&para;</a></h2>
+<h3 id="_7">配置文件位置<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>BeiDou-ijl15/ezorsia/config.ini
+</code></pre></div>
+<p>将生成的 ijl15.dll 和 config.ini 复制到游戏客户端目录。</p>
+<h3 id="_8">完整配置说明<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">[general]</span>
+<span class="c1">;IME 修复方案，只有0和1两种，优先尝试方案1（更完美），如果会卡门再尝试方案0</span>
+<span class="na">imeType</span><span class="o">=</span><span class="s">1</span>
+<span class="c1">;分辨率 (推荐值: 1280x720, 1366x768; 其他可选: 1600x900, 1920x1080, 1024x768; 不保证可用: 800x600)</span>
+<span class="na">width</span><span class="o">=</span><span class="s">1280</span>
+<span class="na">height</span><span class="o">=</span><span class="s">720</span>
+<span class="c1">;服务器地址</span>
+<span class="na">ServerIP_Address</span><span class="o">=</span><span class="s">127.0.0.1</span>
+<span class="na">serverIP_Port</span><span class="o">=</span><span class="s">8484</span>
+<span class="c1">;加载文字汉化</span>
+<span class="na">SwitchChinese</span><span class="o">=</span><span class="s">true</span>
+<span class="c1">;右下角消息数量</span>
+<span class="na">MsgAmount</span><span class="o">=</span><span class="s">10</span>
+<span class="c1">;是否包含EzorsiaV2 WZ文件</span>
+<span class="na">EzorsiaV2WzIncluded</span><span class="o">=</span><span class="s">true</span>
+<span class="c1">;是否使用自定义登录框</span>
+<span class="na">CustomLoginFrame</span><span class="o">=</span><span class="s">true</span>
+<span class="c1">;开启后登录界面的UI会按大边框布局</span>
+<span class="na">bigLoginFrame</span><span class="o">=</span><span class="s">true</span>
+<span class="c1">;窗口模式</span>
+<span class="na">WindowedMode</span><span class="o">=</span><span class="s">true</span>
+<span class="c1">;跳过开头的动画</span>
+<span class="na">RemoveLogos</span><span class="o">=</span><span class="s">true</span>
+<span class="c1">;是否启用VirtuProtect</span>
+<span class="na">UseVirtuProtect</span><span class="o">=</span><span class="s">true</span>
+
+<span class="k">[optional]</span>
+<span class="c1">;物理攻击面板上限</span>
+<span class="na">setDamageCap</span><span class="o">=</span><span class="s">199999</span>
+<span class="c1">;魔攻/魔防面板上限</span>
+<span class="na">setMAtkCap</span><span class="o">=</span><span class="s">1999</span>
+<span class="c1">;命中上限</span>
+<span class="na">setAccCap</span><span class="o">=</span><span class="s">999</span>
+<span class="c1">;回避上限</span>
+<span class="na">setAvdCap</span><span class="o">=</span><span class="s">999</span>
+<span class="c1">;真实输出上限</span>
+<span class="na">setAtkOutCap</span><span class="o">=</span><span class="s">199999</span>
+<span class="c1">;移速上限</span>
+<span class="na">speedMovementCap</span><span class="o">=</span><span class="s">140</span>
+<span class="c1">;跳跃上限</span>
+<span class="na">jumpCap</span><span class="o">=</span><span class="s">123</span>
+<span class="c1">;爬绳速度自适应</span>
+<span class="na">climbSpeedAuto</span><span class="o">=</span><span class="s">false</span>
+<span class="c1">;爬绳基础速度系数</span>
+<span class="na">climbSpeed</span><span class="o">=</span><span class="s">1.0</span>
+<span class="c1">;超级机制</span>
+<span class="na">useTubi</span><span class="o">=</span><span class="s">true</span>
+<span class="c1">;是否使用自定义登录框</span>
+<span class="na">ownLoginFrame</span><span class="o">=</span><span class="s">false</span>
+<span class="c1">;是否使用自定义商城背景</span>
+<span class="na">ownCashShopFrame</span><span class="o">=</span><span class="s">false</span>
+<span class="c1">;允许重复发言</span>
+<span class="na">talkRepeat</span><span class="o">=</span><span class="s">false</span>
+<span class="c1">;连续说话限制（毫秒）</span>
+<span class="na">talkTime</span><span class="o">=</span><span class="s">2000</span>
+
+<span class="k">[debug]</span>
+<span class="na">debug</span><span class="o">=</span><span class="s">false</span>
+<span class="c1">;免密模式，须先开启debug</span>
+<span class="na">noPassword</span><span class="o">=</span><span class="s">false</span>
+</code></pre></div>
+<h3 id="_9">配置分类详解<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h4 id="1-general">1. 基本配置 [general]<a class="headerlink" href="#1-general" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iimeType</td>
+<td>1</td>
+<td>IME输入法修复方案（0或1）</td>
+</tr>
+<tr>
+<td>width</td>
+<td>1280</td>
+<td>分辨率宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>720</td>
+<td>分辨率高度</td>
+</tr>
+<tr>
+<td>ServerIP_Address</td>
+<td>127.0.0.1</td>
+<td>服务器地址</td>
+</tr>
+<tr>
+<td>serverIP_Port</td>
+<td>8484</td>
+<td>服务器端口</td>
+</tr>
+<tr>
+<td>SwitchChinese</td>
+<td>true</td>
+<td>加载文字汉化</td>
+</tr>
+<tr>
+<td>MsgAmount</td>
+<td>10</td>
+<td>右下角消息数量</td>
+</tr>
+<tr>
+<td>WindowedMode</td>
+<td>true</td>
+<td>窗口模式</td>
+</tr>
+<tr>
+<td>RemoveLogos</td>
+<td>true</td>
+<td>跳过开头动画</td>
+</tr>
+<tr>
+<td>UseVirtuProtect</td>
+<td>true</td>
+<td>启用VirtuProtect</td>
+</tr>
+</tbody>
+</table>
+<p><strong>IME修复方案说明：</strong></p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>方案0，较基础</td>
+</tr>
+<tr>
+<td>1</td>
+<td>方案1，更完美，推荐优先尝试</td>
+</tr>
+</tbody>
+</table>
+<p>如果方案1会导致"卡门"问题，请尝试方案0。</p>
+<p><strong>推荐分辨率：</strong></p>
+<table>
+<thead>
+<tr>
+<th>分辨率</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1280x720</td>
+<td>推荐</td>
+</tr>
+<tr>
+<td>1366x768</td>
+<td>推荐</td>
+</tr>
+<tr>
+<td>1600x900</td>
+<td>可用</td>
+</tr>
+<tr>
+<td>1920x1080</td>
+<td>可用</td>
+</tr>
+<tr>
+<td>1024x768</td>
+<td>可用</td>
+</tr>
+<tr>
+<td>800x600</td>
+<td>不保证可用</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-optional">2. 属性上限配置 [optional]<a class="headerlink" href="#2-optional" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setDamageCap</td>
+<td>199999</td>
+<td>物理攻击面板上限</td>
+</tr>
+<tr>
+<td>setMAtkCap</td>
+<td>1999</td>
+<td>魔攻/魔防面板上限</td>
+</tr>
+<tr>
+<td>setAccCap</td>
+<td>999</td>
+<td>命中上限</td>
+</tr>
+<tr>
+<td>setAvdCap</td>
+<td>999</td>
+<td>回避上限</td>
+</tr>
+<tr>
+<td>setAtkOutCap</td>
+<td>199999</td>
+<td>真实输出上限</td>
+</tr>
+<tr>
+<td>speedMovementCap</td>
+<td>140</td>
+<td>移速上限</td>
+</tr>
+<tr>
+<td>jumpCap</td>
+<td>123</td>
+<td>跳跃上限</td>
+</tr>
+</tbody>
+</table>
+<p><strong>功能说明：</strong> 突破原版游戏的属性上限限制。</p>
+<h4 id="3_1">3. 其他功能配置<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>climbSpeedAuto</td>
+<td>false</td>
+<td>爬绳速度自适应</td>
+</tr>
+<tr>
+<td>climbSpeed</td>
+<td>1.0</td>
+<td>爬绳基础速度系数</td>
+</tr>
+<tr>
+<td>useTubi</td>
+<td>true</td>
+<td>超级机制（解决升级停顿、宠物攻击中断）</td>
+</tr>
+<tr>
+<td>talkRepeat</td>
+<td>false</td>
+<td>允许重复发言</td>
+</tr>
+<tr>
+<td>talkTime</td>
+<td>2000</td>
+<td>连续说话限制（毫秒）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="4-debug">4. 调试配置 [debug]<a class="headerlink" href="#4-debug" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>debug</td>
+<td>false</td>
+<td>开启调试模式</td>
+</tr>
+<tr>
+<td>noPassword</td>
+<td>false</td>
+<td>免密模式（须先开启debug）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>免密模式说明：</strong>
+- 须先开启 debug=true
+- 需要服务端配合支持
+- 客户端仅解除密码限制</p>
+<hr />
+<h2 id="_10">前端配置<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="_11">配置文件位置<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>gms-ui/src/config/settings.json
+</code></pre></div>
+<h3 id="_12">主要配置项<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BeiDou 管理后台&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;apiBaseUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8686&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="vite">Vite配置<a class="headerlink" href="#vite" title="Permanent link">&para;</a></h3>
+<p>配置文件位于 <code>config/vite.config.dev.ts</code> 和 <code>config/vite.config.prod.ts</code>。</p>
+<h3 id="packagejson">package.json配置<a class="headerlink" href="#packagejson" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;dev&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vite --config ./config/vite.config.dev.ts&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;build&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vue-tsc --noEmit &amp;&amp; vite build --config ./config/vite.config.prod.ts&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="_13">数据库配置<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="_14">游戏配置表配置<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>游戏参数存储在 <code>game_config</code> 表中，可通过数据库或Web后台修改。</p>
+<h4 id="world">大区配置 (world)<a class="headerlink" href="#world" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flag</td>
+<td>0</td>
+<td>大区类型（0普通，1活动，2新区，3热门）</td>
+</tr>
+<tr>
+<td>server_message</td>
+<td>Welcome to Scania!</td>
+<td>顶部滚动信息</td>
+</tr>
+<tr>
+<td>event_message</td>
+<td>Scania</td>
+<td>大区描述</td>
+</tr>
+<tr>
+<td>recommend_message</td>
+<td>Welcome to Scania!</td>
+<td>大区推荐信息</td>
+</tr>
+<tr>
+<td>channel_size</td>
+<td>3</td>
+<td>启动频道数</td>
+</tr>
+<tr>
+<td>exp_rate</td>
+<td>1.0</td>
+<td>经验倍率</td>
+</tr>
+<tr>
+<td>meso_rate</td>
+<td>1.0</td>
+<td>金币倍率</td>
+</tr>
+<tr>
+<td>drop_rate</td>
+<td>1.0</td>
+<td>掉落倍率</td>
+</tr>
+<tr>
+<td>boss_drop_rate</td>
+<td>1.0</td>
+<td>BOSS掉落倍率</td>
+</tr>
+<tr>
+<td>quest_rate</td>
+<td>1.0</td>
+<td>任务倍率</td>
+</tr>
+<tr>
+<td>fishing_rate</td>
+<td>1.0</td>
+<td>钓鱼倍率</td>
+</tr>
+<tr>
+<td>travel_rate</td>
+<td>1.0</td>
+<td>旅行倍率</td>
+</tr>
+<tr>
+<td>quick_level</td>
+<td>0</td>
+<td>冲刺等级</td>
+</tr>
+<tr>
+<td>quick_level_rate</td>
+<td>0</td>
+<td>冲刺等级倍率</td>
+</tr>
+</tbody>
+</table>
+<h4 id="servercore">服务器核心配置 (server/Core)<a class="headerlink" href="#servercore" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>max_world_size</td>
+<td>21</td>
+<td>最多大区数</td>
+</tr>
+<tr>
+<td>max_channel_size</td>
+<td>20</td>
+<td>最多频道数</td>
+</tr>
+<tr>
+<td>channel_capacity</td>
+<td>100</td>
+<td>频道最多容纳人数</td>
+</tr>
+<tr>
+<td>timezone</td>
+<td>GMT+8</td>
+<td>游戏时区</td>
+</tr>
+<tr>
+<td>update_interval</td>
+<td>777</td>
+<td>状态更新间隔（毫秒）</td>
+</tr>
+<tr>
+<td>item_limit_on_map</td>
+<td>200</td>
+<td>地图物品数量上限</td>
+</tr>
+<tr>
+<td>respawn_interval</td>
+<td>10000</td>
+<td>怪物刷新间隔（毫秒）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="servergame-mechanics">游戏机制配置 (server/Game Mechanics)<a class="headerlink" href="#servergame-mechanics" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>use_cpq</td>
+<td>true</td>
+<td>开启怪物嘉年华</td>
+</tr>
+<tr>
+<td>use_mts</td>
+<td>false</td>
+<td>开启拍卖行</td>
+</tr>
+<tr>
+<td>use_duey</td>
+<td>true</td>
+<td>开启快递系统</td>
+</tr>
+<tr>
+<td>use_auto_assign_starters_ap</td>
+<td>true</td>
+<td>新手自动分配属性点</td>
+</tr>
+<tr>
+<td>use_enforce_novice_exp_rate</td>
+<td>true</td>
+<td>新手固定1倍经验</td>
+</tr>
+<tr>
+<td>use_family_system</td>
+<td>true</td>
+<td>开启学院系统</td>
+</tr>
+<tr>
+<td>use_rebirth_system</td>
+<td>false</td>
+<td>开启转生系统</td>
+</tr>
+<tr>
+<td>rebirth_npc_id</td>
+<td>9010021</td>
+<td>转生NPC ID</td>
+</tr>
+<tr>
+<td>use_maker_permissive_atk_up</td>
+<td>false</td>
+<td>非武器装备强化攻击力</td>
+</tr>
+<tr>
+<td>use_perfect_scrolling</td>
+<td>false</td>
+<td>砸卷失败不消耗次数</td>
+</tr>
+</tbody>
+</table>
+<h4 id="serversafe">安全配置 (server/Safe)<a class="headerlink" href="#serversafe" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enable_pic</td>
+<td>false</td>
+<td>开启PIC</td>
+</tr>
+<tr>
+<td>enable_pin</td>
+<td>false</td>
+<td>开启PIN</td>
+</tr>
+<tr>
+<td>automatic_register</td>
+<td>true</td>
+<td>开启自动注册</td>
+</tr>
+<tr>
+<td>deterred_multi_client</td>
+<td>false</td>
+<td>校验多开</td>
+</tr>
+<tr>
+<td>use_auto_ban</td>
+<td>false</td>
+<td>开启自动封禁</td>
+</tr>
+<tr>
+<td>use_ip_validation</td>
+<td>false</td>
+<td>开启IP验证</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gm-servergm">GM配置 (server/GM)<a class="headerlink" href="#gm-servergm" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>minimum_gm_level_to_trade</td>
+<td>4</td>
+<td>GM交易最小等级</td>
+</tr>
+<tr>
+<td>minimum_gm_level_to_use_storage</td>
+<td>4</td>
+<td>GM使用仓库最小等级</td>
+</tr>
+<tr>
+<td>gm_pets_never_hungry</td>
+<td>true</td>
+<td>GM宠物不饥饿</td>
+</tr>
+<tr>
+<td>use_perfect_gm_scroll</td>
+<td>true</td>
+<td>GM砸卷必成功</td>
+</tr>
+<tr>
+<td>use_auto_hide_gm</td>
+<td>true</td>
+<td>GM自动隐身</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_15">配置修改方式<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h3 id="_16">服务端配置修改<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<ol>
+<li>编辑 <code>application.yml</code> 文件</li>
+<li>重启服务端生效</li>
+</ol>
+<h3 id="_17">客户端配置修改<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<ol>
+<li>编辑游戏客户端目录下的 <code>config.ini</code></li>
+<li>重新启动游戏客户端生效</li>
+</ol>
+<h3 id="_18">游戏参数修改<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p>方式一：数据库直接修改</p>
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">game_config</span><span class="w"> </span>
+<span class="k">SET</span><span class="w"> </span><span class="n">config_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2.0&#39;</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">config_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;world&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">config_sub_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="w"> </span>
+<span class="k">AND</span><span class="w"> </span><span class="n">config_code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;exp_rate&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>方式二：Web后台修改
+- 登录 gms-ui 管理后台
+- 进入游戏配置页面
+- 修改参数值
+- 保存后自动生效</p>
+<hr />
+<h2 id="_19">下一步<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../06-%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/">运维部署文档</a> - 生产环境配置要点</li>
+<li><a href="../07-%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">用户使用手册</a> - 配置使用指南</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

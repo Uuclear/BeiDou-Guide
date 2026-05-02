@@ -1,0 +1,3229 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BeiDou 游戏系统开发文档与源码索引">
+      
+      
+        <meta name="author" content="BeiDou-Guide">
+      
+      
+        <link rel="canonical" href="https://uuclear.github.io/BeiDou-Guide/reference/gms-server-symbol-notes/scripting/">
+      
+      
+        <link rel="prev" href="../provider/">
+      
+      
+        <link rel="next" href="../server/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>scripting - BeiDou 开发文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gms-server-scripting" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="BeiDou 开发文档" class="md-header__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BeiDou 开发文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              scripting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../read-guide/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  阅读指引
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  环境与架构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  源码精读与导读
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../gms-server-symbol-notes-README/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  自动生成索引
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="BeiDou 开发文档" class="md-nav__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    BeiDou 开发文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../read-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阅读指引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境与架构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    环境与架构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03-API%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 接口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05-%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../06-%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运维部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../07-%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用户手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../08-%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    技术规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码精读与导读
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    源码精读与导读
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码深度导读
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../10-BeiDou-ijl15-%E6%BA%90%E7%A0%81%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 源码详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11-%E5%85%A8%E9%87%8F%E6%BA%90%E7%A0%81%E7%AC%A6%E5%8F%B7%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与生成说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../12-%E6%BA%90%E7%A0%81%E6%A8%A1%E5%9D%97%E7%B2%BE%E8%AF%BB-%E4%BA%BA%E6%9C%BA%E6%92%B0%E5%86%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码模块精读（人机撰写）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自动生成索引
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    自动生成索引
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 逐符号职责（分卷）
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    gms-server 逐符号职责（分卷）
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-server-symbol-notes-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    分卷索引与用法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    （跳转）单文件入口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_root/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    org.gms 根
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    controller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dao
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    exception
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    net
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    property
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scripting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingabstractplayerinteractionjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/AbstractPlayerInteraction.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingabstractscriptmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/AbstractScriptManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingsynchronizedinvocablejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/SynchronizedInvocable.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingeventeventinstancemanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/event/EventInstanceManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingeventeventmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/event/EventManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingeventeventscheduledfuturejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/event/EventScheduledFuture.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingeventeventscriptmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/event/EventScriptManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingeventschedulereventscriptschedulerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/event/scheduler/EventScriptScheduler.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingitemitemscriptmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/item/ItemScriptManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingitemitemscriptmethodsjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/item/ItemScriptMethods.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingmapmapscriptmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/map/MapScriptManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingmapmapscriptmethodsjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/map/MapScriptMethods.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingnpcnpcconversationmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/npc/NPCConversationManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingnpcnpcscriptmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/npc/NPCScriptManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingportalportalplayerinteractionjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/portal/PortalPlayerInteraction.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingportalportalscriptjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/portal/PortalScript.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingportalportalscriptmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/portal/PortalScriptManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingquestquestactionmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/quest/QuestActionManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingquestquestscriptmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/quest/QuestScriptManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingreactorreactoractionmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/reactor/ReactorActionManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingreactorreactorscriptmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/reactor/ReactorScriptManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../util/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    util
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与 API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    全量符号与 API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-server-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-server-api-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server public 索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-ui-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-ui-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../beidou-ijl15-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../beidou-ijl15-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingabstractplayerinteractionjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/AbstractPlayerInteraction.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingabstractscriptmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/AbstractScriptManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingsynchronizedinvocablejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/SynchronizedInvocable.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingeventeventinstancemanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/event/EventInstanceManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingeventeventmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/event/EventManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingeventeventscheduledfuturejava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/event/EventScheduledFuture.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingeventeventscriptmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/event/EventScriptManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingeventschedulereventscriptschedulerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/event/scheduler/EventScriptScheduler.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingitemitemscriptmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/item/ItemScriptManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingitemitemscriptmethodsjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/item/ItemScriptMethods.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingmapmapscriptmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/map/MapScriptManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingmapmapscriptmethodsjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/map/MapScriptMethods.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingnpcnpcconversationmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/npc/NPCConversationManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingnpcnpcscriptmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/npc/NPCScriptManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingportalportalplayerinteractionjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/portal/PortalPlayerInteraction.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingportalportalscriptjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/portal/PortalScript.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingportalportalscriptmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/portal/PortalScriptManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingquestquestactionmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/quest/QuestActionManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingquestquestscriptmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/quest/QuestScriptManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingreactorreactoractionmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/reactor/ReactorActionManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scriptingreactorreactorscriptmanagerjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scripting/reactor/ReactorScriptManager.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/Uuclear/BeiDou-Guide/edit/main/docs/reference/gms-server-symbol-notes/scripting.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="gms-server-scripting">gms-server 逐符号中文职责 · 分卷 <code>scripting</code><a class="headerlink" href="#gms-server-scripting" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>自动生成：<code>scripts/generate-symbol-notes.py</code>
+源码路径：<code>BeiDou-Server</code>
+本分卷 Java 文件数：21</p>
+</blockquote>
+<p><a href="../../gms-server-symbol-notes-README/">← 返回分卷索引</a></p>
+<hr />
+<h2 id="scriptingabstractplayerinteractionjava"><code>scripting/AbstractPlayerInteraction.java</code><a class="headerlink" href="#scriptingabstractplayerinteractionjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class AbstractPlayerInteraction</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public AbstractPlayerInteraction(Client c)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Client getClient()</code>：读取并返回状态/数据。</li>
+<li><code>public Character getPlayer()</code>：读取并返回状态/数据。</li>
+<li><code>public Character getChar()</code>：读取并返回状态/数据。</li>
+<li><code>public int getJobId()</code>：读取并返回状态/数据。</li>
+<li><code>public Job getJob()</code>：读取并返回状态/数据。</li>
+<li><code>public int getLevel()</code>：读取并返回状态/数据。</li>
+<li><code>public MapleMap getMap()</code>：读取并返回状态/数据。</li>
+<li><code>public int getHourOfDay()</code>：读取并返回状态/数据。</li>
+<li><code>public int getMarketPortalId(int mapId)</code>：读取并返回状态/数据。</li>
+<li><code>private int getMarketPortalId(MapleMap map)</code>：读取并返回状态/数据。</li>
+<li><code>public void warp(int mapid)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void warp(int map, int portal)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void warp(int map, String portal)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void warpMap(int map)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void warpParty(int id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void warpParty(int id, int portalId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void warpParty(int map, String portalName)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void warpParty(int id, int fromMinId, int fromMaxId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void warpParty(int id, int portalId, int fromMinId, int fromMaxId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public MapleMap getWarpMap(int map)</code>：读取并返回状态/数据。</li>
+<li><code>public MapleMap getMap(int map)</code>：读取并返回状态/数据。</li>
+<li><code>public int countAllMonstersOnMap(int map)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public int countMonster()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void resetMapObjects(int mapid)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public EventManager getEventManager(String event)</code>：读取并返回状态/数据。</li>
+<li><code>public EventInstanceManager getEventInstance()</code>：读取并返回状态/数据。</li>
+<li><code>public Inventory getInventory(int type)</code>：读取并返回状态/数据。</li>
+<li><code>public Inventory getInventory(InventoryType type)</code>：读取并返回状态/数据。</li>
+<li><code>public boolean hasItem(int itemid)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public boolean hasItem(int itemid, int quantity)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public boolean haveItem(int itemid)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean haveItem(int itemid, int quantity)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public int getItemQuantity(int itemid)</code>：读取并返回状态/数据。</li>
+<li><code>public boolean haveItemWithId(int itemid)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean haveItemWithId(int itemid, boolean checkEquipped)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean canHold(int itemid)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public boolean canHold(int itemid, int quantity)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public boolean canHold(int itemid, int quantity, int removeItemid, int removeQuantity)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>private List&lt;Integer&gt; convertToIntegerList(List&lt;Object&gt; objects)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean canHoldAll(List&lt;Object&gt; itemids)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public boolean canHoldAll(List&lt;Object&gt; itemids, List&lt;Object&gt; quantity)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>private boolean canHoldAll(List&lt;Integer&gt; itemids, List&lt;Integer&gt; quantity, boolean isInteger)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public boolean canHoldAllAfterRemoving(List&lt;Integer&gt; toAddItemids, List&lt;Integer&gt; toAddQuantity, List&lt;Integer&gt; toRemoveItemids, List&lt;Integer&gt; toRemoveQuantity)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public final QuestStatus getQuestRecord(final int id)</code>：读取并返回状态/数据。</li>
+<li><code>public final QuestStatus getQuestNoRecord(final int id)</code>：读取并返回状态/数据。</li>
+<li><code>public void openNpc(int npcid)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void openNpc(int npcid, String script)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public int getQuestStatus(int id)</code>：读取并返回状态/数据。</li>
+<li><code>private QuestStatus.Status getQuestStat(int id)</code>：读取并返回状态/数据。</li>
+<li><code>public boolean isQuestCompleted(int id)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public boolean isQuestActive(int id)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public boolean isQuestStarted(int id)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public void setQuestProgress(int id, String progress)</code>：写入或更新状态字段。</li>
+<li><code>public void setQuestProgress(int id, int progress)</code>：写入或更新状态字段。</li>
+<li><code>public void setQuestProgress(int id, int infoNumber, int progress)</code>：写入或更新状态字段。</li>
+<li><code>public void setQuestProgress(int id, int infoNumber, String progress)</code>：写入或更新状态字段。</li>
+<li><code>public String getQuestProgress(int id)</code>：读取并返回状态/数据。</li>
+<li><code>public String getQuestProgress(int id, int infoNumber)</code>：读取并返回状态/数据。</li>
+<li><code>public int getQuestProgressInt(int id)</code>：读取并返回状态/数据。</li>
+<li><code>public int getQuestProgressInt(int id, int infoNumber)</code>：读取并返回状态/数据。</li>
+<li><code>public void resetAllQuestProgress(int id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void resetQuestProgress(int id, int infoNumber)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean forceStartQuest(int id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean forceStartQuest(int id, int npc)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean forceCompleteQuest(int id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean forceCompleteQuest(int id, int npc)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startQuest(short id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean completeQuest(short id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startQuest(int id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean completeQuest(int id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startQuest(short id, int npc)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean completeQuest(short id, int npc)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startQuest(int id, int npc)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean completeQuest(int id, int npc)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Item evolvePet(byte slot, int afterId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void gainItem(int id, short quantity)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void gainItem(int id, short quantity, boolean show)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void gainItem(int id, boolean show)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void gainItem(int id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Item gainItem(int id, short quantity, boolean randomStats, boolean showMessage)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Item gainItem(int id, short quantity, boolean randomStats, boolean showMessage, long expires)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Item gainItem(int id, short quantity, boolean randomStats, boolean showMessage, long expires, Pet from)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void gainFame(int delta)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void changeMusic(String songName)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void playerMessage(int type, String message)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void message(String message)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void dropMessage(int type, String message)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void mapMessage(int type, String message)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void mapEffect(String path)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void mapSound(String path)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void displayAranIntro()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void showIntro(String path)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void showInfo(String path)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void guildMessage(int type, String message)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Guild getGuild()</code>：读取并返回状态/数据。</li>
+<li><code>public Party getParty()</code>：读取并返回状态/数据。</li>
+<li><code>public boolean isLeader()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public boolean isGuildLeader()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public boolean isPartyLeader()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public boolean isEventLeader()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public void givePartyItems(int id, short quantity, List&lt;Character&gt; party)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void removeHPQItems()</code>：删除对象、关系或临时状态。</li>
+<li><code>public void removePartyItems(int id)</code>：删除对象、关系或临时状态。</li>
+<li><code>public void giveCharacterExp(int amount, Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void givePartyExp(int amount, List&lt;Character&gt; party)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void givePartyExp(String PQ)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void givePartyExp(String PQ, boolean instance)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void removeFromParty(int id, List&lt;Character&gt; party)</code>：删除对象、关系或临时状态。</li>
+<li><code>public void removeAll(int id)</code>：删除对象、关系或临时状态。</li>
+<li><code>public void removeAll(int id, Client cl)</code>：删除对象、关系或临时状态。</li>
+<li><code>public void removeAllByInventory(int invType)</code>：删除对象、关系或临时状态。</li>
+<li><code>public void removeAllByInventorySlot(int invType, short slot)</code>：删除对象、关系或临时状态。</li>
+<li><code>public int getMapId()</code>：读取并返回状态/数据。</li>
+<li><code>public int getPlayerCount(int mapid)</code>：读取并返回状态/数据。</li>
+<li><code>public void showInstruction(String msg, int width, int height)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void disableMinimap()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean isAllReactorState(final int reactorId, final int state)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public void resetMap(int mapid)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void useItem(int id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void cancelItem(final int id)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public void teachSkill(int skillid, byte level, byte masterLevel, long expiration)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void teachSkill(int skillid, byte level, byte masterLevel, long expiration, boolean force)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void removeEquipFromSlot(short slot)</code>：删除对象、关系或临时状态。</li>
+<li><code>public void gainAndEquip(int itemid, short slot)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void spawnNpc(int npcId, Point pos, MapleMap map)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void spawnMonster(int id, int x, int y)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Monster getMonsterLifeFactory(int mid)</code>：读取并返回状态/数据。</li>
+<li><code>public void spawnGuide()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void removeGuide()</code>：删除对象、关系或临时状态。</li>
+<li><code>public void displayGuide(int num)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void goDojoUp()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void resetDojoEnergy()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void resetPartyDojoEnergy()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void enableActions()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void showEffect(String effect)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void dojoEnergy()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void talkGuide(String message)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void guideHint(int hint)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void updateAreaInfo(Short area, String info)</code>：更新已有对象/配置/缓存。</li>
+<li><code>public boolean containsAreaInfo(short area, String info)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void earnTitle(String msg)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void showInfoText(String msg)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void openUI(byte ui)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void lockUI()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void unlockUI()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void playSound(String sound)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void environmentChange(String env, int mode)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public String numberWithCommas(int number)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Pyramid getPyramid()</code>：读取并返回状态/数据。</li>
+<li><code>public int createExpedition(ExpeditionType type)</code>：创建对象、会话或业务记录。</li>
+<li><code>public int createExpedition(ExpeditionType type, boolean silent, int minPlayers, int maxPlayers)</code>：创建对象、会话或业务记录。</li>
+<li><code>public void endExpedition(Expedition exped)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Expedition getExpedition(ExpeditionType type)</code>：读取并返回状态/数据。</li>
+<li><code>public String getExpeditionMemberNames(ExpeditionType type)</code>：读取并返回状态/数据。</li>
+<li><code>public boolean isLeaderExpedition(ExpeditionType type)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public long getJailTimeLeft()</code>：读取并返回状态/数据。</li>
+<li><code>public List&lt;Pet&gt; getDriedPets()</code>：读取并返回状态/数据。</li>
+<li><code>public List&lt;Item&gt; getUnclaimedMarriageGifts()</code>：读取并返回状态/数据。</li>
+<li><code>public boolean startDungeonInstance(int dungeonid)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean canGetFirstJob(int jobType)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public String getFirstJobStatRequirement(int jobType)</code>：读取并返回状态/数据。</li>
+<li><code>public void npcTalk(int npcid, String message)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public long getCurrentTime()</code>：读取并返回状态/数据。</li>
+<li><code>public void weakenAreaBoss(int monsterId, String message)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void applySealSkill(Monster monster)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void applyReduceAvoid(Monster monster)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void sendBlueNotice(MapleMap map, String message)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public String getCharacterExtendValue(String extendName)</code>：读取并返回状态/数据。</li>
+<li><code>public String getCharacterExtendValue(String extendName, boolean isDaily)</code>：读取并返回状态/数据。</li>
+<li><code>public String getAccountExtendValue(String extendName)</code>：读取并返回状态/数据。</li>
+<li><code>public String getAccountExtendValue(String extendName, boolean isDaily)</code>：读取并返回状态/数据。</li>
+<li><code>public void saveOrUpdateCharacterExtendValue(String extendName, String extendValue)</code>：持久化当前状态到存储层。</li>
+<li><code>public void saveOrUpdateCharacterExtendValue(String extendName, String extendValue, boolean isDaily)</code>：持久化当前状态到存储层。</li>
+<li><code>public void saveOrUpdateAccountExtendValue(String extendName, String extendValue)</code>：持久化当前状态到存储层。</li>
+<li><code>public void saveOrUpdateAccountExtendValue(String extendName, String extendValue, boolean isDaily)</code>：持久化当前状态到存储层。</li>
+<li><code>public void gainEquip(Equip equip)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public int getOnlineTime()</code>：读取并返回状态/数据。</li>
+</ul>
+<h2 id="scriptingabstractscriptmanagerjava"><code>scripting/AbstractScriptManager.java</code><a class="headerlink" href="#scriptingabstractscriptmanagerjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class AbstractScriptManager</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>protected AbstractScriptManager()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>protected ScriptEngine getInvocableScriptEngine(String path)</code>：读取并返回状态/数据。</li>
+<li><code>protected ScriptEngine getInvocableScriptEngine(String path, Client c)</code>：读取并返回状态/数据。</li>
+<li><code>private void enableScriptHostAccess(GraalJSScriptEngine engine)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>protected void resetContext(String path, Client c)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="scriptingsynchronizedinvocablejava"><code>scripting/SynchronizedInvocable.java</code><a class="headerlink" href="#scriptingsynchronizedinvocablejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class SynchronizedInvocable</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>private SynchronizedInvocable(Invocable invocable)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public static Invocable of(Invocable invocable)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public synchronized Object invokeMethod(Object thiz, String name, Object... args) throws ScriptException, NoSuchMethodException</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public synchronized Object invokeFunction(String name, Object... args) throws ScriptException, NoSuchMethodException</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public synchronized &lt;T&gt; T getInterface(Class&lt;T&gt; clasz)</code>：读取并返回状态/数据。</li>
+<li><code>public synchronized &lt;T&gt; T getInterface(Object thiz, Class&lt;T&gt; clasz)</code>：读取并返回状态/数据。</li>
+</ul>
+<h2 id="scriptingeventeventinstancemanagerjava"><code>scripting/event/EventInstanceManager.java</code><a class="headerlink" href="#scriptingeventeventinstancemanagerjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class EventInstanceManager</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public EventInstanceManager(EventManager em, String name)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void setName(String name)</code>：写入或更新状态字段。</li>
+<li><code>public EventManager getEm()</code>：读取并返回状态/数据。</li>
+<li><code>public int getEventPlayersJobs()</code>：读取并返回状态/数据。</li>
+<li><code>public void applyEventPlayersItemBuff(int itemId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void applyEventPlayersSkillBuff(int skillId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void applyEventPlayersSkillBuff(int skillId, int skillLv)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void giveEventPlayersExp(int gain)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void giveEventPlayersExp(int gain, int mapId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void giveEventPlayersMeso(int gain)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void giveEventPlayersMeso(int gain, int mapId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Object invokeScriptFunction(String name, Object... args) throws ScriptException, NoSuchMethodException</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public synchronized void registerPlayer(final Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public synchronized void registerPlayer(final Character chr, boolean runEntryScript)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void exitPlayer(final Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void dropMessage(int type, String message)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void restartEventTimer(long time)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void startEventTimer(long time)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void addEventTimer(long time)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void dismissEventTimer()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void stopEventTimer()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean isTimerStarted()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public long getTimeLeft()</code>：读取并返回状态/数据。</li>
+<li><code>public void registerParty(Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void registerParty(Party party, MapleMap map)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void registerExpedition(Expedition exped)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void registerExpeditionTeam(Expedition exped, int recruitMap)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void unregisterPlayer(final Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public int getPlayerCount()</code>：读取并返回状态/数据。</li>
+<li><code>public Character getPlayerById(int id)</code>：读取并返回状态/数据。</li>
+<li><code>public List&lt;Character&gt; getPlayers()</code>：读取并返回状态/数据。</li>
+<li><code>private List&lt;Character&gt; getPlayerList()</code>：读取并返回状态/数据。</li>
+<li><code>public void registerMonster(Monster mob)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void movePlayer(final Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void changedMap(final Character chr, final int mapId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void afterChangedMap(final Character chr, final int mapId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public synchronized void changedLeader(final PartyCharacter ldr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void monsterKilled(final Monster mob, final boolean hasKiller)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void friendlyKilled(final Monster mob, final boolean hasKiller)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void friendlyDamaged(final Monster mob)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void friendlyItemDrop(final Monster mob)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void playerKilled(final Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void reviveMonster(final Monster mob)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean revivePlayer(final Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void playerDisconnected(final Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void monsterKilled(Character chr, final Monster mob)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public int getKillCount(Character chr)</code>：读取并返回状态/数据。</li>
+<li><code>public void dispose()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public synchronized void dispose(boolean shutdown)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public MapManager getMapFactory()</code>：读取并返回状态/数据。</li>
+<li><code>public void schedule(final String methodName, long delay)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public String getName()</code>：读取并返回状态/数据。</li>
+<li><code>public MapleMap getMapInstance(int mapId)</code>：读取并返回状态/数据。</li>
+<li><code>public void setIntProperty(String key, Integer value)</code>：写入或更新状态字段。</li>
+<li><code>public void setProperty(String key, Integer value)</code>：写入或更新状态字段。</li>
+<li><code>public void setProperty(String key, String value)</code>：写入或更新状态字段。</li>
+<li><code>public Object setProperty(String key, String value, boolean prev)</code>：写入或更新状态字段。</li>
+<li><code>public void setObjectProperty(String key, Object obj)</code>：写入或更新状态字段。</li>
+<li><code>public String getProperty(String key)</code>：读取并返回状态/数据。</li>
+<li><code>public int getIntProperty(String key)</code>：读取并返回状态/数据。</li>
+<li><code>public Object getObjectProperty(String key)</code>：读取并返回状态/数据。</li>
+<li><code>public void leftParty(final Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void disbandParty()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void clearPQ()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void removePlayer(final Character chr)</code>：删除对象、关系或临时状态。</li>
+<li><code>public boolean isLeader(Character chr)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public boolean isEventLeader(Character chr)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public final MapleMap getInstanceMap(final int mapid)</code>：读取并返回状态/数据。</li>
+<li><code>public final boolean disposeIfPlayerBelow(final byte size, final int towarp)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void spawnNpc(int npcId, Point pos, MapleMap map)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void dispatchRaiseQuestMobCount(int mobid, int mapid)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Monster getMonster(int mid)</code>：读取并返回状态/数据。</li>
+<li><code>private List&lt;Integer&gt; convertToIntegerList(List&lt;Object&gt; objects)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void setEventClearStageExp(List&lt;Object&gt; gain)</code>：写入或更新状态字段。</li>
+<li><code>public void setEventClearStageMeso(List&lt;Object&gt; gain)</code>：写入或更新状态字段。</li>
+<li><code>public Integer getClearStageExp(int stage)</code>：读取并返回状态/数据。</li>
+<li><code>public Integer getClearStageMeso(int stage)</code>：读取并返回状态/数据。</li>
+<li><code>public List&lt;Integer&gt; getClearStageBonus(int stage)</code>：读取并返回状态/数据。</li>
+<li><code>private void dropExclusiveItems(Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void dropAllExclusiveItems()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void setExclusiveItems(List&lt;Object&gt; items)</code>：写入或更新状态字段。</li>
+<li><code>public final void setEventRewards(List&lt;Object&gt; rwds, List&lt;Object&gt; qtys, int expGiven)</code>：写入或更新状态字段。</li>
+<li><code>public final void setEventRewards(List&lt;Object&gt; rwds, List&lt;Object&gt; qtys)</code>：写入或更新状态字段。</li>
+<li><code>public final void setEventRewards(int eventLevel, List&lt;Object&gt; rwds, List&lt;Object&gt; qtys)</code>：写入或更新状态字段。</li>
+<li><code>public final void setEventRewards(int eventLevel, List&lt;Object&gt; rwds, List&lt;Object&gt; qtys, int expGiven)</code>：写入或更新状态字段。</li>
+<li><code>private byte getRewardListRequirements(int level)</code>：读取并返回状态/数据。</li>
+<li><code>private boolean hasRewardSlot(Character player, int eventLevel)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public final boolean giveEventReward(Character player)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final boolean giveEventReward(Character player, int eventLevel)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void disposeExpedition()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final synchronized void startEvent()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void setEventCleared()</code>：写入或更新状态字段。</li>
+<li><code>public final boolean isEventCleared()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public final boolean isEventDisposed()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>private boolean isEventTeamLeaderOn()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public final boolean checkEventTeamLacking(boolean leavingEventMap, int minPlayers)</code>：校验输入参数或业务约束。</li>
+<li><code>public final boolean isExpeditionTeamLackingNow(boolean leavingEventMap, int minPlayers, Character quitter)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public final boolean isEventTeamLackingNow(boolean leavingEventMap, int minPlayers, Character quitter)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public final boolean isEventTeamTogether()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public final void warpEventTeam(int warpFrom, int warpTo)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void warpEventTeam(int warpTo)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void warpEventTeamToMapSpawnPoint(int warpFrom, int warpTo, int toSp)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void warpEventTeamToMapSpawnPoint(int warpTo, int toSp)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final int getLeaderId()</code>：读取并返回状态/数据。</li>
+<li><code>public Character getLeader()</code>：读取并返回状态/数据。</li>
+<li><code>public final void setLeader(Character chr)</code>：写入或更新状态字段。</li>
+<li><code>public final void showWrongEffect()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void showWrongEffect(int mapId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void showClearEffect()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void showClearEffect(boolean hasGate)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void showClearEffect(int mapId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void showClearEffect(boolean hasGate, int mapId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void showClearEffect(int mapId, String mapObj, int newState)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void showClearEffect(boolean hasGate, int mapId, String mapObj, int newState)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void recoverOpenedGate(Character chr, int thisMapId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void giveEventPlayersStageReward(int thisStage)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void linkToNextStage(int thisStage, String eventFamily, int thisMapId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void linkPortalToScript(int thisStage, String portalName, String scriptName, int thisMapId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void gridInsert(Character chr, int newStatus)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void gridRemove(Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final int gridCheck(Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final int gridSize()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public final void gridClear()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean activatedAllReactorsOnMap(int mapId, int minReactorId, int maxReactorId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean activatedAllReactorsOnMap(MapleMap map, int minReactorId, int maxReactorId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="scriptingeventeventmanagerjava"><code>scripting/event/EventManager.java</code><a class="headerlink" href="#scriptingeventeventmanagerjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class EventManager</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>class EventManagerTask</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public EventManager(Channel cserv, Invocable iv, String name)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private boolean isDisposed()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public void cancel()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>private List&lt;Integer&gt; convertToIntegerList(List&lt;Object&gt; objects)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public long getLobbyDelay()</code>：读取并返回状态/数据。</li>
+<li><code>private int getMaxLobbies()</code>：读取并返回状态/数据。</li>
+<li><code>public EventScheduledFuture schedule(String methodName, long delay)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public EventScheduledFuture schedule(final String methodName, final EventInstanceManager eim, long delay)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public EventScheduledFuture scheduleAtTimestamp(final String methodName, long timestamp)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public World getWorldServer()</code>：读取并返回状态/数据。</li>
+<li><code>public Channel getChannelServer()</code>：读取并返回状态/数据。</li>
+<li><code>public Invocable getIv()</code>：读取并返回状态/数据。</li>
+<li><code>public EventInstanceManager getInstance(String name)</code>：读取并返回状态/数据。</li>
+<li><code>public Collection&lt;EventInstanceManager&gt; getInstances()</code>：读取并返回状态/数据。</li>
+<li><code>public EventInstanceManager newInstance(String name) throws EventInstanceInProgressException</code>：创建对象、会话或业务记录。</li>
+<li><code>public Marriage newMarriage(String name) throws EventInstanceInProgressException</code>：创建对象、会话或业务记录。</li>
+<li><code>public void disposeInstance(final String name)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void setProperty(String key, String value)</code>：写入或更新状态字段。</li>
+<li><code>public void setIntProperty(String key, int value)</code>：写入或更新状态字段。</li>
+<li><code>public void setProperty(String key, int value)</code>：写入或更新状态字段。</li>
+<li><code>public String getProperty(String key)</code>：读取并返回状态/数据。</li>
+<li><code>public int getIntProperty(String key)</code>：读取并返回状态/数据。</li>
+<li><code>private void setLockLobby(int lobbyId, boolean lock)</code>：写入或更新状态字段。</li>
+<li><code>private boolean startLobbyInstance(int lobbyId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void freeLobbyInstance(String lobbyName)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public String getName()</code>：读取并返回状态/数据。</li>
+<li><code>private int availableLobbyInstance()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private String getInternalScriptExceptionMessage(Throwable a)</code>：读取并返回状态/数据。</li>
+<li><code>private EventInstanceManager createInstance(String name, Object... args) throws ScriptException, NoSuchMethodException</code>：创建对象、会话或业务记录。</li>
+<li><code>private void registerEventInstance(String eventName, int lobbyId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startInstance(Expedition exped)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startInstance(int lobbyId, Expedition exped)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startInstance(int lobbyId, Expedition exped, Character leader)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startInstance(Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startInstance(int lobbyId, Character leader)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startInstance(int lobbyId, Character chr, Character leader, int difficulty)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startInstance(Party party, MapleMap map)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startInstance(int lobbyId, Party party, MapleMap map)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startInstance(int lobbyId, Party party, MapleMap map, Character leader)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startInstance(Party party, MapleMap map, int difficulty)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startInstance(int lobbyId, Party party, MapleMap map, int difficulty)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startInstance(int lobbyId, Party party, MapleMap map, int difficulty, Character leader)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startInstance(EventInstanceManager eim, String ldr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startInstance(EventInstanceManager eim, Character ldr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startInstance(int lobbyId, EventInstanceManager eim, String ldr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startInstance(int lobbyId, EventInstanceManager eim, String ldr, Character leader)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public List&lt;PartyCharacter&gt; getEligibleParty(Party party)</code>：读取并返回状态/数据。</li>
+<li><code>public void clearPQ(EventInstanceManager eim)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void clearPQ(EventInstanceManager eim, MapleMap toMap)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public long getEventTimeout()</code>：读取并返回状态/数据。</li>
+<li><code>public boolean isNobodyInPQ()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public Monster getMonster(int mid)</code>：读取并返回状态/数据。</li>
+<li><code>private void exportReadyGuild(Integer guildId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void exportMovedQueueToGuild(Integer guildId, int place)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private List&lt;Integer&gt; getNextGuildQueue()</code>：读取并返回状态/数据。</li>
+<li><code>public boolean isQueueFull()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public int getQueueSize()</code>：读取并返回状态/数据。</li>
+<li><code>public byte addGuildToQueue(Integer guildId, Integer leaderId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean attemptStartGuildInstance()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void startQuest(Character chr, int id, int npcid)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void completeQuest(Character chr, int id, int npcid)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public int getTransportationTime(int travelTime)</code>：读取并返回状态/数据。</li>
+<li><code>public int getBossTime(int BossTime)</code>：读取并返回状态/数据。</li>
+<li><code>private void fillEimQueue()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private EventInstanceManager getReadyInstance()</code>：读取并返回状态/数据。</li>
+<li><code>private void instantiateQueuedInstance()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="scriptingeventeventscheduledfuturejava"><code>scripting/event/EventScheduledFuture.java</code><a class="headerlink" href="#scriptingeventeventscheduledfuturejava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class EventScheduledFuture</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public EventScheduledFuture(Runnable r, EventScriptScheduler ess)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void cancel(boolean dummy)</code>：进行条件判定并返回布尔结果。</li>
+</ul>
+<h2 id="scriptingeventeventscriptmanagerjava"><code>scripting/event/EventScriptManager.java</code><a class="headerlink" href="#scriptingeventeventscriptmanagerjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class EventScriptManager</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public EventScriptManager(final Channel channel, String[] scripts)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public EventManager getEventManager(String event)</code>：读取并返回状态/数据。</li>
+<li><code>public boolean isActive()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public final void init()</code>：初始化模块、资源或运行时状态。</li>
+<li><code>private void reloadScripts()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private EventEntry initializeEventEntry(String script, Channel channel)</code>：初始化模块、资源或运行时状态。</li>
+<li><code>public void reload()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void cancel()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public void dispose()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="scriptingeventschedulereventscriptschedulerjava"><code>scripting/event/scheduler/EventScriptScheduler.java</code><a class="headerlink" href="#scriptingeventschedulereventscriptschedulerjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class EventScriptScheduler</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>private void runBaseSchedule()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void registerEntry(final Runnable scheduledAction, final long duration)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void cancelEntry(final Runnable scheduledAction)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public void dispose()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="scriptingitemitemscriptmanagerjava"><code>scripting/item/ItemScriptManager.java</code><a class="headerlink" href="#scriptingitemitemscriptmanagerjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ItemScriptManager</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public static ItemScriptManager getInstance()</code>：读取并返回状态/数据。</li>
+<li><code>public void runItemScript(Client c, ScriptedItem scriptItem)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="scriptingitemitemscriptmethodsjava"><code>scripting/item/ItemScriptMethods.java</code><a class="headerlink" href="#scriptingitemitemscriptmethodsjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ItemScriptMethods</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public ItemScriptMethods(Client c)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="scriptingmapmapscriptmanagerjava"><code>scripting/map/MapScriptManager.java</code><a class="headerlink" href="#scriptingmapmapscriptmanagerjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class MapScriptManager</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public static MapScriptManager getInstance()</code>：读取并返回状态/数据。</li>
+<li><code>public void reloadScripts()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean runMapScript(Client c, String mapScriptPath, boolean firstUser)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="scriptingmapmapscriptmethodsjava"><code>scripting/map/MapScriptMethods.java</code><a class="headerlink" href="#scriptingmapmapscriptmethodsjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class MapScriptMethods</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public MapScriptMethods(Client c)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void displayCygnusIntro()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void displayAranIntro()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void startExplorerExperience()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void goAdventure()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void goLith()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void explorerQuest(short questid, String questName)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void touchTheSky()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="scriptingnpcnpcconversationmanagerjava"><code>scripting/npc/NPCConversationManager.java</code><a class="headerlink" href="#scriptingnpcnpcconversationmanagerjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class NPCConversationManager</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>private String getDefaultTalk(int npcid)</code>：读取并返回状态/数据。</li>
+<li><code>public NPCConversationManager(Client c, int npc, String scriptName)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public NPCConversationManager(Client c, int npc, List&lt;PartyCharacter&gt; otherParty, boolean test)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public NPCConversationManager(Client c, int npc, int oid, String scriptName, boolean itemScript)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public int getNpc()</code>：读取并返回状态/数据。</li>
+<li><code>public int getNpcObjectId()</code>：读取并返回状态/数据。</li>
+<li><code>public String getScriptName()</code>：读取并返回状态/数据。</li>
+<li><code>public boolean isItemScript()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public void resetItemScript()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void dispose()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void sendNext(String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendPrev(String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendNextPrev(String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendOk(String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendDefault()</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendYesNo(String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendAcceptDecline(String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendSimple(String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendNext(String text, byte speaker)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendPrev(String text, byte speaker)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendNextPrev(String text, byte speaker)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendOk(String text, byte speaker)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendYesNo(String text, byte speaker)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendAcceptDecline(String text, byte speaker)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendSimple(String text, byte speaker)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendStyle(String text, int[] styles)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendGetNumber(String text, int def, int min, int max)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendGetText(String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendGetNumber(String text, int def, int min, int max,byte speaker)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendGetText(String text,byte speaker)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendDimensionalMirror(String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void setGetText(String text)</code>：写入或更新状态字段。</li>
+<li><code>public String getText()</code>：读取并返回状态/数据。</li>
+<li><code>public boolean forceStartQuest(int id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean forceCompleteQuest(int id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startQuest(short id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean completeQuest(short id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean startQuest(int id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean completeQuest(int id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public int getMeso()</code>：读取并返回状态/数据。</li>
+<li><code>public void gainMeso(int gain)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void gainMeso(Double gain)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void gainExp(int gain)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void showEffect(String effect)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void setHair(int hair)</code>：写入或更新状态字段。</li>
+<li><code>public void setFace(int face)</code>：写入或更新状态字段。</li>
+<li><code>public void setSkin(int color)</code>：写入或更新状态字段。</li>
+<li><code>public int itemQuantity(int itemid)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void displayGuildRanks()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean canSpawnPlayerNpc(int mapid)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public PlayerNPC getPlayerNPCByScriptid(int scriptId)</code>：读取并返回状态/数据。</li>
+<li><code>public Party getParty()</code>：读取并返回状态/数据。</li>
+<li><code>public void resetMap(int mapid)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void gainTameness(int tameness)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public String getName()</code>：读取并返回状态/数据。</li>
+<li><code>public int getGender()</code>：读取并返回状态/数据。</li>
+<li><code>public void changeJobById(int a)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void changeJob(Job job)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public String getJobName(int id)</code>：读取并返回状态/数据。</li>
+<li><code>public StatEffect getItemEffect(int itemId)</code>：读取并返回状态/数据。</li>
+<li><code>public void resetStats()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void openShopNPC(int id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void maxMastery()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void doGachapon()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void upgradeAlliance()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void disbandAlliance(Client c, int allianceId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean canBeUsedAllianceName(String name)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public Alliance createAlliance(String name)</code>：创建对象、会话或业务记录。</li>
+<li><code>public int getAllianceCapacity()</code>：读取并返回状态/数据。</li>
+<li><code>public boolean hasMerchant()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public boolean hasMerchantItems()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public void showFredrick()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public int partyMembersInMap()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Event getEvent()</code>：读取并返回状态/数据。</li>
+<li><code>public void divideTeams()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Character getMapleCharacter(String player)</code>：读取并返回状态/数据。</li>
+<li><code>public void logLeaf(String prize)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean createPyramid(String mode, boolean party)</code>：创建对象、会话或业务记录。</li>
+<li><code>public boolean itemExists(int itemid)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public int getCosmeticItem(int itemid)</code>：读取并返回状态/数据。</li>
+<li><code>private int getEquippedCosmeticid(int itemid)</code>：读取并返回状态/数据。</li>
+<li><code>public boolean isCosmeticEquipped(int itemid)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public boolean isUsingOldPqNpcStyle()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public Object[] getAvailableMasteryBooks()</code>：读取并返回状态/数据。</li>
+<li><code>public Object[] getAvailableSkillBooks()</code>：读取并返回状态/数据。</li>
+<li><code>public Object[] getNamesWhoDropsItem(Integer itemId)</code>：读取并返回状态/数据。</li>
+<li><code>public String getSkillBookInfo(int itemid)</code>：读取并返回状态/数据。</li>
+<li><code>public int cpqCalcAvgLvl(int map)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean sendCPQMapLists()</code>：向外发送响应、消息或网络包。</li>
+<li><code>public boolean fieldTaken(int field)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean fieldLobbied(int field)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void cpqLobby(int field)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Character getChrById(int id)</code>：读取并返回状态/数据。</li>
+<li><code>public void cancelCPQLobby()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>private void warpoutCPQLobby(MapleMap lobbyMap)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private int isCPQParty(MapleMap lobby, Party party)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>private int canStartCPQ(MapleMap lobby, Party party, Party challenger)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public void startCPQ(final Character challenger, final int field)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void startCPQ2(final Character challenger, final int field)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean sendCPQMapLists2()</code>：向外发送响应、消息或网络包。</li>
+<li><code>public boolean fieldTaken2(int field)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean fieldLobbied2(int field)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void cpqLobby2(int field)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void mapClock(int time)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private boolean sendCPQChallenge(String cpqType, int leaderid)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void answerCPQChallenge(boolean accept)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void challengeParty2(int field)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void challengeParty(int field)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private synchronized boolean setupAriantBattle(Expedition exped, int mapid)</code>：写入或更新状态字段。</li>
+<li><code>public String startAriantBattle(ExpeditionType expedType, int mapid)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void sendMarriageWishlist(boolean groom)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendMarriageGifts(List&lt;Item&gt; gifts)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public boolean createMarriageWishlist()</code>：创建对象、会话或业务记录。</li>
+<li><code>public void sendNextLevel(String nextLevel, String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendLastLevel(String lastLevel, String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendLastNextLevel(String lastLevel, String nextLevel, String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendOkLevel(String nextLevel, String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendSelectLevel(String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendSelectLevel(String prefix, String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendNextSelectLevel(String nextLevel, String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void getInputNumberLevel(String nextLevel, String text, int def, int min, int max)</code>：读取并返回状态/数据。</li>
+<li><code>public void getInputTextLevel(String nextLevel, String text)</code>：读取并返回状态/数据。</li>
+<li><code>public void sendAcceptDeclineLevel(String decLineLevel, String acceptLevel, String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendYesNoLevel(String noLevel, String yesLevel, String text)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendNextLevel(String nextLevel, String text, byte speaker)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendLastLevel(String lastLevel, String text, byte speaker)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendLastNextLevel(String lastLevel, String nextLevel, String text, byte speaker)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendOkLevel(String nextLevel, String text, byte speaker)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendSelectLevel(String text, byte speaker)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendSelectLevel(String prefix, String text, byte speaker)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendNextSelectLevel(String nextLevel, String text, byte speaker)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void getPnpcInputNumberLevel(String nextLevel, String text, int def, int min, int max, byte speaker)</code>：读取并返回状态/数据。</li>
+<li><code>public void getPnpcInputTextLevel(String nextLevel, String text, byte speaker)</code>：读取并返回状态/数据。</li>
+<li><code>public void sendAcceptDeclineLevel(String decLineLevel, String acceptLevel, String text, byte speaker)</code>：向外发送响应、消息或网络包。</li>
+<li><code>public void sendYesNoLevel(String noLevel, String yesLevel, String text, byte speaker)</code>：向外发送响应、消息或网络包。</li>
+</ul>
+<h2 id="scriptingnpcnpcscriptmanagerjava"><code>scripting/npc/NPCScriptManager.java</code><a class="headerlink" href="#scriptingnpcnpcscriptmanagerjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class NPCScriptManager</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public static NPCScriptManager getInstance()</code>：读取并返回状态/数据。</li>
+<li><code>public boolean isNpcScriptAvailable(Client c, String fileName)</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public boolean start(Client c, int npc, Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean start(Client c, int npc, int oid, Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean start(Client c, int npc, String fileName, Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean start(Client c, int npc, int oid, String fileName, Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean start(Client c, ScriptedItem scriptItem, Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void start(String filename, Client c, int npc, List&lt;PartyCharacter&gt; chrs)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private boolean start(Client c, int npc, int oid, String fileName, Character chr, boolean itemScript, String engineName)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void action(Client c, byte mode, byte type, int selection)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void nextLevel(Client c, byte mode, byte type, int selection)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void dispose(NPCConversationManager cm)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void dispose(Client c)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void dispose(Client c, boolean action)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public NPCConversationManager getCM(Client c)</code>：读取并返回状态/数据。</li>
+</ul>
+<h2 id="scriptingportalportalplayerinteractionjava"><code>scripting/portal/PortalPlayerInteraction.java</code><a class="headerlink" href="#scriptingportalportalplayerinteractionjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class PortalPlayerInteraction</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public PortalPlayerInteraction(Client c, Portal portal)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Portal getPortal()</code>：读取并返回状态/数据。</li>
+<li><code>public void runMapScript()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean hasLevel30Character()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public void blockPortal()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void unblockPortal()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void playPortalSound()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="scriptingportalportalscriptjava"><code>scripting/portal/PortalScript.java</code><a class="headerlink" href="#scriptingportalportalscriptjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>interface PortalScript</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>boolean enter(PortalPlayerInteraction ppi)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="scriptingportalportalscriptmanagerjava"><code>scripting/portal/PortalScriptManager.java</code><a class="headerlink" href="#scriptingportalportalscriptmanagerjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class PortalScriptManager</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public static PortalScriptManager getInstance()</code>：读取并返回状态/数据。</li>
+<li><code>private PortalScript getPortalScript(String scriptName) throws ScriptException</code>：读取并返回状态/数据。</li>
+<li><code>public boolean executePortalScript(Portal portal, Client c)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void reloadPortalScripts()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="scriptingquestquestactionmanagerjava"><code>scripting/quest/QuestActionManager.java</code><a class="headerlink" href="#scriptingquestquestactionmanagerjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class QuestActionManager</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public QuestActionManager(Client c, int quest, int npc, boolean start)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public int getQuest()</code>：读取并返回状态/数据。</li>
+<li><code>public boolean isStart()</code>：进行条件判定并返回布尔结果。</li>
+<li><code>public void dispose()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean forceStartQuest()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean forceCompleteQuest()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void startQuest()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void completeQuest()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void gainExp(int gain)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void gainMeso(int gain)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public String getMedalName()</code>：读取并返回状态/数据。</li>
+</ul>
+<h2 id="scriptingquestquestscriptmanagerjava"><code>scripting/quest/QuestScriptManager.java</code><a class="headerlink" href="#scriptingquestquestscriptmanagerjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class QuestScriptManager</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public static QuestScriptManager getInstance()</code>：读取并返回状态/数据。</li>
+<li><code>private ScriptEngine getQuestScriptEngine(Client c, short questid)</code>：读取并返回状态/数据。</li>
+<li><code>public void start(Client c, short questid, int npc)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void start(Client c, byte mode, byte type, int selection)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void end(Client c, short questid, int npc)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void end(Client c, byte mode, byte type, int selection)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void raiseOpen(Client c, short questid, int npc)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void dispose(QuestActionManager qm, Client c)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void dispose(Client c)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public QuestActionManager getQM(Client c)</code>：读取并返回状态/数据。</li>
+<li><code>public void reloadQuestScripts()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public boolean checkFunctionExists(Client c, short questid, int npc, String functionName)</code>：校验输入参数或业务约束。</li>
+</ul>
+<h2 id="scriptingreactorreactoractionmanagerjava"><code>scripting/reactor/ReactorActionManager.java</code><a class="headerlink" href="#scriptingreactorreactoractionmanagerjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ReactorActionManager</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public ReactorActionManager(Client c, Reactor reactor, Invocable iv)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void hitReactor()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void destroyNpc(int npcId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private static void sortDropEntries(List&lt;ReactorDropEntry&gt; from, List&lt;ReactorDropEntry&gt; item, List&lt;ReactorDropEntry&gt; visibleQuest, List&lt;ReactorDropEntry&gt; otherQuest, Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private static List&lt;ReactorDropEntry&gt; assembleReactorDropEntries(Character chr, List&lt;ReactorDropEntry&gt; items)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void sprayItems()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void sprayItems(boolean meso, int mesoChance, int minMeso, int maxMeso)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void sprayItems(boolean meso, int mesoChance, int minMeso, int maxMeso, int minItems)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void sprayItems(int posX, int posY, boolean meso, int mesoChance, int minMeso, int maxMeso, int minItems)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void dropItems()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void dropItems(boolean meso, int mesoChance, int minMeso, int maxMeso)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void dropItems(boolean meso, int mesoChance, int minMeso, int maxMeso, int minItems)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void dropItems(int posX, int posY, boolean meso, int mesoChance, int minMeso, int maxMeso, int minItems)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void dropItems(boolean delayed, int posX, int posY, boolean meso, int mesoChance, final int minMeso, final int maxMeso, int minItems)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private List&lt;ReactorDropEntry&gt; getDropChances()</code>：读取并返回状态/数据。</li>
+<li><code>private List&lt;ReactorDropEntry&gt; generateDropList(List&lt;ReactorDropEntry&gt; drops, float dropRate, boolean meso, int mesoChance, int minItems)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void spawnMonster(int id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void createMapMonitor(int mapId, String portal)</code>：创建对象、会话或业务记录。</li>
+<li><code>public void spawnMonster(int id, int qty)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void spawnMonster(int id, int qty, int x, int y)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void spawnMonster(int id, int qty, Point pos)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void killMonster(int id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void killMonster(int id, boolean withDrops)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Point getPosition()</code>：读取并返回状态/数据。</li>
+<li><code>public void spawnNpc(int npcId)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void spawnNpc(int npcId, Point pos)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public Reactor getReactor()</code>：读取并返回状态/数据。</li>
+<li><code>public void spawnFakeMonster(int id)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void summonBossDelayed(final int mobId, final int delayMs, final int x, final int y, final String bgm, final String summonMessage)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void summonBoss(int mobId, int x, int y, String bgmName, String summonMessage)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void dispelAllMonsters(int num, int team)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="scriptingreactorreactorscriptmanagerjava"><code>scripting/reactor/ReactorScriptManager.java</code><a class="headerlink" href="#scriptingreactorreactorscriptmanagerjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ReactorScriptManager</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public static ReactorScriptManager getInstance()</code>：读取并返回状态/数据。</li>
+<li><code>public void onHit(Client c, Reactor reactor)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void act(Client c, Reactor reactor)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public List&lt;ReactorDropEntry&gt; getDrops(int reactorId)</code>：读取并返回状态/数据。</li>
+<li><code>public void clearDrops()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void touch(Client c, Reactor reactor)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void untouch(Client c, Reactor reactor)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private void touching(Client c, Reactor reactor, boolean touching)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private Invocable initializeInvocable(Client c, Reactor reactor)</code>：初始化模块、资源或运行时状态。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

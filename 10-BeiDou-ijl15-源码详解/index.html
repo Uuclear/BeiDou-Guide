@@ -1,0 +1,2934 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BeiDou 游戏系统开发文档与源码索引">
+      
+      
+        <meta name="author" content="BeiDou-Guide">
+      
+      
+        <link rel="canonical" href="https://uuclear.github.io/BeiDou-Guide/10-BeiDou-ijl15-%E6%BA%90%E7%A0%81%E8%AF%A6%E8%A7%A3/">
+      
+      
+        <link rel="prev" href="../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/">
+      
+      
+        <link rel="next" href="../11-%E5%85%A8%E9%87%8F%E6%BA%90%E7%A0%81%E7%AC%A6%E5%8F%B7%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>ijl15 源码详解 - BeiDou 开发文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#beidou-ijl15" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="BeiDou 开发文档" class="md-header__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BeiDou 开发文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ijl15 源码详解
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../read-guide/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  阅读指引
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  环境与架构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  源码精读与导读
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../reference/gms-server-symbol-notes-README/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  自动生成索引
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BeiDou 开发文档" class="md-nav__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    BeiDou 开发文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../read-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阅读指引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境与架构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    环境与架构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-API%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 接口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运维部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用户手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    技术规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码精读与导读
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    源码精读与导读
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码深度导读
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 源码详解
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 源码详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        总览：DLL 在何时做了什么
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        入口与配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="入口与配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dllmaincpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dllmain.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dllmainh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dllmain.h
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inireaderh-inireader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INIReader.h / INIReader 实现段
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ijl15-nmco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        名称劫持：ijl15 与 NMCO
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="名称劫持：ijl15 与 NMCO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ijl15h-ijl15cpp-ijl15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ijl15.h / ijl15.cpp —— 类 ijl15
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nmcoh-nmcocpp-nmco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMCO.h / NMCO.cpp —— 类 NMCO
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        内存与钩子基础设施
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内存与钩子基础设施">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memoryh-memorycpp-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory.h / Memory.cpp —— 类 Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        客户端逻辑补丁：类 Client
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="客户端逻辑补丁：类 Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clienth-clientcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client.h / Client.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#win32-wz-replacementfuncsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        函数替换与 Win32 / Wz 钩子：ReplacementFuncs.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        地址与代码洞
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="地址与代码洞">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addylocationsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AddyLocations.h
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codecavesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        codecaves.h
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixime-fixbuddy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输入法与好友：FixIme / FixBuddy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="输入法与好友：FixIme / FixBuddy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fiximeh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FixIme.h
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixbuddyh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FixBuddy.h
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boss-uibosshph-bosshpcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boss 血条 UI：BossHP.h / BossHP.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hpmp-hpmpalerth-hpmpalertcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HP/MP 预警：HpMpAlert.h / HpMpAlert.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        客户端集合类型模板：MapleClientCollectionTypes/*
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其它头文件
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阅读顺序建议
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-%E5%85%A8%E9%87%8F%E6%BA%90%E7%A0%81%E7%AC%A6%E5%8F%B7%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与生成说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-%E6%BA%90%E7%A0%81%E6%A8%A1%E5%9D%97%E7%B2%BE%E8%AF%BB-%E4%BA%BA%E6%9C%BA%E6%92%B0%E5%86%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码模块精读（人机撰写）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自动生成索引
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    自动生成索引
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 逐符号职责（分卷）
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    gms-server 逐符号职责（分卷）
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    分卷索引与用法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    （跳转）单文件入口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/_root/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    org.gms 根
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/aop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    controller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/dao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dao
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/exception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    exception
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/net/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    net
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    property
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-symbol-notes/util/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    util
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与 API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    全量符号与 API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-server-api-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server public 索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-ui-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/gms-ui-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/beidou-ijl15-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/beidou-ijl15-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dll" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        总览：DLL 在何时做了什么
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        入口与配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="入口与配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dllmaincpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dllmain.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dllmainh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dllmain.h
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inireaderh-inireader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INIReader.h / INIReader 实现段
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ijl15-nmco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        名称劫持：ijl15 与 NMCO
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="名称劫持：ijl15 与 NMCO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ijl15h-ijl15cpp-ijl15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ijl15.h / ijl15.cpp —— 类 ijl15
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nmcoh-nmcocpp-nmco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMCO.h / NMCO.cpp —— 类 NMCO
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        内存与钩子基础设施
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="内存与钩子基础设施">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memoryh-memorycpp-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory.h / Memory.cpp —— 类 Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        客户端逻辑补丁：类 Client
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="客户端逻辑补丁：类 Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clienth-clientcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client.h / Client.cpp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#win32-wz-replacementfuncsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        函数替换与 Win32 / Wz 钩子：ReplacementFuncs.h
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        地址与代码洞
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="地址与代码洞">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addylocationsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AddyLocations.h
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codecavesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        codecaves.h
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixime-fixbuddy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        输入法与好友：FixIme / FixBuddy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="输入法与好友：FixIme / FixBuddy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fiximeh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FixIme.h
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixbuddyh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FixBuddy.h
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boss-uibosshph-bosshpcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boss 血条 UI：BossHP.h / BossHP.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hpmp-hpmpalerth-hpmpalertcpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HP/MP 预警：HpMpAlert.h / HpMpAlert.cpp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapleclientcollectiontypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        客户端集合类型模板：MapleClientCollectionTypes/*
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其它头文件
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        阅读顺序建议
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/Uuclear/BeiDou-Guide/edit/main/docs/10-BeiDou-ijl15-源码详解.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="beidou-ijl15">BeiDou-ijl15 源码详解<a class="headerlink" href="#beidou-ijl15" title="Permanent link">&para;</a></h1>
+<p>本文档对应上游仓库 <a href="https://github.com/BeiDouMS/BeiDou-ijl15">BeiDouMS/BeiDou-ijl15</a> 中 <code>ezorsia/</code> 目录下的主要源文件。ijl15 工程体量小（数十个 C/C++ 单元），适合在文档中<strong>按文件</strong>说明职责；地址偏移（如 <code>0x004CA061</code>）与客户端版本强相关，升级客户端后必须重新校验。</p>
+<hr />
+<h2 id="dll">总览：DLL 在何时做了什么<a class="headerlink" href="#dll" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>进程加载 DLL</strong>（<code>DllMain</code> → <code>DLL_PROCESS_ATTACH</code>）  </li>
+<li>读取同目录 <strong><code>config.ini</code></strong>（<code>INIReader</code>），填充 <code>Client::</code> 静态配置（分辨率、端口、伤害上限、IME 等）。  </li>
+<li>将 <strong>主机名解析为 IPv4 字符串</strong>（<code>ResolveToIpv4String</code>），供后续补丁写入连接信息时使用。  </li>
+<li>按固定顺序安装 <strong>Detours 钩子</strong>（<code>ReplacementFuncs.h</code> 中大量 <code>Hook*</code>）：多开、窗口、资源加载路径、字符串池等。  </li>
+<li>调用 <code>Client::UpdateGameStartup()</code> 及一系列 <code>Client::</code> 补丁方法，应用分辨率、中文、数值上限等逻辑。  </li>
+<li><code>BossHP::Hook()</code> 钩住与 Boss 血条 UI 相关的客户端例程。  </li>
+<li><strong><code>ijl15::CreateHook()</code></strong>：从 <strong><code>2ijl15.dll</code></strong> 取真实 JPEG 库导出并 <strong>转发</strong>（见下文），使本 DLL 可顶替游戏加载的 <code>ijl15.dll</code> 名称而不破坏图像解码。  </li>
+<li><code>DLL_PROCESS_DETACH</code> 中当前实现为 <strong><code>ExitProcess(0)</code></strong>（会终结进程；若需热卸载需自行调整）。</li>
+</ol>
+<blockquote>
+<p>说明：<code>dllmain.cpp</code> 内注释仍写「NMCO hook」，但实际加载的是 <code>ijl15::CreateHook()</code>。<strong>NMCO</strong> 相关转发实现在 <code>NMCO.cpp</code>，依赖 <strong><code>nmconew2.dll</code></strong>，与 <strong>ijl15 转发</strong> 是两套可选机制，是否启用取决于你的打包与引导方式。</p>
+</blockquote>
+<hr />
+<h2 id="_1">入口与配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="dllmaincpp"><code>dllmain.cpp</code><a class="headerlink" href="#dllmaincpp" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ResolveToIpv4String</code></td>
+<td>若 <code>config.ini</code> 里是域名，用 WinSock <code>getaddrinfo</code> 解析为 IPv4 点分字符串；解析失败则退回原文本。</td>
+</tr>
+<tr>
+<td><code>CreateConsole</code></td>
+<td>分配控制台（开发调试用，默认注释）。</td>
+</tr>
+<tr>
+<td><code>DllMain</code></td>
+<td>读配置、安装钩子、调用 <code>Client</code> / <code>BossHP</code> / <code>ijl15</code> 初始化；<code>DLL_PROCESS_DETACH</code> 调 <code>ExitProcess(0)</code>。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dllmainh"><code>dllmain.h</code><a class="headerlink" href="#dllmainh" title="Permanent link">&para;</a></h3>
+<p>通常为空或仅声明；以仓库实际内容为准。</p>
+<h3 id="inireaderh-inireader"><code>INIReader.h</code> / <code>INIReader</code> 实现段<a class="headerlink" href="#inireaderh-inireader" title="Permanent link">&para;</a></h3>
+<p>基于 <strong>inih</strong> 的 INI 解析（参见文件头许可证说明）。<code>dllmain</code> 使用 <code>INIReader reader("config.ini")</code>，各 section（如 <code>general</code>、<code>optional</code>、<code>debug</code>）键值映射到 <code>Client::</code> 静态成员。</p>
+<hr />
+<h2 id="ijl15-nmco">名称劫持：<code>ijl15</code> 与 <code>NMCO</code><a class="headerlink" href="#ijl15-nmco" title="Permanent link">&para;</a></h2>
+<h3 id="ijl15h-ijl15cpp-ijl15"><code>ijl15.h</code> / <code>ijl15.cpp</code> —— 类 <code>ijl15</code><a class="headerlink" href="#ijl15h-ijl15cpp-ijl15" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>成员</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CreateHook()</code></td>
+<td><code>LoadLibraryA("2ijl15.dll")</code>，<code>GetProcAddress</code> 取得 <code>ijlErrorStr</code>、<code>ijlFree</code>、<code>ijlGetLibVersion</code>、<code>ijlInit</code>、<code>ijlRead</code>、<code>ijlWrite</code> 地址。</td>
+</tr>
+<tr>
+<td>导出函数 <code>ijlGetLibVersion</code> 等</td>
+<td><code>extern "C"</code> + <code>naked</code>，内联汇编 <code>jmp</code> 到真实实现（<strong>x86</strong>）。</td>
+</tr>
+</tbody>
+</table>
+<p>设计意图：游戏进程仍按名称加载 <strong>ijl15.dll</strong>，本模块导出同名入口，把调用转发到真正的 <strong><code>2ijl15.dll</code></strong>（需与游戏一并分发）。</p>
+<h3 id="nmcoh-nmcocpp-nmco"><code>NMCO.h</code> / <code>NMCO.cpp</code> —— 类 <code>NMCO</code><a class="headerlink" href="#nmcoh-nmcocpp-nmco" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>成员</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CreateHook()</code></td>
+<td><code>LoadLibraryA("nmconew2.dll")</code>，解析 <code>NMCO_CallNMFunc</code>、<code>NMCO_CallNMFunc2</code>、<code>NMCO_MemoryFree</code>。</td>
+</tr>
+<tr>
+<td>导出 <code>NMCO_*</code></td>
+<td>同样为 <code>naked</code> + <code>jmp</code> 转发。</td>
+</tr>
+</tbody>
+</table>
+<p>用于 Nexon/登录组件一类 DLL 的导出兼容（具体取决于你的客户端补丁策略）。</p>
+<hr />
+<h2 id="_2">内存与钩子基础设施<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="memoryh-memorycpp-memory"><code>Memory.h</code> / <code>Memory.cpp</code> —— 类 <code>Memory</code><a class="headerlink" href="#memoryh-memorycpp-memory" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UseVirtuProtect</code></td>
+<td>静态开关：是否在改写内存前使用 <code>VirtualProtect</code>（默认可通过 <code>config.ini</code> 的 <code>UseVirtuProtect</code> 控制）。</td>
+</tr>
+<tr>
+<td><code>SetHook</code></td>
+<td>封装 Detours：<code>DetourTransactionBegin</code> → <code>DetourAttach</code>/<code>Detach</code> → <code>Commit</code>。</td>
+</tr>
+<tr>
+<td><code>FillBytes</code></td>
+<td>按字节填充指定地址区域。</td>
+</tr>
+<tr>
+<td><code>ReplaceString</code> / <code>WriteString</code></td>
+<td>在客户端内存中改写字符串；注释中强调 <strong>新串长度 ≤ 原串</strong> 等约束。</td>
+</tr>
+<tr>
+<td><code>WriteByte</code> / <code>WriteShort</code> / <code>WriteInt</code> / <code>WriteDouble</code></td>
+<td>写入标量。</td>
+</tr>
+<tr>
+<td><code>WriteByteArray</code></td>
+<td>写入字节数组补丁。</td>
+</tr>
+<tr>
+<td><code>CodeCave</code></td>
+<td>在指定地址写入跳转/补丁（与 <code>codecaves</code> 配合）。</td>
+</tr>
+<tr>
+<td><code>PatchNop</code></td>
+<td>用 NOP（<code>0x90</code>）填充指定长度，可选 <code>VirtualProtect</code>。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="client">客户端逻辑补丁：类 <code>Client</code><a class="headerlink" href="#client" title="Permanent link">&para;</a></h2>
+<h3 id="clienth-clientcpp"><code>Client.h</code> / <code>Client.cpp</code><a class="headerlink" href="#clienth-clientcpp" title="Permanent link">&para;</a></h3>
+<p><strong>静态配置成员</strong>（节选，完整以头文件为准）：分辨率 <code>m_nGameWidth</code>/<code>m_nGameHeight</code>、<code>MsgAmount</code>、窗口与 Logo 选项、<code>setDamageCap</code> 等数值上限、<code>ServerIP_AddressFromINI</code>、<code>serverIP_Port</code>、IME 与调试开关等。</p>
+<p><strong>静态方法</strong>（职责摘要）：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>职责摘要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UpdateGameStartup</code></td>
+<td>大量 <strong>可选</strong> 的 <code>Memory::CodeCave</code> / <code>WriteByte</code> 补丁（多数以注释形式保留），用于版本特定的启动与网络绕过；按客户端构建切换。</td>
+</tr>
+<tr>
+<td><code>EnableNewIGCipher</code></td>
+<td>与 <code>m_nIGCipherHash</code> 相关的密码学/包处理补丁。</td>
+</tr>
+<tr>
+<td><code>UpdateResolution</code></td>
+<td>按配置分辨率改写客户端渲染/窗口相关常量与调用。</td>
+</tr>
+<tr>
+<td><code>UpdateLogin</code></td>
+<td>登录流程相关内存补丁（与 <code>AddyLocations</code> 地址绑定）。</td>
+</tr>
+<tr>
+<td><code>FixMouseWheel</code></td>
+<td>鼠标滚轮行为修正。</td>
+</tr>
+<tr>
+<td><code>Chinese</code></td>
+<td>中文显示/编码相关补丁。</td>
+</tr>
+<tr>
+<td><code>LongQuickSlot</code></td>
+<td>快捷栏扩展相关。</td>
+</tr>
+<tr>
+<td><code>FixDateFormat</code></td>
+<td>日期格式。</td>
+</tr>
+<tr>
+<td><code>FixItemType</code></td>
+<td>物品类型显示或判定。</td>
+</tr>
+<tr>
+<td><code>JumpCap</code></td>
+<td>跳跃上限相关。</td>
+</tr>
+<tr>
+<td><code>FixChatPosHook</code></td>
+<td>聊天窗口位置。</td>
+</tr>
+<tr>
+<td><code>NoPassword</code></td>
+<td>配合调试的无密码逻辑（受 <code>noPassword</code> 等标志控制）。</td>
+</tr>
+<tr>
+<td><code>MoreHook</code></td>
+<td>其它杂项钩子集合。</td>
+</tr>
+<tr>
+<td><code>WorldMap</code></td>
+<td>世界地图相关 UI 或数据补丁。</td>
+</tr>
+</tbody>
+</table>
+<p>具体汇编级行为需对照 <strong><code>AddyLocations.h</code></strong>、<strong><code>codecaves.h</code></strong> 中地址与 <code>Client.cpp</code> 实现。</p>
+<hr />
+<h2 id="win32-wz-replacementfuncsh">函数替换与 Win32 / Wz 钩子：<code>ReplacementFuncs.h</code><a class="headerlink" href="#win32-wz-replacementfuncsh" title="Permanent link">&para;</a></h2>
+<p>该头文件体积大，主要包含：</p>
+<ul>
+<li><code>HookGetModuleFileName</code>、<code>HookCreateWindowExA</code>、<code>Hook_CreateMutexA</code> 等 <strong>Win32 API</strong> 级别的 Detour（多开、窗口居中、最小化按钮等）。  </li>
+<li><code>HookPcCreateObject_IWzResMan</code> 等与 <strong>Wz 资源系统</strong> 相关的钩子，用于路径、挂载与加载行为修正。  </li>
+<li>大量内联 <strong>lambda</strong> 作为 Detour 目标，调用 <code>Memory::SetHook</code>。</li>
+</ul>
+<p>阅读方式：搜索 <code>bool Hook</code> 或 <code>Hook</code> 前缀函数名，从 <code>DllMain</code> 里实际启用的一组开始跟踪。</p>
+<hr />
+<h2 id="_3">地址与代码洞<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="addylocationsh"><code>AddyLocations.h</code><a class="headerlink" href="#addylocationsh" title="Permanent link">&para;</a></h3>
+<p>客户端 <strong>VA（虚拟地址）</strong> 常量，供 <code>Memory::Write*</code>、<code>CodeCave</code> 使用。版本变化时此处最先失效。</p>
+<h3 id="codecavesh"><code>codecaves.h</code><a class="headerlink" href="#codecavesh" title="Permanent link">&para;</a></h3>
+<p>预定义的 <strong>code cave</strong> 机器码块与目标地址、NOP 计数等，与 <code>Memory::CodeCave</code> 配合。</p>
+<hr />
+<h2 id="fixime-fixbuddy">输入法与好友：<code>FixIme</code> / <code>FixBuddy</code><a class="headerlink" href="#fixime-fixbuddy" title="Permanent link">&para;</a></h2>
+<h3 id="fiximeh"><code>FixIme.h</code><a class="headerlink" href="#fiximeh" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>EnableIme</code> / <code>DisableIme</code>：通过 <code>ImmGetContext</code> / <code>ImmAssociateContext</code> 调整 IME（注释标明部分方法未充分测试）。  </li>
+<li>若干 <strong><code>__declspec(naked)</code></strong> 与全局 <strong><code>DWORD</code> 返回地址</strong>：在内联汇编里跳转到客户端原有 IME 分支，修复中文输入路径；地址与客户端构建绑定。</li>
+</ul>
+<h3 id="fixbuddyh"><code>FixBuddy.h</code><a class="headerlink" href="#fixbuddyh" title="Permanent link">&para;</a></h3>
+<p>好友列表/社交相关补丁声明（具体以文件内容为准）。</p>
+<hr />
+<h2 id="boss-uibosshph-bosshpcpp">Boss 血条 UI：<code>BossHP.h</code> / <code>BossHP.cpp</code><a class="headerlink" href="#boss-uibosshph-bosshpcpp" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>成员</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Hook</code></td>
+<td>对外入口，内部调用 <code>HookInternal</code> 等安装一系列与怪物 HP 标签、字段初始化/销毁相关的钩子。</td>
+</tr>
+<tr>
+<td><code>DrawBossHpNumberIfNeed</code> 等</td>
+<td>在适当时机绘制自定义 Boss HP 数值或覆盖默认显示。</td>
+</tr>
+<tr>
+<td><code>GetMiniMapWidth</code></td>
+<td>布局计算辅助。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="hpmp-hpmpalerth-hpmpalertcpp">HP/MP 预警：<code>HpMpAlert.h</code> / <code>HpMpAlert.cpp</code><a class="headerlink" href="#hpmp-hpmpalerth-hpmpalertcpp" title="Permanent link">&para;</a></h2>
+<p>声明 <code>HookSaveGlobal</code>、<code>HookHpMpAlertRecv</code>：与全局状态保存及 HP/MP 包处理挂钩，实现低血量提示等（细节见 <code>.cpp</code>）。</p>
+<hr />
+<h2 id="mapleclientcollectiontypes">客户端集合类型模板：<code>MapleClientCollectionTypes/*</code><a class="headerlink" href="#mapleclientcollectiontypes" title="Permanent link">&para;</a></h2>
+<p><code>ZArray</code>、<code>ZList</code>、<code>ZXString</code>、<code>ZRef</code> 等模板/工具类，多为 <strong>从客户端逆向风格</strong> 迁移的容器与字符串封装，供补丁代码安全访问游戏内结构；阅读时关注 <strong><code>ZXString</code></strong>、<strong><code>ZArray</code></strong> 等与游戏内类型布局一致性。</p>
+<hr />
+<h2 id="_4">其它头文件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>stdafx.h</code> / <code>stdafx.cpp</code></td>
+<td>预编译头与通用 Windows / CRT 包含。</td>
+</tr>
+<tr>
+<td><code>AutoTypes.h</code></td>
+<td>自动类型/typedef 聚合，服务钩子签名。</td>
+</tr>
+<tr>
+<td><code>resource.h</code></td>
+<td>资源 ID。</td>
+</tr>
+<tr>
+<td><code>detours.h</code> / <code>detver.h</code></td>
+<td>Microsoft Detours 库头文件。</td>
+</tr>
+<tr>
+<td><code>syelog.h</code>、<code>targetver.h</code></td>
+<td>日志与目标平台版本（按项目配置）。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_5">阅读顺序建议<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ol>
+<li><code>dllmain.cpp</code> → 弄清配置键与钩子启用顺序。  </li>
+<li><code>Memory.cpp</code> → 理解所有补丁的底层能力边界。  </li>
+<li><code>ijl15.cpp</code> / <code>NMCO.cpp</code> → 理解 DLL 名称劫持模式。  </li>
+<li><code>Client.cpp</code> 中<strong>未被注释</strong>的活跃补丁 → 当前版本实际生效逻辑。  </li>
+<li><code>ReplacementFuncs.h</code> 中与 <code>DllMain</code> 调用名一致的 <code>Hook*</code> → Win32 与 Wz 层行为。  </li>
+<li><code>FixIme.h</code>、<code>BossHP</code>、<code>HpMpAlert</code> → 专项功能。</li>
+</ol>
+<p>修改补丁时务必在 <strong>与目标客户端完全一致</strong> 的二进制上验证地址与调用约定（<strong>stdcall/cdecl/thiscall</strong> 等）。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,6760 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BeiDou 游戏系统开发文档与源码索引">
+      
+      
+        <meta name="author" content="BeiDou-Guide">
+      
+      
+        <link rel="canonical" href="https://uuclear.github.io/BeiDou-Guide/reference/gms-ui-full-symbols/">
+      
+      
+        <link rel="prev" href="../gms-server-api-index/">
+      
+      
+        <link rel="next" href="../gms-ui-symbol-notes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>gms-ui 全量符号 - BeiDou 开发文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gms-ui" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="BeiDou 开发文档" class="md-header__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BeiDou 开发文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              gms-ui 全量符号
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../read-guide/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  阅读指引
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  环境与架构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  源码精读与导读
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../gms-server-symbol-notes-README/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  自动生成索引
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="BeiDou 开发文档" class="md-nav__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    BeiDou 开发文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../read-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阅读指引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境与架构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    环境与架构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-API%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 接口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运维部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用户手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../08-%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    技术规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码精读与导读
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    源码精读与导读
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码深度导读
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10-BeiDou-ijl15-%E6%BA%90%E7%A0%81%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 源码详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11-%E5%85%A8%E9%87%8F%E6%BA%90%E7%A0%81%E7%AC%A6%E5%8F%B7%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与生成说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../12-%E6%BA%90%E7%A0%81%E6%A8%A1%E5%9D%97%E7%B2%BE%E8%AF%BB-%E4%BA%BA%E6%9C%BA%E6%92%B0%E5%86%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码模块精读（人机撰写）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自动生成索引
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    自动生成索引
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 逐符号职责（分卷）
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    gms-server 逐符号职责（分卷）
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    分卷索引与用法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    （跳转）单文件入口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/_root/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    org.gms 根
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/aop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    controller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/dao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dao
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/exception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    exception
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/net/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    net
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    property
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-symbol-notes/util/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    util
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与 API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    全量符号与 API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-server-api-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server public 索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 全量符号
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#appvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiaccountts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/account.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiautobants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/autoban.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apicashshopts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/cashShop.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apicommandts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/command.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiconfigts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/config.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apidashboardts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/dashboard.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apidropts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/drop.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apifiletreets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/fileTree.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apigachaponts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/gachapon.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiinformationts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/information.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiinterceptorts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/interceptor.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiinventoryts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/inventory.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apimessagets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/message.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apinpcshopts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/npcShop.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiplayerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/player.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiuserts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/user.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsbreadcrumbindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/breadcrumb/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentschartindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/chart/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsfooterindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/footer/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsglobal-settingblockvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/global-setting/block.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsglobal-settingform-wrappervue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/global-setting/form-wrapper.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsglobal-settingindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/global-setting/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsmenuindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/menu/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsmenuuse-menu-treets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/menu/use-menu-tree.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsmessage-boxindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/message-box/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsmessage-boxlistvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/message-box/list.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsmessage-boxlocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/message-box/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsmessage-boxlocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/message-box/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsnavbarindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/navbar/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentstab-barindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/tab-bar/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentstab-bartab-itemvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/tab-bar/tab-item.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directiveindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        directive/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directivepermissionindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        directive/permission/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#envdts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        env.d.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hookschart-optionts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/chart-option.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooksloadingts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/loading.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hookslocalets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/locale.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hookspermissionts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/permission.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooksrequestts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/request.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooksresponsivets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/responsive.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooksthemests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/themes.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooksuserts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/user.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooksvisiblets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/visible.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layoutdefault-layoutvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        layout/default-layout.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layoutpage-layoutvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        layout/page-layout.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localeen-usbasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        locale/en-US/base.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localeen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localeindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        locale/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localezh-cnbasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        locale/zh-CN/base.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        main.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mockindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mock/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mockmessage-boxts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mock/message-box.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mockuserts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mock/user.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerapp-menusindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/app-menus/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerconstantsts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/constants.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerguardindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/guard/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerguardpermissionts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/guard/permission.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerguarduserlogininfots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/guard/userLoginInfo.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerroutesbasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/routes/base.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerroutesexternalmodulesarcots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/routes/externalModules/arco.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerroutesexternalmodulesbeidouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/routes/externalModules/beidou.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerroutesindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/routes/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerroutesmodulesaccountts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/routes/modules/account.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerroutesmodulesdashboardts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/routes/modules/dashboard.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerroutesmodulesgamets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/routes/modules/game.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerroutestypests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/routes/types.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routertypingsdts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/typings.d.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storeindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesaccounttypests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/account/types.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesappindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/app/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesapptypests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/app/types.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulescashshoptypets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/cashShop/type.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesdroptypets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/drop/type.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesgachapontypets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/gachapon/type.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesinventorytypets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/inventory/type.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesnpcshoptypets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/npcShop/type.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulestab-barindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/tab-bar/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulestab-bartypests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/tab-bar/types.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesuserindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/user/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesusertypests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/user/types.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storepagets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/page.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typesechartsts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        types/echarts.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typesglobalts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        types/global.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typesmockts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        types/mock.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilsauthts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/auth.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilsenvts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/env.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilseventts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/event.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilsindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilsists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/is.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilsmaplestoryapits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/mapleStoryAPI.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilsmonitorts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/monitor.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilsroute-listenerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/route-listener.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilssetup-mockts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/setup-mock.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilsstringutilsts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/stringUtils.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsaccountlistaddformvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/account/list/addForm.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsaccountlistindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/account/list/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsaccountlistupdateformvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/account/list/updateForm.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsaccountlocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/account/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsaccountlocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/account/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsaccountplayerindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/account/player/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsdashboardinformationsearchindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/dashboard/informationSearch/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsdashboardinformationsearchlocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/dashboard/informationSearch/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsdashboardinformationsearchlocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/dashboard/informationSearch/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsdashboardworkplaceindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/dashboard/workplace/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsdashboardworkplacelocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/dashboard/workplace/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsdashboardworkplacelocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/dashboard/workplace/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsdashboardworkplacemockts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/dashboard/workplace/mock.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameautobanindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/autoban/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameautobanlocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/autoban/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameautobanlocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/autoban/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamecashshopformvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/cashShop/form.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamecashshopindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/cashShop/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamecashshoplocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/cashShop/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamecashshoplocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/cashShop/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamecashshoptablevue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/cashShop/table.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamecommandinfoindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/commandInfo/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamecommandinfolocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/commandInfo/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamecommandinfolocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/commandInfo/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameconfigindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/config/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameconfiglocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/config/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameconfiglocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/config/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamedropglobalvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/drop/global.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamedropindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/drop/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamedroplocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/drop/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamedroplocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/drop/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamefileindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/file/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamegachaponformvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/gachapon/form.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamegachaponindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/gachapon/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamegachaponlocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/gachapon/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamegachaponlocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/gachapon/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamegachaponrewardvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/gachapon/reward.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameinventoryinventoryuivue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/inventory/InventoryUI.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameinventorycharacterselectorvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/inventory/characterSelector.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameinventoryindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/inventory/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameinventoryinventoryequipformvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/inventory/inventoryEquipForm.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameinventorylocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/inventory/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameinventorylocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/inventory/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameinventorytablevue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/inventory/table.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamenpcshopindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/npcShop/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamenpcshoplocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/npcShop/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamenpcshoplocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/npcShop/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewslogincomponentslogin-formvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/login/components/login-form.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsloginindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/login/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsloginlocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/login/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsloginlocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/login/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsnot-foundindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/not-found/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsredirectindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/redirect/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gms-ui-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beidou-ijl15-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beidou-ijl15-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#appvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiaccountts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/account.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiautobants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/autoban.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apicashshopts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/cashShop.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apicommandts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/command.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiconfigts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/config.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apidashboardts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/dashboard.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apidropts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/drop.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apifiletreets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/fileTree.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apigachaponts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/gachapon.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiinformationts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/information.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiinterceptorts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/interceptor.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiinventoryts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/inventory.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apimessagets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/message.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apinpcshopts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/npcShop.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiplayerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/player.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apiuserts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        api/user.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsbreadcrumbindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/breadcrumb/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentschartindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/chart/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsfooterindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/footer/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsglobal-settingblockvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/global-setting/block.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsglobal-settingform-wrappervue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/global-setting/form-wrapper.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsglobal-settingindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/global-setting/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsmenuindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/menu/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsmenuuse-menu-treets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/menu/use-menu-tree.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsmessage-boxindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/message-box/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsmessage-boxlistvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/message-box/list.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsmessage-boxlocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/message-box/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsmessage-boxlocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/message-box/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentsnavbarindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/navbar/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentstab-barindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/tab-bar/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#componentstab-bartab-itemvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        components/tab-bar/tab-item.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directiveindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        directive/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directivepermissionindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        directive/permission/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#envdts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        env.d.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hookschart-optionts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/chart-option.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooksloadingts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/loading.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hookslocalets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/locale.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hookspermissionts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/permission.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooksrequestts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/request.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooksresponsivets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/responsive.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooksthemests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/themes.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooksuserts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/user.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hooksvisiblets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hooks/visible.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layoutdefault-layoutvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        layout/default-layout.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layoutpage-layoutvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        layout/page-layout.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localeen-usbasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        locale/en-US/base.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localeen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localeindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        locale/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localezh-cnbasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        locale/zh-CN/base.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        main.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mockindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mock/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mockmessage-boxts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mock/message-box.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mockuserts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mock/user.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerapp-menusindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/app-menus/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerconstantsts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/constants.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerguardindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/guard/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerguardpermissionts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/guard/permission.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerguarduserlogininfots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/guard/userLoginInfo.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerroutesbasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/routes/base.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerroutesexternalmodulesarcots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/routes/externalModules/arco.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerroutesexternalmodulesbeidouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/routes/externalModules/beidou.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerroutesindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/routes/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerroutesmodulesaccountts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/routes/modules/account.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerroutesmodulesdashboardts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/routes/modules/dashboard.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerroutesmodulesgamets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/routes/modules/game.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routerroutestypests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/routes/types.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routertypingsdts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        router/typings.d.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storeindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesaccounttypests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/account/types.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesappindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/app/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesapptypests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/app/types.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulescashshoptypets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/cashShop/type.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesdroptypets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/drop/type.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesgachapontypets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/gachapon/type.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesinventorytypets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/inventory/type.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesnpcshoptypets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/npcShop/type.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulestab-barindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/tab-bar/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulestab-bartypests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/tab-bar/types.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesuserindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/user/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storemodulesusertypests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/modules/user/types.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storepagets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store/page.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typesechartsts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        types/echarts.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typesglobalts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        types/global.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typesmockts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        types/mock.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilsauthts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/auth.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilsenvts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/env.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilseventts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/event.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilsindexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/index.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilsists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/is.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilsmaplestoryapits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/mapleStoryAPI.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilsmonitorts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/monitor.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilsroute-listenerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/route-listener.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilssetup-mockts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/setup-mock.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilsstringutilsts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        utils/stringUtils.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsaccountlistaddformvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/account/list/addForm.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsaccountlistindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/account/list/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsaccountlistupdateformvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/account/list/updateForm.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsaccountlocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/account/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsaccountlocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/account/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsaccountplayerindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/account/player/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsdashboardinformationsearchindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/dashboard/informationSearch/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsdashboardinformationsearchlocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/dashboard/informationSearch/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsdashboardinformationsearchlocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/dashboard/informationSearch/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsdashboardworkplaceindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/dashboard/workplace/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsdashboardworkplacelocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/dashboard/workplace/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsdashboardworkplacelocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/dashboard/workplace/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsdashboardworkplacemockts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/dashboard/workplace/mock.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameautobanindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/autoban/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameautobanlocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/autoban/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameautobanlocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/autoban/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamecashshopformvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/cashShop/form.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamecashshopindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/cashShop/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamecashshoplocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/cashShop/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamecashshoplocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/cashShop/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamecashshoptablevue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/cashShop/table.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamecommandinfoindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/commandInfo/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamecommandinfolocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/commandInfo/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamecommandinfolocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/commandInfo/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameconfigindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/config/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameconfiglocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/config/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameconfiglocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/config/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamedropglobalvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/drop/global.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamedropindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/drop/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamedroplocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/drop/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamedroplocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/drop/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamefileindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/file/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamegachaponformvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/gachapon/form.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamegachaponindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/gachapon/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamegachaponlocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/gachapon/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamegachaponlocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/gachapon/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamegachaponrewardvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/gachapon/reward.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameinventoryinventoryuivue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/inventory/InventoryUI.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameinventorycharacterselectorvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/inventory/characterSelector.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameinventoryindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/inventory/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameinventoryinventoryequipformvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/inventory/inventoryEquipForm.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameinventorylocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/inventory/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameinventorylocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/inventory/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgameinventorytablevue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/inventory/table.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamenpcshopindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/npcShop/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamenpcshoplocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/npcShop/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsgamenpcshoplocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/game/npcShop/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewslogincomponentslogin-formvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/login/components/login-form.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsloginindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/login/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsloginlocaleen-usts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/login/locale/en-US.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsloginlocalezh-cnts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/login/locale/zh-CN.ts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsnot-foundindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/not-found/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewsredirectindexvue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        views/redirect/index.vue
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/Uuclear/BeiDou-Guide/edit/main/docs/reference/gms-ui-full-symbols.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="gms-ui">gms-ui 全量符号索引<a class="headerlink" href="#gms-ui" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>自动生成：<code>scripts/generate-full-symbol-docs.py</code>
+源码路径：<code>BeiDou-Server</code>
+TS/Vue 文件数：151</p>
+</blockquote>
+<hr />
+<h2 id="appvue"><code>App.vue</code><a class="headerlink" href="#appvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="apiaccountts"><code>api/account.ts</code><a class="headerlink" href="#apiaccountts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 9</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export RegisterForm
+export GMUpdateForm
+export getAccountList
+export addAccount
+export updateAccountByGM
+export deleteAccount
+export banAccount
+export unbanAccount
+export resetLoggedIn
+</code></pre></div></li>
+</ul>
+<h2 id="apiautobants"><code>api/autoban.ts</code><a class="headerlink" href="#apiautobants" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 3</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export AutobanConfigResult
+export getAutobanConfigList
+export updateAutobanConfig
+</code></pre></div></li>
+</ul>
+<h2 id="apicashshopts"><code>api/cashShop.ts</code><a class="headerlink" href="#apicashshopts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 8</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export conditionState
+export cashShopFormState
+export batchFormState
+export getAllCategoryList
+export getCommodityByCategory
+export onSale
+export offSale
+export batchOnSale
+</code></pre></div></li>
+</ul>
+<h2 id="apicommandts"><code>api/command.ts</code><a class="headerlink" href="#apicommandts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 6</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export CommandReq
+export getCommandList
+export updateCommand
+export reloadEventsByGMCommand
+export reloadPortalsByGMCommand
+export reloadMapsByGMCommand
+</code></pre></div></li>
+</ul>
+<h2 id="apiconfigts"><code>api/config.ts</code><a class="headerlink" href="#apiconfigts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 10</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export ConfigSearch
+export ConfigResult
+export getConfigTypeList
+export getConfigList
+export addConfig
+export updateConfig
+export deleteConfig
+export deleteConfigList
+export importYml
+export exportYml
+</code></pre></div></li>
+</ul>
+<h2 id="apidashboardts"><code>api/dashboard.ts</code><a class="headerlink" href="#apidashboardts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 6</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export getServerStatus
+export startServer
+export stopServer
+export restartServer
+export shutdown
+export getVersion
+</code></pre></div></li>
+</ul>
+<h2 id="apidropts"><code>api/drop.ts</code><a class="headerlink" href="#apidropts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 9</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export DropConditionState
+export getDrop
+export updateDrop
+export insertDrop
+export deleteDrop
+export getGlobalDrop
+export updateGlobalDrop
+export insertGlobalDrop
+export deleteGlobalDrop
+</code></pre></div></li>
+</ul>
+<h2 id="apifiletreets"><code>api/fileTree.ts</code><a class="headerlink" href="#apifiletreets" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 6</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export FileTreeForm
+export ReadForm
+export WriteForm
+export treeFile
+export readFile
+export writeFile
+</code></pre></div></li>
+</ul>
+<h2 id="apigachaponts"><code>api/gachapon.ts</code><a class="headerlink" href="#apigachaponts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 7</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export GachaponPoolSearchCondition
+export getPools
+export updatePool
+export deletePool
+export getRewards
+export updateReward
+export deleteReward
+</code></pre></div></li>
+</ul>
+<h2 id="apiinformationts"><code>api/information.ts</code><a class="headerlink" href="#apiinformationts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 3</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export InformationSearch
+export InformationResult
+export informationSearch
+</code></pre></div></li>
+</ul>
+<h2 id="apiinterceptorts"><code>api/interceptor.ts</code><a class="headerlink" href="#apiinterceptorts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 1</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export HttpResponse
+function generateUUID(
+</code></pre></div></li>
+</ul>
+<h2 id="apiinventoryts"><code>api/inventory.ts</code><a class="headerlink" href="#apiinventoryts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 6</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export InventoryCondition
+export getInventoryTypeList
+export getCharacterList
+export getInventoryList
+export updateInventory
+export deleteInventory
+</code></pre></div></li>
+</ul>
+<h2 id="apimessagets"><code>api/message.ts</code><a class="headerlink" href="#apimessagets" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 6</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export MessageRecord
+export MessageListType
+export queryMessageList
+export setMessageStatus
+export ChatRecord
+export queryChatList
+</code></pre></div></li>
+</ul>
+<h2 id="apinpcshopts"><code>api/npcShop.ts</code><a class="headerlink" href="#apinpcshopts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 6</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export getShopFilter
+export getShopList
+export getShopItemList
+export deleteShopItem
+export addShopItem
+export updateShopItem
+</code></pre></div></li>
+</ul>
+<h2 id="apiplayerts"><code>api/player.ts</code><a class="headerlink" href="#apiplayerts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 4</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export GiveForm
+export getPlayerList
+export givePlayerSrc
+export getEquInitialInfo
+</code></pre></div></li>
+</ul>
+<h2 id="apiuserts"><code>api/user.ts</code><a class="headerlink" href="#apiuserts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 8</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export LoginData
+export SubmitBody
+export LoginRes
+export login
+export logout
+export getUserInfo
+export getMenuList
+export refreshToken
+</code></pre></div></li>
+</ul>
+<h2 id="componentsbreadcrumbindexvue"><code>components/breadcrumb/index.vue</code><a class="headerlink" href="#componentsbreadcrumbindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="componentschartindexvue"><code>components/chart/index.vue</code><a class="headerlink" href="#componentschartindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="componentsfooterindexvue"><code>components/footer/index.vue</code><a class="headerlink" href="#componentsfooterindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="componentsglobal-settingblockvue"><code>components/global-setting/block.vue</code><a class="headerlink" href="#componentsglobal-settingblockvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 1
+<div class="highlight"><pre><span></span><code>const handleChange = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="componentsglobal-settingform-wrappervue"><code>components/global-setting/form-wrapper.vue</code><a class="headerlink" href="#componentsglobal-settingform-wrappervue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 1
+<div class="highlight"><pre><span></span><code>const handleChange = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="componentsglobal-settingindexvue"><code>components/global-setting/index.vue</code><a class="headerlink" href="#componentsglobal-settingindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 3
+<div class="highlight"><pre><span></span><code>const cancel = (...) =&gt;
+const copySettings = (...) =&gt;
+const setVisible = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="componentsindexts"><code>components/index.ts</code><a class="headerlink" href="#componentsindexts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="componentsmenuindexvue"><code>components/menu/index.vue</code><a class="headerlink" href="#componentsmenuindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 1</li>
+<li>const 箭头函数数: 5
+<div class="highlight"><pre><span></span><code>function travel(
+const goto = (...) =&gt;
+const findMenuOpenKeys = (...) =&gt;
+const backtrack = (...) =&gt;
+const setCollapse = (...) =&gt;
+const renderSubMenu = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="componentsmenuuse-menu-treets"><code>components/menu/use-menu-tree.ts</code><a class="headerlink" href="#componentsmenuuse-menu-treets" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 1</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export useMenuTree
+function travel(
+</code></pre></div></li>
+</ul>
+<h2 id="componentsmessage-boxindexvue"><code>components/message-box/index.vue</code><a class="headerlink" href="#componentsmessage-boxindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 2</li>
+<li>const 箭头函数数: 4
+<div class="highlight"><pre><span></span><code>function fetchSourceData(
+function readMessage(
+const getUnreadList = (...) =&gt;
+const formatUnreadLength = (...) =&gt;
+const handleItemClick = (...) =&gt;
+const emptyList = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="componentsmessage-boxlistvue"><code>components/message-box/list.vue</code><a class="headerlink" href="#componentsmessage-boxlistvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 2
+<div class="highlight"><pre><span></span><code>const allRead = (...) =&gt;
+const onItemClick = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="componentsmessage-boxlocaleen-usts"><code>components/message-box/locale/en-US.ts</code><a class="headerlink" href="#componentsmessage-boxlocaleen-usts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="componentsmessage-boxlocalezh-cnts"><code>components/message-box/locale/zh-CN.ts</code><a class="headerlink" href="#componentsmessage-boxlocalezh-cnts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="componentsnavbarindexvue"><code>components/navbar/index.vue</code><a class="headerlink" href="#componentsnavbarindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 4
+<div class="highlight"><pre><span></span><code>const handleToggleTheme = (...) =&gt;
+const handleLogout = (...) =&gt;
+const setDropDownVisible = (...) =&gt;
+const loadVersion = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="componentstab-barindexvue"><code>components/tab-bar/index.vue</code><a class="headerlink" href="#componentstab-barindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="componentstab-bartab-itemvue"><code>components/tab-bar/tab-item.vue</code><a class="headerlink" href="#componentstab-bartab-itemvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 4
+<div class="highlight"><pre><span></span><code>const goto = (...) =&gt;
+const tagClose = (...) =&gt;
+const findCurrentRouteIndex = (...) =&gt;
+const actionSelect = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="directiveindexts"><code>directive/index.ts</code><a class="headerlink" href="#directiveindexts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="directivepermissionindexts"><code>directive/permission/index.ts</code><a class="headerlink" href="#directivepermissionindexts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 1</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>function checkPermission(
+</code></pre></div></li>
+</ul>
+<h2 id="envdts"><code>env.d.ts</code><a class="headerlink" href="#envdts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="hookschart-optionts"><code>hooks/chart-option.ts</code><a class="headerlink" href="#hookschart-optionts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export useChartOption
+</code></pre></div></li>
+</ul>
+<h2 id="hooksloadingts"><code>hooks/loading.ts</code><a class="headerlink" href="#hooksloadingts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 3
+<div class="highlight"><pre><span></span><code>export useLoading
+const handleRefreshToken = (...) =&gt;
+const setLoading = (...) =&gt;
+const toggle = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="hookslocalets"><code>hooks/locale.ts</code><a class="headerlink" href="#hookslocalets" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 1
+<div class="highlight"><pre><span></span><code>export useLocale
+const changeLocale = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="hookspermissionts"><code>hooks/permission.ts</code><a class="headerlink" href="#hookspermissionts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export usePermission
+</code></pre></div></li>
+</ul>
+<h2 id="hooksrequestts"><code>hooks/request.ts</code><a class="headerlink" href="#hooksrequestts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export useRequest
+</code></pre></div></li>
+</ul>
+<h2 id="hooksresponsivets"><code>hooks/responsive.ts</code><a class="headerlink" href="#hooksresponsivets" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 2</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export useResponsive
+function queryDevice(
+function resizeHandler(
+</code></pre></div></li>
+</ul>
+<h2 id="hooksthemests"><code>hooks/themes.ts</code><a class="headerlink" href="#hooksthemests" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export useThemes
+</code></pre></div></li>
+</ul>
+<h2 id="hooksuserts"><code>hooks/user.ts</code><a class="headerlink" href="#hooksuserts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 1
+<div class="highlight"><pre><span></span><code>export useUser
+const logout = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="hooksvisiblets"><code>hooks/visible.ts</code><a class="headerlink" href="#hooksvisiblets" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 2
+<div class="highlight"><pre><span></span><code>export useVisible
+const setVisible = (...) =&gt;
+const toggle = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="layoutdefault-layoutvue"><code>layout/default-layout.vue</code><a class="headerlink" href="#layoutdefault-layoutvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 2
+<div class="highlight"><pre><span></span><code>const setCollapsed = (...) =&gt;
+const drawerCancel = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="layoutpage-layoutvue"><code>layout/page-layout.vue</code><a class="headerlink" href="#layoutpage-layoutvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="localeen-usbasets"><code>locale/en-US/base.ts</code><a class="headerlink" href="#localeen-usbasets" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="localeen-usts"><code>locale/en-US.ts</code><a class="headerlink" href="#localeen-usts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="localeindexts"><code>locale/index.ts</code><a class="headerlink" href="#localeindexts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export LOCALE_OPTIONS
+</code></pre></div></li>
+</ul>
+<h2 id="localezh-cnbasets"><code>locale/zh-CN/base.ts</code><a class="headerlink" href="#localezh-cnbasets" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="localezh-cnts"><code>locale/zh-CN.ts</code><a class="headerlink" href="#localezh-cnts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="maints"><code>main.ts</code><a class="headerlink" href="#maints" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="mockindexts"><code>mock/index.ts</code><a class="headerlink" href="#mockindexts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="mockmessage-boxts"><code>mock/message-box.ts</code><a class="headerlink" href="#mockmessage-boxts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 1
+<div class="highlight"><pre><span></span><code>const getMessageList = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="mockuserts"><code>mock/user.ts</code><a class="headerlink" href="#mockuserts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="routerapp-menusindexts"><code>router/app-menus/index.ts</code><a class="headerlink" href="#routerapp-menusindexts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="routerconstantsts"><code>router/constants.ts</code><a class="headerlink" href="#routerconstantsts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 5</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export WHITE_LIST
+export NOT_FOUND
+export REDIRECT_ROUTE_NAME
+export DEFAULT_ROUTE_NAME
+export DEFAULT_ROUTE
+</code></pre></div></li>
+</ul>
+<h2 id="routerguardindexts"><code>router/guard/index.ts</code><a class="headerlink" href="#routerguardindexts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 1</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export createRouteGuard
+function setupPageGuard(
+</code></pre></div></li>
+</ul>
+<h2 id="routerguardpermissionts"><code>router/guard/permission.ts</code><a class="headerlink" href="#routerguardpermissionts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export setupPermissionGuard
+</code></pre></div></li>
+</ul>
+<h2 id="routerguarduserlogininfots"><code>router/guard/userLoginInfo.ts</code><a class="headerlink" href="#routerguarduserlogininfots" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export setupUserLoginInfoGuard
+</code></pre></div></li>
+</ul>
+<h2 id="routerindexts"><code>router/index.ts</code><a class="headerlink" href="#routerindexts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="routerroutesbasets"><code>router/routes/base.ts</code><a class="headerlink" href="#routerroutesbasets" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 3</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export DEFAULT_LAYOUT
+export REDIRECT_MAIN
+export NOT_FOUND_ROUTE
+</code></pre></div></li>
+</ul>
+<h2 id="routerroutesexternalmodulesarcots"><code>router/routes/externalModules/arco.ts</code><a class="headerlink" href="#routerroutesexternalmodulesarcots" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="routerroutesexternalmodulesbeidouts"><code>router/routes/externalModules/beidou.ts</code><a class="headerlink" href="#routerroutesexternalmodulesbeidouts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="routerroutesindexts"><code>router/routes/index.ts</code><a class="headerlink" href="#routerroutesindexts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 2</li>
+<li>function 声明数: 1</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export appRoutes
+export appExternalRoutes
+function formatModules(
+</code></pre></div></li>
+</ul>
+<h2 id="routerroutesmodulesaccountts"><code>router/routes/modules/account.ts</code><a class="headerlink" href="#routerroutesmodulesaccountts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="routerroutesmodulesdashboardts"><code>router/routes/modules/dashboard.ts</code><a class="headerlink" href="#routerroutesmodulesdashboardts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="routerroutesmodulesgamets"><code>router/routes/modules/game.ts</code><a class="headerlink" href="#routerroutesmodulesgamets" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="routerroutestypests"><code>router/routes/types.ts</code><a class="headerlink" href="#routerroutestypests" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 2</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export Component
+export AppRouteRecordRaw
+</code></pre></div></li>
+</ul>
+<h2 id="routertypingsdts"><code>router/typings.d.ts</code><a class="headerlink" href="#routertypingsdts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="storeindexts"><code>store/index.ts</code><a class="headerlink" href="#storeindexts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="storemodulesaccounttypests"><code>store/modules/account/types.ts</code><a class="headerlink" href="#storemodulesaccounttypests" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export AccountState
+</code></pre></div></li>
+</ul>
+<h2 id="storemodulesappindexts"><code>store/modules/app/index.ts</code><a class="headerlink" href="#storemodulesappindexts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="storemodulesapptypests"><code>store/modules/app/types.ts</code><a class="headerlink" href="#storemodulesapptypests" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export AppState
+</code></pre></div></li>
+</ul>
+<h2 id="storemodulescashshoptypets"><code>store/modules/cashShop/type.ts</code><a class="headerlink" href="#storemodulescashshoptypets" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 2</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export categoryState
+export cashShopState
+</code></pre></div></li>
+</ul>
+<h2 id="storemodulesdroptypets"><code>store/modules/drop/type.ts</code><a class="headerlink" href="#storemodulesdroptypets" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export DropState
+</code></pre></div></li>
+</ul>
+<h2 id="storemodulesgachapontypets"><code>store/modules/gachapon/type.ts</code><a class="headerlink" href="#storemodulesgachapontypets" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 2</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export GachaponPoolState
+export GachaponRewardState
+</code></pre></div></li>
+</ul>
+<h2 id="storemodulesinventorytypets"><code>store/modules/inventory/type.ts</code><a class="headerlink" href="#storemodulesinventorytypets" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 3</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export InventoryTypeState
+export InventoryEquipmentState
+export InventoryState
+</code></pre></div></li>
+</ul>
+<h2 id="storemodulesnpcshoptypets"><code>store/modules/npcShop/type.ts</code><a class="headerlink" href="#storemodulesnpcshoptypets" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 2</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export NpcShopState
+export NpcShopItemState
+</code></pre></div></li>
+</ul>
+<h2 id="storemodulestab-barindexts"><code>store/modules/tab-bar/index.ts</code><a class="headerlink" href="#storemodulestab-barindexts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="storemodulestab-bartypests"><code>store/modules/tab-bar/types.ts</code><a class="headerlink" href="#storemodulestab-bartypests" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 2</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export TagProps
+export TabBarState
+</code></pre></div></li>
+</ul>
+<h2 id="storemodulesuserindexts"><code>store/modules/user/index.ts</code><a class="headerlink" href="#storemodulesuserindexts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="storemodulesusertypests"><code>store/modules/user/types.ts</code><a class="headerlink" href="#storemodulesusertypests" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 2</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export RoleType
+export UserState
+</code></pre></div></li>
+</ul>
+<h2 id="storepagets"><code>store/page.ts</code><a class="headerlink" href="#storepagets" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export PageState
+</code></pre></div></li>
+</ul>
+<h2 id="typesechartsts"><code>types/echarts.ts</code><a class="headerlink" href="#typesechartsts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export ToolTipFormatterParams
+</code></pre></div></li>
+</ul>
+<h2 id="typesglobalts"><code>types/global.ts</code><a class="headerlink" href="#typesglobalts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 8</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export AnyObject
+export Options
+export NodeOptions
+export GetParams
+export PostData
+export Pagination
+export TimeRanger
+export GeneralChart
+</code></pre></div></li>
+</ul>
+<h2 id="typesmockts"><code>types/mock.ts</code><a class="headerlink" href="#typesmockts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export MockParams
+</code></pre></div></li>
+</ul>
+<h2 id="utilsauthts"><code>utils/auth.ts</code><a class="headerlink" href="#utilsauthts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 4
+<div class="highlight"><pre><span></span><code>const isLogin = (...) =&gt;
+const getToken = (...) =&gt;
+const setToken = (...) =&gt;
+const clearToken = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="utilsenvts"><code>utils/env.ts</code><a class="headerlink" href="#utilsenvts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="utilseventts"><code>utils/event.ts</code><a class="headerlink" href="#utilseventts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 2</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export addEventListen
+export removeEventListen
+</code></pre></div></li>
+</ul>
+<h2 id="utilsindexts"><code>utils/index.ts</code><a class="headerlink" href="#utilsindexts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 2</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export openWindow
+export regexUrl
+</code></pre></div></li>
+</ul>
+<h2 id="utilsists"><code>utils/is.ts</code><a class="headerlink" href="#utilsists" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 13</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export isArray
+export isObject
+export isString
+export isNumber
+export isRegExp
+export isFile
+export isBlob
+export isUndefined
+export isNull
+export isFunction
+export isEmptyObject
+export isExist
+export isWindow
+</code></pre></div></li>
+</ul>
+<h2 id="utilsmaplestoryapits"><code>utils/mapleStoryAPI.ts</code><a class="headerlink" href="#utilsmaplestoryapits" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 2</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export getIconUrl
+export nothing
+</code></pre></div></li>
+</ul>
+<h2 id="utilsmonitorts"><code>utils/monitor.ts</code><a class="headerlink" href="#utilsmonitorts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 1</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export handleError
+</code></pre></div></li>
+</ul>
+<h2 id="utilsroute-listenerts"><code>utils/route-listener.ts</code><a class="headerlink" href="#utilsroute-listenerts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 3</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export setRouteEmitter
+export listenerRouteChange
+export removeRouteListener
+</code></pre></div></li>
+</ul>
+<h2 id="utilssetup-mockts"><code>utils/setup-mock.ts</code><a class="headerlink" href="#utilssetup-mockts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 2</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export successResponseWrap
+export failResponseWrap
+</code></pre></div></li>
+</ul>
+<h2 id="utilsstringutilsts"><code>utils/stringUtils.ts</code><a class="headerlink" href="#utilsstringutilsts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 2</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>export isValidString
+export timestampToChineseTime
+</code></pre></div></li>
+</ul>
+<h2 id="viewsaccountlistaddformvue"><code>views/account/list/addForm.vue</code><a class="headerlink" href="#viewsaccountlistaddformvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 2
+<div class="highlight"><pre><span></span><code>const init = (...) =&gt;
+const submitClick = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsaccountlistindexvue"><code>views/account/list/index.vue</code><a class="headerlink" href="#viewsaccountlistindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 11
+<div class="highlight"><pre><span></span><code>const loadData = (...) =&gt;
+const pageChange = (...) =&gt;
+const pageSizeChange = (...) =&gt;
+const resetClick = (...) =&gt;
+const addClick = (...) =&gt;
+const editClick = (...) =&gt;
+const restLoggedInClick = (...) =&gt;
+const banClick = (...) =&gt;
+const unbanClick = (...) =&gt;
+const submitBanClick = (...) =&gt;
+const deleteClick = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsaccountlistupdateformvue"><code>views/account/list/updateForm.vue</code><a class="headerlink" href="#viewsaccountlistupdateformvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 2
+<div class="highlight"><pre><span></span><code>const init = (...) =&gt;
+const submitClick = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsaccountlocaleen-usts"><code>views/account/locale/en-US.ts</code><a class="headerlink" href="#viewsaccountlocaleen-usts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsaccountlocalezh-cnts"><code>views/account/locale/zh-CN.ts</code><a class="headerlink" href="#viewsaccountlocalezh-cnts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsaccountplayerindexvue"><code>views/account/player/index.vue</code><a class="headerlink" href="#viewsaccountplayerindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 9
+<div class="highlight"><pre><span></span><code>const loadData = (...) =&gt;
+const refreshClick = (...) =&gt;
+const pageChange = (...) =&gt;
+const pageSizeChange = (...) =&gt;
+const resetClick = (...) =&gt;
+const globalGiveClick = (...) =&gt;
+const giveClick = (...) =&gt;
+const submitClick = (...) =&gt;
+const itemChanged = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsdashboardinformationsearchindexvue"><code>views/dashboard/informationSearch/index.vue</code><a class="headerlink" href="#viewsdashboardinformationsearchindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 4
+<div class="highlight"><pre><span></span><code>const getImg = (...) =&gt;
+const searchData = (...) =&gt;
+const resetSearch = (...) =&gt;
+const getTag = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsdashboardinformationsearchlocaleen-usts"><code>views/dashboard/informationSearch/locale/en-US.ts</code><a class="headerlink" href="#viewsdashboardinformationsearchlocaleen-usts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsdashboardinformationsearchlocalezh-cnts"><code>views/dashboard/informationSearch/locale/zh-CN.ts</code><a class="headerlink" href="#viewsdashboardinformationsearchlocalezh-cnts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsdashboardworkplaceindexvue"><code>views/dashboard/workplace/index.vue</code><a class="headerlink" href="#viewsdashboardworkplaceindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 8
+<div class="highlight"><pre><span></span><code>const loadSeverStatus = (...) =&gt;
+const handleButtonClick = (...) =&gt;
+const handleShutdownConfirm = (...) =&gt;
+const handleShutdownCancel = (...) =&gt;
+const handleRestartConfirm = (...) =&gt;
+const handleRestartCancel = (...) =&gt;
+const handleStopConfigOk = (...) =&gt;
+const handleStopConfigCancel = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsdashboardworkplacelocaleen-usts"><code>views/dashboard/workplace/locale/en-US.ts</code><a class="headerlink" href="#viewsdashboardworkplacelocaleen-usts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsdashboardworkplacelocalezh-cnts"><code>views/dashboard/workplace/locale/zh-CN.ts</code><a class="headerlink" href="#viewsdashboardworkplacelocalezh-cnts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsdashboardworkplacemockts"><code>views/dashboard/workplace/mock.ts</code><a class="headerlink" href="#viewsdashboardworkplacemockts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 1
+<div class="highlight"><pre><span></span><code>const getLineData = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgameautobanindexvue"><code>views/game/autoban/index.vue</code><a class="headerlink" href="#viewsgameautobanindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 2
+<div class="highlight"><pre><span></span><code>const loadConfigs = (...) =&gt;
+const saveClick = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgameautobanlocaleen-usts"><code>views/game/autoban/locale/en-US.ts</code><a class="headerlink" href="#viewsgameautobanlocaleen-usts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsgameautobanlocalezh-cnts"><code>views/game/autoban/locale/zh-CN.ts</code><a class="headerlink" href="#viewsgameautobanlocalezh-cnts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsgamecashshopformvue"><code>views/game/cashShop/form.vue</code><a class="headerlink" href="#viewsgamecashshopformvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 3
+<div class="highlight"><pre><span></span><code>const handleBeforeOk = (...) =&gt;
+const handleCancel = (...) =&gt;
+const initForm = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgamecashshopindexvue"><code>views/game/cashShop/index.vue</code><a class="headerlink" href="#viewsgamecashshopindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 3
+<div class="highlight"><pre><span></span><code>const topCategoryChange = (...) =&gt;
+const subCategoryChange = (...) =&gt;
+const loadCategories = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgamecashshoplocaleen-usts"><code>views/game/cashShop/locale/en-US.ts</code><a class="headerlink" href="#viewsgamecashshoplocaleen-usts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsgamecashshoplocalezh-cnts"><code>views/game/cashShop/locale/zh-CN.ts</code><a class="headerlink" href="#viewsgamecashshoplocalezh-cnts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsgamecashshoptablevue"><code>views/game/cashShop/table.vue</code><a class="headerlink" href="#viewsgamecashshoptablevue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 6
+<div class="highlight"><pre><span></span><code>const pageChange = (...) =&gt;
+const loadData = (...) =&gt;
+const changeOnSaleFilter = (...) =&gt;
+const editClick = (...) =&gt;
+const showBatchForm = (...) =&gt;
+const handleBatchFormBeforeOk = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgamecommandinfoindexvue"><code>views/game/commandInfo/index.vue</code><a class="headerlink" href="#viewsgamecommandinfoindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 9
+<div class="highlight"><pre><span></span><code>const loadCommands = (...) =&gt;
+const pageChange = (...) =&gt;
+const pageSizeChange = (...) =&gt;
+const searchData = (...) =&gt;
+const resetSearch = (...) =&gt;
+const levelChange = (...) =&gt;
+const uptClick = (...) =&gt;
+const editOk = (...) =&gt;
+const resetEditData = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgamecommandinfolocaleen-usts"><code>views/game/commandInfo/locale/en-US.ts</code><a class="headerlink" href="#viewsgamecommandinfolocaleen-usts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsgamecommandinfolocalezh-cnts"><code>views/game/commandInfo/locale/zh-CN.ts</code><a class="headerlink" href="#viewsgamecommandinfolocalezh-cnts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsgameconfigindexvue"><code>views/game/config/index.vue</code><a class="headerlink" href="#viewsgameconfigindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 22
+<div class="highlight"><pre><span></span><code>const loadTypes = (...) =&gt;
+const transI18nType = (...) =&gt;
+const transI18nClz = (...) =&gt;
+const getClzType = (...) =&gt;
+const loadConfigs = (...) =&gt;
+const pageChange = (...) =&gt;
+const pageSizeChange = (...) =&gt;
+const searchData = (...) =&gt;
+const resetSearch = (...) =&gt;
+const typeChange = (...) =&gt;
+const subTypeChange = (...) =&gt;
+const addClick = (...) =&gt;
+const delClick = (...) =&gt;
+const uptClick = (...) =&gt;
+const editOk = (...) =&gt;
+const resetEditData = (...) =&gt;
+const confirmOk = (...) =&gt;
+const importClick = (...) =&gt;
+const importOk = (...) =&gt;
+const customRequest = (...) =&gt;
+const uploadSuccess = (...) =&gt;
+const exportClick = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgameconfiglocaleen-usts"><code>views/game/config/locale/en-US.ts</code><a class="headerlink" href="#viewsgameconfiglocaleen-usts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsgameconfiglocalezh-cnts"><code>views/game/config/locale/zh-CN.ts</code><a class="headerlink" href="#viewsgameconfiglocalezh-cnts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsgamedropglobalvue"><code>views/game/drop/global.vue</code><a class="headerlink" href="#viewsgamedropglobalvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 10
+<div class="highlight"><pre><span></span><code>const pageChange = (...) =&gt;
+const pageSizeChange = (...) =&gt;
+const loadData = (...) =&gt;
+const resetClick = (...) =&gt;
+const filterItemClick = (...) =&gt;
+const editClick = (...) =&gt;
+const cancelEditClick = (...) =&gt;
+const saveClick = (...) =&gt;
+const deleteClick = (...) =&gt;
+const insertClick = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgamedropindexvue"><code>views/game/drop/index.vue</code><a class="headerlink" href="#viewsgamedropindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 11
+<div class="highlight"><pre><span></span><code>const pageChange = (...) =&gt;
+const pageSizeChange = (...) =&gt;
+const loadData = (...) =&gt;
+const resetClick = (...) =&gt;
+const filterMobClick = (...) =&gt;
+const filterItemClick = (...) =&gt;
+const editClick = (...) =&gt;
+const cancelEditClick = (...) =&gt;
+const saveClick = (...) =&gt;
+const deleteClick = (...) =&gt;
+const insertClick = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgamedroplocaleen-usts"><code>views/game/drop/locale/en-US.ts</code><a class="headerlink" href="#viewsgamedroplocaleen-usts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsgamedroplocalezh-cnts"><code>views/game/drop/locale/zh-CN.ts</code><a class="headerlink" href="#viewsgamedroplocalezh-cnts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsgamefileindexvue"><code>views/game/file/index.vue</code><a class="headerlink" href="#viewsgamefileindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 6</li>
+<li>const 箭头函数数: 0
+<div class="highlight"><pre><span></span><code>function onEditorMount(
+function registerCodeCompletion(
+function onTreeSelectFile(
+function onTreeSelectDiretory(
+function onEditorTextChange(
+function treeRoot(
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgamegachaponformvue"><code>views/game/gachapon/form.vue</code><a class="headerlink" href="#viewsgamegachaponformvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 6
+<div class="highlight"><pre><span></span><code>const handleBeforeOk = (...) =&gt;
+const handleCancel = (...) =&gt;
+const loadData = (...) =&gt;
+const initForm = (...) =&gt;
+const calcRealProb = (...) =&gt;
+const formatter = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgamegachaponindexvue"><code>views/game/gachapon/index.vue</code><a class="headerlink" href="#viewsgamegachaponindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 9
+<div class="highlight"><pre><span></span><code>const pageChange = (...) =&gt;
+const pageSizeChange = (...) =&gt;
+const loadData = (...) =&gt;
+const resetClick = (...) =&gt;
+const gachaponIdClick = (...) =&gt;
+const deleteClick = (...) =&gt;
+const insertClick = (...) =&gt;
+const editClick = (...) =&gt;
+const showRewardFormClick = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgamegachaponlocaleen-usts"><code>views/game/gachapon/locale/en-US.ts</code><a class="headerlink" href="#viewsgamegachaponlocaleen-usts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsgamegachaponlocalezh-cnts"><code>views/game/gachapon/locale/zh-CN.ts</code><a class="headerlink" href="#viewsgamegachaponlocalezh-cnts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsgamegachaponrewardvue"><code>views/game/gachapon/reward.vue</code><a class="headerlink" href="#viewsgamegachaponrewardvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 5
+<div class="highlight"><pre><span></span><code>const initForm = (...) =&gt;
+const loadData = (...) =&gt;
+const saveClick = (...) =&gt;
+const insertClick = (...) =&gt;
+const deleteClick = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgameinventoryinventoryuivue"><code>views/game/inventory/InventoryUI.vue</code><a class="headerlink" href="#viewsgameinventoryinventoryuivue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 2</li>
+<li>const 箭头函数数: 4
+<div class="highlight"><pre><span></span><code>function getFromCacheOrDownload(
+function calculatePositionOffsets(
+const fetchInventoryData = (...) =&gt;
+const drawInventory = (...) =&gt;
+const handleMouseMove = (...) =&gt;
+const handleMouseLeave = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgameinventorycharacterselectorvue"><code>views/game/inventory/characterSelector.vue</code><a class="headerlink" href="#viewsgameinventorycharacterselectorvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 3
+<div class="highlight"><pre><span></span><code>const openSelector = (...) =&gt;
+const searchClick = (...) =&gt;
+const selectClick = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgameinventoryindexvue"><code>views/game/inventory/index.vue</code><a class="headerlink" href="#viewsgameinventoryindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 6
+<div class="highlight"><pre><span></span><code>const loadType = (...) =&gt;
+const tabChange = (...) =&gt;
+const useCharacter = (...) =&gt;
+const openInventoryUI = (...) =&gt;
+const handleOk = (...) =&gt;
+const handleCancel = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgameinventoryinventoryequipformvue"><code>views/game/inventory/inventoryEquipForm.vue</code><a class="headerlink" href="#viewsgameinventoryinventoryequipformvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 3
+<div class="highlight"><pre><span></span><code>const handleBeforeOk = (...) =&gt;
+const handleCancel = (...) =&gt;
+const initForm = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgameinventorylocaleen-usts"><code>views/game/inventory/locale/en-US.ts</code><a class="headerlink" href="#viewsgameinventorylocaleen-usts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsgameinventorylocalezh-cnts"><code>views/game/inventory/locale/zh-CN.ts</code><a class="headerlink" href="#viewsgameinventorylocalezh-cnts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsgameinventorytablevue"><code>views/game/inventory/table.vue</code><a class="headerlink" href="#viewsgameinventorytablevue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 4
+<div class="highlight"><pre><span></span><code>const loadData = (...) =&gt;
+const saveClick = (...) =&gt;
+const deleteClick = (...) =&gt;
+const editClick = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgamenpcshopindexvue"><code>views/game/npcShop/index.vue</code><a class="headerlink" href="#viewsgamenpcshopindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 11
+<div class="highlight"><pre><span></span><code>const pageChange = (...) =&gt;
+const pageSizeChange = (...) =&gt;
+const loadClick = (...) =&gt;
+const resetClick = (...) =&gt;
+const loadShopList = (...) =&gt;
+const showShopItemClick = (...) =&gt;
+const loadShopItemList = (...) =&gt;
+const insertItemClick = (...) =&gt;
+const saveClick = (...) =&gt;
+const deleteClick = (...) =&gt;
+const rollbackClick = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsgamenpcshoplocaleen-usts"><code>views/game/npcShop/locale/en-US.ts</code><a class="headerlink" href="#viewsgamenpcshoplocaleen-usts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsgamenpcshoplocalezh-cnts"><code>views/game/npcShop/locale/zh-CN.ts</code><a class="headerlink" href="#viewsgamenpcshoplocalezh-cnts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewslogincomponentslogin-formvue"><code>views/login/components/login-form.vue</code><a class="headerlink" href="#viewslogincomponentslogin-formvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 2
+<div class="highlight"><pre><span></span><code>const handleSubmit = (...) =&gt;
+const setRememberPassword = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsloginindexvue"><code>views/login/index.vue</code><a class="headerlink" href="#viewsloginindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsloginlocaleen-usts"><code>views/login/locale/en-US.ts</code><a class="headerlink" href="#viewsloginlocaleen-usts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsloginlocalezh-cnts"><code>views/login/locale/zh-CN.ts</code><a class="headerlink" href="#viewsloginlocalezh-cnts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+<h2 id="viewsnot-foundindexvue"><code>views/not-found/index.vue</code><a class="headerlink" href="#viewsnot-foundindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 1
+<div class="highlight"><pre><span></span><code>const back = (...) =&gt;
+</code></pre></div></li>
+</ul>
+<h2 id="viewsredirectindexvue"><code>views/redirect/index.vue</code><a class="headerlink" href="#viewsredirectindexvue" title="Permanent link">&para;</a></h2>
+<ul>
+<li>export 符号数: 0</li>
+<li>function 声明数: 0</li>
+<li>const 箭头函数数: 0</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

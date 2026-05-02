@@ -1,0 +1,3243 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="BeiDou 游戏系统开发文档与源码索引">
+      
+      
+        <meta name="author" content="BeiDou-Guide">
+      
+      
+        <link rel="canonical" href="https://uuclear.github.io/BeiDou-Guide/reference/gms-server-symbol-notes/model/">
+      
+      
+        <link rel="prev" href="../manager/">
+      
+      
+        <link rel="next" href="../net/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>model - BeiDou 开发文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gms-server-model" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="BeiDou 开发文档" class="md-header__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BeiDou 开发文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../read-guide/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  阅读指引
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  环境与架构
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  源码精读与导读
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../gms-server-symbol-notes-README/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  自动生成索引
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="BeiDou 开发文档" class="md-nav__button md-logo" aria-label="BeiDou 开发文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    BeiDou 开发文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Uuclear/BeiDou-Guide" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BeiDou-Guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../read-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    阅读指引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境与架构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    环境与架构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    环境搭建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03-API%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API 接口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05-%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../06-%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运维部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../07-%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用户手册
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../08-%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    技术规范
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码精读与导读
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    源码精读与导读
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../09-%E6%BA%90%E7%A0%81%E6%B7%B1%E5%BA%A6%E5%AF%BC%E8%AF%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码深度导读
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../10-BeiDou-ijl15-%E6%BA%90%E7%A0%81%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 源码详解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../11-%E5%85%A8%E9%87%8F%E6%BA%90%E7%A0%81%E7%AC%A6%E5%8F%B7%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与生成说明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../12-%E6%BA%90%E7%A0%81%E6%A8%A1%E5%9D%97%E7%B2%BE%E8%AF%BB-%E4%BA%BA%E6%9C%BA%E6%92%B0%E5%86%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码模块精读（人机撰写）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自动生成索引
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    自动生成索引
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 逐符号职责（分卷）
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    gms-server 逐符号职责（分卷）
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-server-symbol-notes-README/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    分卷索引与用法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    （跳转）单文件入口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_root/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    org.gms 根
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    constants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controller/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    controller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dao
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    exception
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    model
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoaddaccountdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/AddAccountDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoautobanconfigdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/AutobanConfigDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtobasepagedtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/BasePageDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtocashshopbatchonsalereqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/CashShopBatchOnSaleReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtocashshopsearchrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/CashShopSearchRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtochannellistrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ChannelListRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtochronlinelistreqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ChrOnlineListReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtochronlinelistrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ChrOnlineListRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtocommandreqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/CommandReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoconfigtypedtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ConfigTypeDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtodropsearchreqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/DropSearchReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtodropsearchrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/DropSearchRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoequipmentinforeqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/EquipmentInfoReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoequipmentinfortndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/EquipmentInfoRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtofilereaddtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/FileReadDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtofiletreedtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/FileTreeDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtofiletreenodedtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/FileTreeNodeDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtofilewritedtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/FileWriteDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtogachaponpoolsearchreqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/GachaponPoolSearchReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtogachaponpoolsearchrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/GachaponPoolSearchRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtogameconfigreqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/GameConfigReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtogiveresourcereqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/GiveResourceReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoinventoryequiprtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/InventoryEquipRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoinventorysearchreqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/InventorySearchReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoinventorysearchrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/InventorySearchRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoinventorytypertndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/InventoryTypeRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoinventoryequipmentreqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/InventoryequipmentReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoinventoryequipmentrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/InventoryequipmentRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoresultbodyjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ResultBody.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoserverinforeqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ServerInfoReqDto.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoservershutdowndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ServerShutdownDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoshopitemsearchrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ShopItemSearchRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoshopsearchreqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ShopSearchReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoshopsearchrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ShopSearchRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtosubmitbodyjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/SubmitBody.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoupdateaccountbygmdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/UpdateAccountByGmDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoupdateaccountbyuserdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/UpdateAccountByUserDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoworldlistrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/WorldListRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelpojocashcategoryjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/pojo/CashCategory.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelpojoinformationresultjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/pojo/InformationResult.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelpojoinformationsearchjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/pojo/InformationSearch.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelpojonewyearcardrecordjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/pojo/NewYearCardRecord.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelpojonextlevelcontextjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/pojo/NextLevelContext.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelpojoratelimitcontextjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/pojo/RateLimitContext.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelpojoskillentryjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/pojo/SkillEntry.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../net/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    net
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../property/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    property
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provider/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    provider
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scripting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../util/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    util
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全量符号与 API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    全量符号与 API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-server-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-server-api-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-server public 索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-ui-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gms-ui-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gms-ui 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../beidou-ijl15-full-symbols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 全量符号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../beidou-ijl15-symbol-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ijl15 逐符号职责
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoaddaccountdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/AddAccountDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoautobanconfigdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/AutobanConfigDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtobasepagedtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/BasePageDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtocashshopbatchonsalereqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/CashShopBatchOnSaleReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtocashshopsearchrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/CashShopSearchRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtochannellistrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ChannelListRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtochronlinelistreqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ChrOnlineListReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtochronlinelistrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ChrOnlineListRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtocommandreqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/CommandReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoconfigtypedtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ConfigTypeDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtodropsearchreqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/DropSearchReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtodropsearchrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/DropSearchRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoequipmentinforeqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/EquipmentInfoReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoequipmentinfortndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/EquipmentInfoRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtofilereaddtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/FileReadDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtofiletreedtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/FileTreeDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtofiletreenodedtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/FileTreeNodeDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtofilewritedtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/FileWriteDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtogachaponpoolsearchreqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/GachaponPoolSearchReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtogachaponpoolsearchrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/GachaponPoolSearchRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtogameconfigreqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/GameConfigReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtogiveresourcereqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/GiveResourceReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoinventoryequiprtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/InventoryEquipRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoinventorysearchreqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/InventorySearchReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoinventorysearchrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/InventorySearchRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoinventorytypertndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/InventoryTypeRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoinventoryequipmentreqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/InventoryequipmentReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoinventoryequipmentrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/InventoryequipmentRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoresultbodyjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ResultBody.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoserverinforeqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ServerInfoReqDto.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoservershutdowndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ServerShutdownDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoshopitemsearchrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ShopItemSearchRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoshopsearchreqdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ShopSearchReqDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoshopsearchrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/ShopSearchRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtosubmitbodyjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/SubmitBody.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoupdateaccountbygmdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/UpdateAccountByGmDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoupdateaccountbyuserdtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/UpdateAccountByUserDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeldtoworldlistrtndtojava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/dto/WorldListRtnDTO.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelpojocashcategoryjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/pojo/CashCategory.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelpojoinformationresultjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/pojo/InformationResult.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelpojoinformationsearchjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/pojo/InformationSearch.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelpojonewyearcardrecordjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/pojo/NewYearCardRecord.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelpojonextlevelcontextjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/pojo/NextLevelContext.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelpojoratelimitcontextjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/pojo/RateLimitContext.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelpojoskillentryjava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model/pojo/SkillEntry.java
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/Uuclear/BeiDou-Guide/edit/main/docs/reference/gms-server-symbol-notes/model.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="gms-server-model">gms-server 逐符号中文职责 · 分卷 <code>model</code><a class="headerlink" href="#gms-server-model" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>自动生成：<code>scripts/generate-symbol-notes.py</code>
+源码路径：<code>BeiDou-Server</code>
+本分卷 Java 文件数：45</p>
+</blockquote>
+<p><a href="../../gms-server-symbol-notes-README/">← 返回分卷索引</a></p>
+<hr />
+<h2 id="modeldtoaddaccountdtojava"><code>model/dto/AddAccountDTO.java</code><a class="headerlink" href="#modeldtoaddaccountdtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class AddAccountDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtoautobanconfigdtojava"><code>model/dto/AutobanConfigDTO.java</code><a class="headerlink" href="#modeldtoautobanconfigdtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class AutobanConfigDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtobasepagedtojava"><code>model/dto/BasePageDTO.java</code><a class="headerlink" href="#modeldtobasepagedtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class BasePageDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtocashshopbatchonsalereqdtojava"><code>model/dto/CashShopBatchOnSaleReqDTO.java</code><a class="headerlink" href="#modeldtocashshopbatchonsalereqdtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class CashShopBatchOnSaleReqDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtocashshopsearchrtndtojava"><code>model/dto/CashShopSearchRtnDTO.java</code><a class="headerlink" href="#modeldtocashshopsearchrtndtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class CashShopSearchRtnDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtochannellistrtndtojava"><code>model/dto/ChannelListRtnDTO.java</code><a class="headerlink" href="#modeldtochannellistrtndtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ChannelListRtnDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtochronlinelistreqdtojava"><code>model/dto/ChrOnlineListReqDTO.java</code><a class="headerlink" href="#modeldtochronlinelistreqdtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ChrOnlineListReqDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtochronlinelistrtndtojava"><code>model/dto/ChrOnlineListRtnDTO.java</code><a class="headerlink" href="#modeldtochronlinelistrtndtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ChrOnlineListRtnDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtocommandreqdtojava"><code>model/dto/CommandReqDTO.java</code><a class="headerlink" href="#modeldtocommandreqdtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class CommandReqDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtoconfigtypedtojava"><code>model/dto/ConfigTypeDTO.java</code><a class="headerlink" href="#modeldtoconfigtypedtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ConfigTypeDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtodropsearchreqdtojava"><code>model/dto/DropSearchReqDTO.java</code><a class="headerlink" href="#modeldtodropsearchreqdtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class DropSearchReqDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtodropsearchrtndtojava"><code>model/dto/DropSearchRtnDTO.java</code><a class="headerlink" href="#modeldtodropsearchrtndtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class DropSearchRtnDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtoequipmentinforeqdtojava"><code>model/dto/EquipmentInfoReqDTO.java</code><a class="headerlink" href="#modeldtoequipmentinforeqdtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class EquipmentInfoReqDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtoequipmentinfortndtojava"><code>model/dto/EquipmentInfoRtnDTO.java</code><a class="headerlink" href="#modeldtoequipmentinfortndtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class EquipmentInfoRtnDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtofilereaddtojava"><code>model/dto/FileReadDTO.java</code><a class="headerlink" href="#modeldtofilereaddtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class FileReadDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtofiletreedtojava"><code>model/dto/FileTreeDTO.java</code><a class="headerlink" href="#modeldtofiletreedtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class FileTreeDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtofiletreenodedtojava"><code>model/dto/FileTreeNodeDTO.java</code><a class="headerlink" href="#modeldtofiletreenodedtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class FileTreeNodeDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public FileTreeNodeDTO(File file, String key)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="modeldtofilewritedtojava"><code>model/dto/FileWriteDTO.java</code><a class="headerlink" href="#modeldtofilewritedtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class FileWriteDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtogachaponpoolsearchreqdtojava"><code>model/dto/GachaponPoolSearchReqDTO.java</code><a class="headerlink" href="#modeldtogachaponpoolsearchreqdtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class GachaponPoolSearchReqDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtogachaponpoolsearchrtndtojava"><code>model/dto/GachaponPoolSearchRtnDTO.java</code><a class="headerlink" href="#modeldtogachaponpoolsearchrtndtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class GachaponPoolSearchRtnDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtogameconfigreqdtojava"><code>model/dto/GameConfigReqDTO.java</code><a class="headerlink" href="#modeldtogameconfigreqdtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class GameConfigReqDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtogiveresourcereqdtojava"><code>model/dto/GiveResourceReqDTO.java</code><a class="headerlink" href="#modeldtogiveresourcereqdtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class GiveResourceReqDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtoinventoryequiprtndtojava"><code>model/dto/InventoryEquipRtnDTO.java</code><a class="headerlink" href="#modeldtoinventoryequiprtndtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class InventoryEquipRtnDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtoinventorysearchreqdtojava"><code>model/dto/InventorySearchReqDTO.java</code><a class="headerlink" href="#modeldtoinventorysearchreqdtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class InventorySearchReqDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtoinventorysearchrtndtojava"><code>model/dto/InventorySearchRtnDTO.java</code><a class="headerlink" href="#modeldtoinventorysearchrtndtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class InventorySearchRtnDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public Item toItem()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="modeldtoinventorytypertndtojava"><code>model/dto/InventoryTypeRtnDTO.java</code><a class="headerlink" href="#modeldtoinventorytypertndtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class InventoryTypeRtnDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtoinventoryequipmentreqdtojava"><code>model/dto/InventoryequipmentReqDTO.java</code><a class="headerlink" href="#modeldtoinventoryequipmentreqdtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class InventoryequipmentReqDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtoinventoryequipmentrtndtojava"><code>model/dto/InventoryequipmentRtnDTO.java</code><a class="headerlink" href="#modeldtoinventoryequipmentrtndtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class InventoryequipmentRtnDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtoresultbodyjava"><code>model/dto/ResultBody.java</code><a class="headerlink" href="#modeldtoresultbodyjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ResultBody</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public ResultBody()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public ResultBody(BaseErrorInfoInterface errorInfo)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public static &lt;T&gt; ResultBody&lt;T&gt; success()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public static &lt;T&gt; ResultBody&lt;T&gt; success(T data)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public static &lt;T&gt; ResultBody&lt;T&gt; success(SubmitBody&lt;?&gt; request, T data)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public static &lt;T&gt; ResultBody&lt;T&gt; error(HttpServletRequest req, BaseErrorInfoInterface errorInfo)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public static &lt;T&gt; ResultBody&lt;T&gt; error(HttpServletRequest req, String message)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public static &lt;T&gt; ResultBody&lt;T&gt; error(HttpServletRequest req, Integer code, String message)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public String toString()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="modeldtoserverinforeqdtojava"><code>model/dto/ServerInfoReqDto.java</code><a class="headerlink" href="#modeldtoserverinforeqdtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ServerInfoReqDto</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtoservershutdowndtojava"><code>model/dto/ServerShutdownDTO.java</code><a class="headerlink" href="#modeldtoservershutdowndtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ServerShutdownDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtoshopitemsearchrtndtojava"><code>model/dto/ShopItemSearchRtnDTO.java</code><a class="headerlink" href="#modeldtoshopitemsearchrtndtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ShopItemSearchRtnDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtoshopsearchreqdtojava"><code>model/dto/ShopSearchReqDTO.java</code><a class="headerlink" href="#modeldtoshopsearchreqdtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ShopSearchReqDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtoshopsearchrtndtojava"><code>model/dto/ShopSearchRtnDTO.java</code><a class="headerlink" href="#modeldtoshopsearchrtndtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class ShopSearchRtnDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtosubmitbodyjava"><code>model/dto/SubmitBody.java</code><a class="headerlink" href="#modeldtosubmitbodyjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class SubmitBody</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtoupdateaccountbygmdtojava"><code>model/dto/UpdateAccountByGmDTO.java</code><a class="headerlink" href="#modeldtoupdateaccountbygmdtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class UpdateAccountByGmDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtoupdateaccountbyuserdtojava"><code>model/dto/UpdateAccountByUserDTO.java</code><a class="headerlink" href="#modeldtoupdateaccountbyuserdtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class UpdateAccountByUserDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modeldtoworldlistrtndtojava"><code>model/dto/WorldListRtnDTO.java</code><a class="headerlink" href="#modeldtoworldlistrtndtojava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class WorldListRtnDTO</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modelpojocashcategoryjava"><code>model/pojo/CashCategory.java</code><a class="headerlink" href="#modelpojocashcategoryjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class CashCategory</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modelpojoinformationresultjava"><code>model/pojo/InformationResult.java</code><a class="headerlink" href="#modelpojoinformationresultjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class InformationResult</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modelpojoinformationsearchjava"><code>model/pojo/InformationSearch.java</code><a class="headerlink" href="#modelpojoinformationsearchjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class InformationSearch</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modelpojonewyearcardrecordjava"><code>model/pojo/NewYearCardRecord.java</code><a class="headerlink" href="#modelpojonewyearcardrecordjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class NewYearCardRecord</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public NewYearCardRecord(int senderId, String senderName, int receiverId, String receiverName, String message)</code>：创建对象、会话或业务记录。</li>
+<li><code>public void setExtraNewYearCardRecord(int id, boolean senderDiscardCard, boolean receiverDiscardCard, boolean receiverReceivedCard, long dateSent, long dateReceived)</code>：写入或更新状态字段。</li>
+<li><code>public static void saveNewYearCard(NewYearCardRecord newyear)</code>：持久化当前状态到存储层。</li>
+<li><code>public static void updateNewYearCard(NewYearCardRecord newyear)</code>：更新已有对象/配置/缓存。</li>
+<li><code>public static NewYearCardRecord loadNewYearCard(int cardid)</code>：从外部来源加载数据（数据库/文件/配置）。</li>
+<li><code>public static void loadPlayerNewYearCards(Character chr)</code>：从外部来源加载数据（数据库/文件/配置）。</li>
+<li><code>public static void printNewYearRecords(Character chr)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void startNewYearCardTask()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public void stopNewYearCardTask()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>private static void deleteNewYearCard(int id)</code>：删除对象、关系或临时状态。</li>
+<li><code>public static void removeAllNewYearCard(boolean send, Character chr)</code>：删除对象、关系或临时状态。</li>
+</ul>
+<h2 id="modelpojonextlevelcontextjava"><code>model/pojo/NextLevelContext.java</code><a class="headerlink" href="#modelpojonextlevelcontextjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class NextLevelContext</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public void clear()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+<h2 id="modelpojoratelimitcontextjava"><code>model/pojo/RateLimitContext.java</code><a class="headerlink" href="#modelpojoratelimitcontextjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class RateLimitContext</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+</ul>
+<h2 id="modelpojoskillentryjava"><code>model/pojo/SkillEntry.java</code><a class="headerlink" href="#modelpojoskillentryjava" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>class SkillEntry</code>：领域类型或功能模块，职责由同名文件实现定义。</li>
+<li><code>public SkillEntry(byte skillLevel, int masterLevel, long expiration)</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+<li><code>public String toString()</code>：通用业务逻辑入口，需结合实现查看细节。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
